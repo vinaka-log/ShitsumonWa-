@@ -4,10 +4,10 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = [:remember_me, :user_activation]
+Rails.application.config.sorcery.submodules = [:remember_me, :user_activation, :reset_password]
 
 # Here you can configure each submodule's features.
-Rails.application.config.sorcery.submodules = [:remember_me, :user_activation]
+Rails.application.config.sorcery.submodules = [:remember_me, :user_activation, :reset_password]
 
 Rails.application.config.sorcery.configure do |config|
   config.user_config do |user|
@@ -315,6 +315,16 @@ Rails.application.config.sorcery.configure do |config|
     # user.remember_me_token_persist_globally =
 
     # -- user_activation --
+    Rails.application.config.sorcery.submodules = [:user_activation, :reset_password]
+
+    Rails.application.config.sorcery.configure do |config|
+        onfig.user_config do |user|
+        user.user_activation_mailer = UserMailer
+        user.reset_password_mailer = UserMailer
+      end
+
+      config.user_class = "User"
+    end
     # The attribute name to hold activation state (active/pending).
     # Default: `:activation_state`
     #
