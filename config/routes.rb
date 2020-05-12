@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   get 'pages/show'
   get  '/signup',  to: 'users#new'
 
-  resources :users
+  resources :users do
+    #sorceryでの認証のためルートを定義
+    member do
+      get :activate
+    end
+  end
   resources :users_sessions
   
   
