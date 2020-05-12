@@ -5,9 +5,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :users_sessions
-
-  get '/login' to: 'user_sessions#new'
-  post '/logout' to: 'user_sessions#destroy'
+  
+  
+  get '/login', to: 'user_sessions#new'
+  post '/logout', to: 'user_sessions#destroy'
 
  
 end
