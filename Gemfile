@@ -5,8 +5,8 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3'
-#  Use bootstrap for views
-gem 'bootstrap-sass', '3.3.7'
+#  Use BULMA for views
+gem "bulma-rails"
 # Use bcrypt for has_secure_password
 gem 'bcrypt'
 # Use sqlite3 as the database for Active Record
@@ -65,4 +65,5 @@ gem 'jquery-rails'
 gem 'rename'
 gem 'sorcery'
 gem 'letter_opener'
+
 
