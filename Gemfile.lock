@@ -82,8 +82,11 @@ GEM
     crass (1.0.6)
     debug_inspector (0.0.3)
     erubi (1.9.0)
+<<<<<<< HEAD
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
+=======
+>>>>>>> edit-pages
     ffi (1.12.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -91,6 +94,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+<<<<<<< HEAD
     jquery-rails (4.4.0)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -100,6 +104,8 @@ GEM
       addressable (~> 2.7)
     letter_opener (1.7.0)
       launchy (~> 2.2)
+=======
+>>>>>>> edit-pages
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -256,8 +262,11 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   jbuilder (~> 2.7)
+<<<<<<< HEAD
   jquery-rails
   letter_opener
+=======
+>>>>>>> edit-pages
   listen (~> 3.2)
   pry-byebug
   pry-doc
@@ -271,6 +280,8 @@ DEPENDENCIES
   sorcery
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets
+  sprockets-rails
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
