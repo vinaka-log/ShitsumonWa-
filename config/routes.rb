@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  root 'pages#index'
-=======
   root 'pages#test'
->>>>>>> edit-pages
   get 'pages/show'
   get  '/signup',  to: 'users#new'
 
