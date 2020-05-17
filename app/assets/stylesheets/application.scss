@@ -1,9 +1,3 @@
-<<<<<<< HEAD:app/assets/stylesheets/application.css
-=======
-@import "bluma";
-@import 'custom';
->>>>>>> edit-pages:app/assets/stylesheets/application.scss
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -19,10 +13,5 @@
  *= require_tree .
  *= require_self
  */
-
-<<<<<<< HEAD:app/assets/stylesheets/application.css
- 
-=======
-
-
->>>>>>> edit-pages:app/assets/stylesheets/application.scss
+@import "bulma";
+@import "custom";
