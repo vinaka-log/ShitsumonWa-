@@ -17,7 +17,7 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.activation_success_email.subject
   #
-  def activation_success_email
+  def activation_success_email(user)
     @user = user
     @url  = "http://localhost:3000/login"
     mail(:to => user.email,
