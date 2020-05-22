@@ -1,7 +1,31 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="sign-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4 signup-container">
+        <h1 class="text-center text-white">Sign in</h1>
+        <%= form_with model: @user, url: users_path,local: true do |form| %>
+          <%= form.label :name, 'User Name', class: 'form-control' %>
+          <%= form.text_field :name %>
+          <%= form.label :email, 'E-mail Address', class: 'form-control' %>
+          <%= form.text_field :email %>
+          <%= form.label :nationality, 'Country', class: 'form-control' %>
+          <%= form.text_field  :nationality %>
+          <%= form.label :password, 'Password', class: 'form-control' %>
+          <%= form.password_field :password %>
+          <%= form.label :password_confirmation, 'Password Confirmation' , class: 'form-control'%>
+          <%= form.password_field :password_confirmation %>
+          <%= form.submit "Register" %>
+        <% end %>
+
+        <%= link_to 'Login', '#',class: 'text-white' %>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<#sorceryのパスワードリセット用>
-<h1>Forgot Password?</h1>
-<%# render 'forgot_password_form' %>
+
+
+# <#sorceryのパスワードリセット用>
+# <h1>Forgot Password?</h1>
+# <%# render 'forgot_password_form' %>

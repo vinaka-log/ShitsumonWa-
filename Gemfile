@@ -9,7 +9,11 @@ gem 'rails', '~> 6.0.3'
 
 #  Use bulma for views
 gem "bulma-rails"
-#gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '3.3.7'
+gem 'sassc', '~> 2.0.0'
+gem 'uglifier'
+gem 'jquery-rails'
+gem 'bootstrap'
 
 # Use bcrypt for has_secure_password
 gem 'bcrypt'

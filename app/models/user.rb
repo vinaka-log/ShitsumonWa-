@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one_attached :image
   authenticates_with_sorcery!
 
   # validates :name, presence: true
