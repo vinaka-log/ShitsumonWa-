@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'pages/show'
   get  '/signup',  to: 'users#new'
+  get  '/signup',  to: 'users#new'
 
   resources :users do
     #sorceryでの認証のためルートを定義
@@ -14,6 +15,4 @@ Rails.application.routes.draw do
   
   get '/login', to: 'user_sessions#new'
   post '/logout', to: 'user_sessions#destroy'
-
- 
 end

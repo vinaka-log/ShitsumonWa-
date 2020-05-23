@@ -32,3 +32,29 @@
   }
 
 }
+
+  // signup
+ .signup-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url('tokyo.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  .signup-container {
+    padding-top: 220px;
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.alert {
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+}
