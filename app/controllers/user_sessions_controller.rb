@@ -22,4 +22,5 @@ class UserSessionsController < ApplicationController
    #エラーが出たため書いた(2020/0524)
   def index
   end
+
 end

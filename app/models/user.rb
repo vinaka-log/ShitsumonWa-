@@ -2,6 +2,8 @@ class User < ApplicationRecord
 
   authenticates_with_sorcery!
 
+  has_one_attached :image
+
   validates :name, presence: true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
