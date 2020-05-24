@@ -10,22 +10,21 @@
 
   <body>
 
-    <%= yield %>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+  <% end %>
 
-    #sorcery設定時に追加
+  <%= render 'layouts/header' %>
+
+  
+  <%= yield %>
+
+  <script>
+  $(function(){
+    $(".alert").fadeOut(5000);
+  });
+  </script>
     
-    <div id="nav">
-     <% if current_user %>
-       <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-       <%= link_to "Logout", :logout, method: :post %>
-     <% else %>
-       <%= link_to "Register", new_user_path %> |
-       <%= link_to "Login", :login %>
-     <% end %>
-   </div>
-   <div>
-     <p id="notice"><%= flash[:notice] %></p>
-     <p id="alert"><%= flash[:alert] %></p>
-   </div>
+  
   </body>
 </html>

@@ -2,20 +2,33 @@
   <div class="container">
     <div class="row">
       <div class="col-md-offset-4 col-md-4 signup-container">
-        <h1 class="text-center text-white">Sign in</h1>
+        <h1 class="text-center text-white ">Sign up</h1>
         <%= form_with model: @user, url: users_path,local: true do |form| %>
-          <%= form.label :name, 'User Name', class: 'form-control' %>
-          <%= form.text_field :name %>
-          <%= form.label :email, 'E-mail Address', class: 'form-control' %>
-          <%= form.text_field :email %>
-          <%= form.label :nationality, 'Country', class: 'form-control' %>
-          <%= form.text_field  :nationality %>
-          <%= form.label :password, 'Password', class: 'form-control' %>
-          <%= form.password_field :password %>
+          <div class="form-group">
+            <%= form.label :name, 'User Name', class: 'form-control' %>
+            <%= form.text_field :name %>
+          </div>
+          <div class="form-group">
+            <%= form.label :email, 'E-mail Address', class: 'form-control' %>
+            <%= form.text_field :email %>
+          </div>
+          <div class="form-group">
+            <%= form.label :nationality, 'Country', class: 'form-control' %>
+            <%= form.text_field  :nationality %>
+          </div>
+            <div class="form-group">
+            <%= form.label :password, 'Password', class: 'form-control' %>
+            <%= form.password_field :password %>
+          </div>
+          <div class="form-group">
+            <%= form.label :password_confirmation, 'Password Confirmation', class: 'form-control' %>
+            <%= form.password_field :password_confirmation %>
+          </div>
+          
           <%= form.submit "Register", class:'btn-block btn-success' %>
         <% end %>
 
-        <%= link_to 'Login', '#',class: 'text-white' %>
+        <%= link_to 'Login', '#',class: 'link_login' %>
       </div>
     </div>
   </div>

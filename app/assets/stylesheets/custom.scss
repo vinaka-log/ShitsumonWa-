@@ -34,6 +34,7 @@
 }
 
   // signup
+
  .signup-wrapper {
   width: 100vw;
   height: 100vh;
@@ -44,17 +45,45 @@
   background-size: cover;
 
   .signup-container {
-    padding-top: 220px;
+    padding-top: 120px;
+    .text-white {
+      color: white;
+      font-size: 50px;
+    }
 
+    
     .form-group {
       margin-bottom: 20px;
+      color: black;
+    }
+
+    .link_login {
+      font-size: 20px;
+      font-color: white;
+      text-decoration:underline;
+
     }
   }
 }
 
+// <!- flash -->
 .alert {
   margin-bottom: 0px;
   position: fixed;
   width: 100%;
   z-index: 10000;
 }
+
+// <!- Log in -->
+.form-wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 150px;
+  background-image: image-url('laptop.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
