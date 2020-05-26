@@ -1,4 +1,38 @@
-<div class = "text-center Sl">
-  <h1 class = "d-flex align-items-center">Shitsumon list</h1>
-  <%=link_to 'new question', new_question_path, class:'btn btn-success btn-lg' %>
+<div class = "question-list ls"> 
+    <div class = "text-center">
+        <h1 class = "d-flex align-items-center">Shitsumon list</h1>
+        <%=link_to 'new question', new_question_path, class:'btn btn-success btn-lg' %>
+    </div>
+
+    <div class="d-flex align-items-center">
+    
+      <table class="table table-bordered border-primary table-hover table-sm posts_table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" style="width: 40px">No.</th>
+            <th scope="col" style="width: 700px">Title</th>
+            <th scope="col">Questioner</th>
+            <th scope="col">Post date</th>
+            <th scope="col">Update date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Test1</td>
+            <td>hoge</td>
+            <td>2020/05/27</td>
+            <td>2020/05/27</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Test1</td>
+            <td>hoge</td>
+            <td>2020/05/27</td>
+            <td>2018/05/27</td>
+          </tr>
+          
+        </tbody>
+      </table>
+   </div>
 </div>

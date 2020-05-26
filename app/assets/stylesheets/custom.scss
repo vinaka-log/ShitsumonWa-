@@ -88,16 +88,22 @@
 
 
 // <!- index question-->
-.Sl {
+.question-list {
   width: 100vw;
   height: 100vh;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  padding-top:200px;
+  padding-top:150px;
   background-image: image-url('hand.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  h1 {
+    font-size: 50px;
+  }
+  .align-items-center {
+    padding-top: 40px;
+  }
 }
 
 // <!- new question-->
@@ -111,5 +117,9 @@
   background-attachment: fixed;
   background-size: cover;
 }
+
+
+
+
 
 
