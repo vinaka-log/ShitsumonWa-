@@ -315,16 +315,7 @@ Rails.application.config.sorcery.configure do |config|
     # user.remember_me_token_persist_globally =
 
     # -- user_activation --
-    Rails.application.config.sorcery.submodules = [:user_activation, :reset_password]
-
-    Rails.application.config.sorcery.configure do |config|
-        onfig.user_config do |user|
-        user.user_activation_mailer = UserMailer
-        user.reset_password_mailer = UserMailer
-      end
-
-      config.user_class = "User"
-    end
+    
     # The attribute name to hold activation state (active/pending).
     # Default: `:activation_state`
     #
