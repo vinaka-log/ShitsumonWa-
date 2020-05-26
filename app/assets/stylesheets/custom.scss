@@ -35,7 +35,6 @@
 }
 
   // signup
-
  .signup-wrapper {
   width: 100vw;
   height: 100vh;
@@ -81,6 +80,32 @@
   height: 100vh;
   padding-top: 150px;
   background-image: image-url('laptop.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+// <!- index question-->
+.Sl {
+  width: 100vw;
+  height: 100vh;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-top:200px;
+  background-image: image-url('hand.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+// <!- new question-->
+.question-wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 150px;
+  background-image: image-url('black-board.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;

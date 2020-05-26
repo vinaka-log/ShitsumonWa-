@@ -16,8 +16,7 @@ class User < ApplicationRecord
   validates :password, confirmation: true, format: { with: VALID_PASSWORD_REGEX }
 
   validates :password_confirmation, presence: true, format: { with: VALID_PASSWORD_REGEX }
-  
 
-  
+  has_many :questions 
   
 end
