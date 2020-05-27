@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     end
   end
 
+   
+  def index
+    @users = User.all
+  end
+
   def edit
     @user = User.find(params[:id])
   end
@@ -23,6 +28,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
     else
+      flash.now[danger] = "Update failed"
       render 'edit'
     end
   end

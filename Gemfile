@@ -8,7 +8,6 @@ gem 'rails', '~> 6.0.3'
 
 
 #  Use bulma for views
-gem "bulma-rails"
 gem 'bootstrap-sass', '3.4.1'
 gem 'sassc', '~> 2.0.0'
 gem 'uglifier'
@@ -68,8 +67,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'jquery-rails'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]  
 gem 'rename'
 gem 'sorcery'
 gem 'letter_opener'
@@ -77,3 +75,5 @@ gem 'letter_opener'
 
 gem 'sprockets'
 gem 'sprockets-rails'
+
+gem "carrierwave"
