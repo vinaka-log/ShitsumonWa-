@@ -138,6 +138,7 @@ GEM
     multi_json (1.14.1)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
+    mysql2 (0.5.3)
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
@@ -238,7 +239,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -285,6 +285,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   listen (~> 3.2)
+  mysql2
   pry-byebug
   pry-doc
   pry-rails
@@ -300,7 +301,6 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sprockets
   sprockets-rails
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   uglifier
