@@ -104,6 +104,28 @@ footer {
   background-size: cover;
 }
 
+// <!- edit user -->
+.show-wrapper{
+  width: 100vw;
+  height: 100vh;
+  padding-top: 150px;
+  background-color:white;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  .left-contents {
+    width: 600px;
+    margin-right: 20px;
+    float: left;
+  }
+
+  .right-contents {
+    width: 300px;
+    float: left;
+  }
+}
+
 
 // <!- index question-->
 .question-list {
