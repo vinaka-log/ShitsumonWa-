@@ -23,14 +23,13 @@
             <%= check_box_tag :remember, params[:remember], true %>
             <%= label_tag :remember %>
           </div>
-
-        <%= form.submit "Log in", class:'btn-block btn-success' %>
+          <p>Forgot Password?</p>
+          
+          <%= form.submit "Log in", class:'btn-block btn-success btn-lg' %>
+        
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 
-   <%# マイグレーションファイル作成後に追加 %>
-  
-
-<% end %>

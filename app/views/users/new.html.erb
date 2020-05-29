@@ -25,12 +25,10 @@
             <%= form.password_field :password_confirmation %>
           </div>
           
-          <%= form.submit 'Register', class:'btn-block btn-success' %>
-          <h1>Forgot Password?</h1>
-          
+          <%= form.submit 'Register', class:'btn-block btn-success btn-lg' %>
+          <%= link_to 'Login', 'login',class: 'link_login' %>
         <% end %>
-
-        <%= link_to 'Login', '#',class: 'link_login' %>
+        
       </div>
     </div>
   </div>

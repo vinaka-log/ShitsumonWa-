@@ -1,5 +1,23 @@
 
 
+
+
+// <!-Footer-->
+footer {
+  background-color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-top: 20px;
+  color:white;
+
+    .navbar-item {
+      display: inline-block;
+      float: left;
+      font-size: 20px;
+      
+      color: white;
+    }  
+}
+
 // <!-Top page-->
 .top-hero-wrapper {
   width: 100vw;

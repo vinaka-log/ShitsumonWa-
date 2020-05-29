@@ -1,5 +1,5 @@
 class UserSessionsController < ApplicationController
-  skip_before_action :require_login, only: ["show"]
+  skip_before_action :require_login
   
   def new
     @user = User.new
@@ -24,3 +24,4 @@ class UserSessionsController < ApplicationController
   end
 
 end
+
