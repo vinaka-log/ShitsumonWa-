@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all.includes(:like_users)
+    @questions = Question.page(params[:page]).per(5).includes(:like_users)
   end
 
   def show
