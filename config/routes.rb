@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     end
   end
   
+  get 'likes/index'
+  post '/likes', to: 'likes#create'
+  delete '/likes', to: 'likes#destroy'
+  
+  
   
   
   

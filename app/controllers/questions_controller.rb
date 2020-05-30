@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all
+    @questions = Question.all.includes(:like_users)
   end
 
   def show
