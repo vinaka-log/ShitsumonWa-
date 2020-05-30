@@ -78,3 +78,4 @@ gem 'sprockets'
 gem 'sprockets-rails'
 
 gem "carrierwave"
+gem 'mini_magick'

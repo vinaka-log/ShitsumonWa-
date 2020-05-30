@@ -285,6 +285,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   listen (~> 3.2)
+  mini_magick
   mysql2
   pry-byebug
   pry-doc

@@ -7,11 +7,11 @@
       <%= form_with model: @question, local: true do |form| %>
         <div class="form-group">
           <%= form.label :name, 'Title', class: 'form-control' %>
-          <%= form.text_field :name, placeholder: "what is about?", size: "50" %>
+          <%= form.text_field :name, placeholder: "what is about?", size: "40" %>
         </div>
         <div class="form-group">
           <%= form.label :description, 'Content', class: 'form-control' %>
-          <%= form.text_area :description,  placeholder: "Please your comments in 500 words", size: "50x10"%>
+          <%= form.text_area :description,  placeholder: "Please your comments in 200 words", size: "40x5"%>
         </div>
         <div class="form-group, text-white">
         <%= form.label :image %>
