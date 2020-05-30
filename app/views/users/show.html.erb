@@ -1,73 +1,29 @@
-<div class="top_container">
-    <div class="col-sm-5">
-        <div class="profile_image">
-            <img src="https://res.cloudinary.com/hbvvwh0vr/image/upload/v1570983635/profile_zhxwvs.png">
-        </div>
-    </div>
-    <div class="col-sm-7 user_container">
-        <!--ユーザー名-->
-        <div class="user_name">a</div>
-        <!--フォロー数の表示-->
-        <div class="follow_container">
-            <a href="/users/18/followings">フォロー数：0人</a>  
-            <a href="/users/18/followers">フォロワー数：0人</a>
-        </div>
-        <!--自己紹介文-->
-        <div class="introduction">
-            <p></p>
-        </div>
-        <!--プロフィール編集-->
-            <!--ユーザー自身の場合、プロフィール編集ボタン-->
-            <div class="profile_edit"><a href="/users/18/edit">プロフィール編集</a></div>
-        
-        <!--過去に作成したコミュニティ一覧の表示-->
-        <div class="community_container">
-            <div class="community">過去に作成したコミュニティ</div>
-            <!--過去に作成したコミュニティ一覧-->
-            <h3>まだコミュニティはありません</h3>
-    
-
-        
-        </div>
-        
-    </div>
-
-</div>
-
-
-<div class="signup-wrapper">
+<div class="show-wrapper">
   <div class="container">
-    <div class="row">
-      <div class=" signup-container col-12 text-center">
-        <h1 class="text-center text-white ">Your profile</h1>
-        <%= form_with model: @user, local: true do |form| %>
-
+    <div class="left-contents">
+      <div class="card-contents">
+        <h2 class="text-title">Your image</h2>
+        <div class="col-sm-6">
+          <div class="profile_image">
+          <%= image_tag ("/assets/default_user.jpg") %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-contents">
+      <div class="card-contents　text-center">
+        <h2 class="text-title">Update your profile</h2>
+        <div class="col-sm-6 user_container">
+        <%= form_with model: @user, url: user_path,local: true do |form| %>
           <div class="form-group">
-          <%= form.label :image, 'プロフィール画像' %>
-          <%= form.file_field :image %>
+            <p> your image </p>
+            <%= form.file_field :image %>
           </div>
           <div class="form-group">
-            <%= form.label :name, 'User Name', class: 'form-control' %>
+            <p> your name </p>
             <%= form.text_field :name %>
           </div>
-          <div class="form-group">
-            <%= form.label :email, 'E-mail Address', class: 'form-control' %>
-            <%= form.text_field :email %>
-          </div>
-          <div class="form-group">
-            <%= form.label :nationality, 'Country', class: 'form-control' %>
-            <%= form.text_field  :nationality %>
-          </div>
-            <div class="form-group">
-            <%= form.label :password, 'Password', class: 'form-control' %>
-            <%= form.password_field :password %>
-          </div>
-          <div class="form-group">
-            <%= form.label :password_confirmation, 'Password Confirmation', class: 'form-control' %>
-            <%= form.password_field :password_confirmation %>
-          </div>
-          
-          <%= form.submit "Update", class:'btn-block btn-success' %>
+          <%= form.submit 'Show', class:'btn-block btn-success btn-lg' %> 
         <% end %>
       </div>
     </div>

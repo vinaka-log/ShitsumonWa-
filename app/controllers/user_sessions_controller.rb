@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
   def create
     #マイグレーションファイル作成後、params[:remember]追加  
     if @user = login(params[:email], params[:password], params[:remember])
-      redirect_back_or_to(:users, success: 'login successful')
+      redirect_back_or_to(user_path(@user.id), success: 'login successful')
     else
       flash.now[:danger] = 'login failed'
       render action: 'new'

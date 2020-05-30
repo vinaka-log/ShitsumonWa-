@@ -5,22 +5,23 @@
     <div class="col-md-offset-4 col-md-4 signup-container">
       <h1 class="text-center text-white">New Question</h1>
       <%= form_with model: @question, local: true do |form| %>
+        <% binding.pry %>
         <div class="form-group">
           <%= form.label :name, 'Title', class: 'form-control' %>
-          <%= form.text_field :name %>
+          <%= form.text_field :name, placeholder: "what is about?", size: "50x20" %>
         </div>
         <div class="form-group">
-          <%= form.label :description, class: 'form-control' %>
-          <%= form.text_area :description %>
+          <%= form.label :description, 'Content', class: 'form-control' %>
+          <%= form.text_area :description,  placeholder: "Please your comments in 400 words", size: "50x10"%>
         </div>
-        <div class="form-group">
+        <div class="form-group, text-white">
         <%= form.label :image %>
         <%= form.file_field :image%>
         </div>
-        <%= form.submit 'Submit', class:'btn-block btn-success' %>
+        <%= form.submit 'Submit', class:'btn-block btn-success btn-lg' %>
         
       <% end %>
-    </div>
+    </div>  
    </div>
  </div>
 </div>

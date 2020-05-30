@@ -26,11 +26,17 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    
     if @user.update_attributes(user_params)
+      redirect_to @user, success: 'Update success'
     else
       flash.now[danger] = "Update failed"
       render 'edit'
     end
+  end
+
+  def show
+    
   end
 
   
@@ -46,6 +52,6 @@ class UsersController < ApplicationController
 
    private
       def user_params
-        params.require(:user).permit(:name, :email, :nationality, :password, :password_confirmation)
+        params.require(:user).permit(:name, :email, :nationality, :password, :password_confirmation, :image)
       end
 end
