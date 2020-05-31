@@ -26,6 +26,7 @@
                 <%= image_tag "/assets/liked.png", class: "question-index-icon" %>
               <% end %>
             <% end %>
+            <%= question.likes.count %>
             <p class="question-text">
               <%= question.description %>
             </p>
