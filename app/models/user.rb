@@ -21,5 +21,6 @@ class User < ApplicationRecord
   has_many :questions 
   has_many :likes, dependent: :destroy
   has_many :like_questions, through: :likes, source: 'question'
+  has_many :comments
   
 end
