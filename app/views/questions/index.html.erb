@@ -1,4 +1,4 @@
-<div class="topic-index-wrapper">
+<div class="question-index-wrapper">
 
   <div class = "question-list ls"> 
       <div class = "text-center">
@@ -13,10 +13,10 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <div class="question-index-single">
-            <h2 class="question-title">
+            <h1 class="question-title">
             <%= link_to question.name,question_path(question) %>
-            </h2>
-            <%= image_tag question.image.url %>
+            </h1>
+            <%= image_tag question.image.url, class: "question-image" %>
             <% if !question.like_users.include?(current_user) %>
               <%= link_to likes_path(question_id: question.id), method: :post do %>
                 <%= image_tag "/assets/default_like.png", class: "question-index-icon" %>             
