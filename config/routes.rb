@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   resources :user_sessions
   resources :questions
+  resources :comments
   resources :users do
     #sorceryでの認証のためルートを定義
     member do
