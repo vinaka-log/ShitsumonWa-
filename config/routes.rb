@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   resources :user_sessions
   resources :questions
   resources :comments
+  resources :relationships, only: [:create, :destroy]
   resources :users do
     #<sorceryでの認証のためルートを定義>
     #<フォロー機能のためのルートを定義>
-
     member do
       get :activate, :following, :followers
     end
