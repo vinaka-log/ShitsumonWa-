@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   resources :questions
   resources :comments
   resources :users do
-    #sorceryでの認証のためルートを定義
+    #<sorceryでの認証のためルートを定義>
+    #<フォロー機能のためのルートを定義>
+
     member do
-      get :activate
+      get :activate, :following, :followers
     end
   end
   
