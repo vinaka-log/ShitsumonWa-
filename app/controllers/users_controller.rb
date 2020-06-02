@@ -14,6 +14,11 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  # <修正する必要あり>
+  def show  
+    @user = User.find(params[:id])
+    @question = @user.questions.page(params[:page]).per(6).order('updated_at DESC')
+  end
 
    
   def index
@@ -26,17 +31,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    
     if @user.update_attributes(user_params)
-      redirect_to @user, success: 'Update success'
+      redirect_to @user, success: "Update success"
     else
       flash.now[danger] = "Update failed"
       render 'edit'
     end
-  end
-
-  def show
-    
   end
 
   

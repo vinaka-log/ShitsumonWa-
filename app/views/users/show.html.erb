@@ -3,6 +3,8 @@
     <div class="left-contents">
       <div class="card-contents">
         <h2 class="text-title">Your image</h2>
+        <%= render 'follow_form' %>
+        <%= render 'stats' %>
         <div class="col-sm-6">
           <div class="profile_image">
           <%= image_tag ("/assets/default_user.jpg") %>
@@ -12,7 +14,7 @@
     </div>
     <div class="right-contents">
       <div class="card-contents　text-center">
-        <h2 class="text-title">Update your profile</h2>
+        <h2 class="text-title">Your profile</h2>
         <div class="col-sm-6 user_container">
         <%= form_with model: @user, url: user_path,local: true do |form| %>
           <div class="form-group">
@@ -28,4 +30,5 @@
       </div>
     </div>
   </div>
+
 </div>
