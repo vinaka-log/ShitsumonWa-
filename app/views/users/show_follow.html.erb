@@ -1,0 +1,10 @@
+
+<% @user.followings.each do |user| %>
+  <table>
+  <tr>
+    <td>  <%= user.username %> </td>
+    <td><%= link_to 'Detail', user_path(user) %></td>
+  </tr>
+  
+  </table>
+<% end %>
