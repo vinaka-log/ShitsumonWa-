@@ -5,6 +5,8 @@
         <div class="question-index-single">
           <h1 class="question-title">
           <%=  @question.name %>
+          <img src="<%= "/user_images/#{@user.image_name}" %>">
+          <%= link_to(@user.name,"users/#{@user.id}") %>
           </h1>
           <%= image_tag @question.image.url, class: "question-image" %>
           <p class="question-text">
