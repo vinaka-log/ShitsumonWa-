@@ -18,7 +18,7 @@
             <%= image_tag question.image.url, class: "question-image" %>
             <% if !question.like_users.include?(current_user) %>
               <%= link_to likes_path(question_id: question.id), method: :post do %>
-                <%= image_tag "/assets/default_like.png", class: "question-index-icon" %>             
+                <%= image_tag "/assets/default_like.png", class: "question-index-icon" %>                    
               <% end %>
             <% else %>
               <%= link_to likes_path(question_id: question.id), method: :delete do %>

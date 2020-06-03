@@ -6,9 +6,11 @@
         <div class="col-sm-6">
           <%= render 'follow_form' %>
             <%= render 'stats' %>
-          <div class="profile_image">
-            <%= image_tag ("/assets/default_user.jpg") %>
-          </div>
+            <% if @user.image? %>
+              <%= image_tag @user.image.url, class: 'profile-image' %>
+            <% else %>
+              <%= image_tag '/assets/default_user.jpg', class: 'profile-image' %>
+          <% end %>
         </div>
       </div>
     </div>
