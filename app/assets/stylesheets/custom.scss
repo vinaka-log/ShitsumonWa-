@@ -141,33 +141,19 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-  
-    .mypage-profile-box,
-    .user-profile-box {
-      background-color: #fff;
-      margin: 0 auto;
-    }
 
+    
+    
     .profile-image {
       display: block;
       margin: 0 auto;
-      padding-top: 40px;
     }
 
-    .profile-links {
-      list-style: none;
+    .card-title {
+      font-weight: 700;
+     magin-top: 0px;
     }
-
-    .profile-link {
-      font-size: 24px;
-      display: inline-block;
-      width: 15%;
-      text-align: right;
-
-      a {
-        color: #6c757d;
-      }
-    }
+    
   }
 
 // <!- edit user -->

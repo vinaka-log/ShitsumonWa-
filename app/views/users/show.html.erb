@@ -4,17 +4,20 @@
       <div class="col-md-offset-4 col-md-4 text-center">
   
         <% if @user.image? %>
-          <%= image_tag @user.image.url, class: 'profile-image', id: "image-prev" %>
+          <%= image_tag @user.image.url, class: 'profile-image' %>
         <% else %>
-          <%= image_tag '/assets/default_user.jpg', class: 'profile-image', id: "image-prev mt-3" %>
+          <%= image_tag '/assets/default_user.jpg', class: 'profile-image' %>
         <% end %>
         <h2 class="text-center card-title">
-          <%= @user.name %>
+          <%= @user.name %>/<%= (@user.nationality) %>
         </h2>
-
         <%= render '/users/stats', user: @user %>
+       
 
-        <div class="profile-description my-3">
+
+        
+
+        <div class="profile-description">
           Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent
         </div>
 
