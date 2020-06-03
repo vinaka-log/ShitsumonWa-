@@ -6,8 +6,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @user = User.find_by(id: @comment.user_id)
-    @comments = @post.comments
+    @comments = @question.comments
     @comment = Comment.new
   end
 
@@ -16,8 +15,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new(question_params,
-    user_id: @current_user.id)
+    question = Question.new(question_params)
     question.save!
     redirect_to questions_url, notice: "#{question.name}.saved"
   end

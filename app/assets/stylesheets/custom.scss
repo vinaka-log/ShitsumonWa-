@@ -199,11 +199,11 @@ body {
     margin-left: 20px;
   } 
 
-// <!- new&show question-->
+// <!- new question-->
   .question-wrapper {
     width: 100vw;
     height: 100vh;
-    padding-top: 50px;
+    padding-top: 200px;
     background-image: image-url('black-board.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -223,7 +223,35 @@ body {
         font-weight: 50;
       }
   }
+
+  // <!- show question-->
+  .show-question-wrapper {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 100px;
+    background-image: image-url('black-board.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color:white;
+    .form-group {
+    color: black;
+    }
+    .question-image {
+    padding: 10px 0 20px 0;
+    width: 600px;
+        height: 500px;
+      }
+      p {
+          font-size: 20px;
+        font-weight: 50;
+      }
   }
+
+  
+
+}
 
 
 
