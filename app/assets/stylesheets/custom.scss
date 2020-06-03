@@ -131,8 +131,47 @@ body {
     background-size: cover;
   }
 
+// <!- show user -->
+  .user-show-wrapper{
+    width: 100vw;
+    height: 100vh;
+    padding-top: 180px;
+    background-image: image-url('white-bord.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  
+    .mypage-profile-box,
+    .user-profile-box {
+      background-color: #fff;
+      margin: 0 auto;
+    }
+
+    .profile-image {
+      display: block;
+      margin: 0 auto;
+      padding-top: 40px;
+    }
+
+    .profile-links {
+      list-style: none;
+    }
+
+    .profile-link {
+      font-size: 24px;
+      display: inline-block;
+      width: 15%;
+      text-align: right;
+
+      a {
+        color: #6c757d;
+      }
+    }
+  }
+
 // <!- edit user -->
-  .show-wrapper{
+  .user-edit-wrapper{
     width: 100vw;
     height: 100vh;
     padding-top: 150px;
