@@ -1,12 +1,13 @@
 class QuestionsController < ApplicationController
+  before_action :require_login, except: [:index, :show,]
 
   def index
-    @questions = Question.page(params[:page]).per(5).includes(:like_users)
+    @questions = Question.page(params[:page]).per(5).order('updated_at DESC').includes(:like_users)
   end
 
   def show
     @question = Question.find(params[:id])
-    @comments = @post.comments
+    @comments = @question.comments
     @comment = Comment.new
   end
 
@@ -25,9 +26,13 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    question = Question.find(params[:id])
-    question.update!
-    redirect_to questions_url, notice: "#{question.name}.saved"
+    @question = Question.find(params[:id])
+    if @question.update_attributes(question_params)
+      flash[:notice] = "#{@question.name}.saved"
+      redirect_to questions_url
+    else
+      render 'questons/edit'
+    end
   end
 
   def destroy

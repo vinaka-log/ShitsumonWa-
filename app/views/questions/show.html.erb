@@ -1,10 +1,11 @@
-<div class="question-wrapper ">
+<div class="show-question-wrapper ">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="question-index-single">
           <h1 class="question-title">
           <%=  @question.name %>
+          
           </h1>
           <%= image_tag @question.image.url, class: "question-image" %>
           <p class="question-text">

@@ -2,22 +2,14 @@
 <html>
   <head>
     <title>ShitsumonWa?</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+    <%= render 'layouts/default' %>
   </head>
 
   <body>
     <%= render 'layouts/header' %>
     <main>
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
-      <% end %>
-    
-      <%= yield %>
-      
+    <%= render 'layouts/flash' %>
+      <%= yield %>  
     </main>
     <%= render 'layouts/footer' %>
 
