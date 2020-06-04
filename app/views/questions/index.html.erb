@@ -26,7 +26,7 @@
               <% end %>
             <% end %>
             <%= question.likes.count %>
-            <%= link_to new_comment_path(question_id: question.id) do %>
+            <%= link_to new_question_comment_path(question_id: question.id) do %>
               <%= image_tag "/assets/comment.png", class: "question-index-icon" %>
             <% end %>
             <p class="question-text">
