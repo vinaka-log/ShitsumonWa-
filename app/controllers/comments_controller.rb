@@ -6,15 +6,20 @@ class CommentsController < ApplicationController
   end
   
   def create
-    question = Question.find(params[:question_id])
-    @comment = question.comments.build(comment_params)
+    @question = Question.find(params["question_id"])
+    @comment = @question.comments.new(comment_params)
     if @comment.save
-      flash[:success] = "Comment success"
-      redirect_back(fallback_location: question_url(question.id))
+      flash[:success] = "Comment saved"
+      redirect_to questions_path
     else
       flash[:danger] = "Comment failed"
-      redirect_back(fallback_location: question_url(question.id))
+      redirect_back(fallback_location: new_question_comment_path)
     end 
+  end
+
+  def show
+    @question = Question.find(params[:id])
+    @comment = @question.comments.build
   end
 
   def destroy
