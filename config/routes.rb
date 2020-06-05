@@ -18,9 +18,9 @@ Rails.application.routes.draw do
     end
   end
   
-  get 'likes/index'
-  post '/likes', to: 'likes#create'
-  delete '/likes', to: 'likes#destroy'
+
+  post   '/like/:question_id', to: 'likes#like',   as: 'like'
+  delete '/like/:question_id', to: 'likes#unlike', as: 'unlike'
   
   
   
