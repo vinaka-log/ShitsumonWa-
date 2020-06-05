@@ -1,22 +1,21 @@
 class LikesController < ApplicationController
+  before_action :set_variables
 
-  def index
-    @like_questions = current_user.like_questions
+  def like
+    like = current_user.likes.new(question_id: @question.id)
+    like.save
   end
 
-  def create
-    like = Like.new
-    like.user_id = current_user.id
-    like.question_id = params[:question_id]
-
-    if like.save
-      redirect_to questions_path, success: 'Like success!!'
-    else
-      redirect_to questions_path, danger: 'Like failed!!'
-    end
+  def unlike
+    like = current_user.likes.find_by(question_id: @question.id)
+    like.destroy
   end
 
-  def destroy 
-    @like_questions = current_user.like_questions.find_by(question_id: params[:question_id])
+  private
+
+  def set_variables
+    @question = Question.find(params[:question_id])
+    @id_name = "#like-link-#{@question.id}"
   end
+
 end
