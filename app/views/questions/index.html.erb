@@ -16,7 +16,10 @@
             <%= link_to question.name,question_path(question) %>
             </h1>
             <%= image_tag question.image.url, class: "question-image" %>
-            <%= render partial: 'storys/storys', collection: @storys, as: :story %>
+            <%= render partial: 'questions/questions', collection: @questions, as: :question %>
+            <%= link_to new_question_comment_path(question_id: question.id) do %>
+              <%= image_tag "/assets/comment.png", class: "question-index-icon" %>
+            <% end %>
             <p class="question-text">
               <%= question.description %>
             </p>
