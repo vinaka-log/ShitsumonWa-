@@ -11,11 +11,10 @@
         <h2 class="text-center card-title">
           <%= @user.name %>/<%= (@user.nationality) %>
         </h2>
-        <%= render '/users/stats', user: @user %>
-       
-
-
         
+        <%= render '/users/stats', user: @user %>
+        <%= link_to "Edit", edit_user_path, class:'btn btn-success btn-lg' %>
+       
 
         <div class="profile-description">
           Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent
