@@ -6,20 +6,21 @@ Rails.application.routes.draw do
   post '/logout', to: 'user_sessions#destroy'
   
   resources :user_sessions
-  resources :questions
-  resources :comments
+  resources :questions do
+    resources :comments,only: [:new, :create, :destroy]
+  end
+
+
   resources :relationships, only: [:create, :destroy]
   resources :users do
-    #<sorceryでの認証のためルートを定義>
-    #<フォロー機能のためのルートを定義>
     member do
       get :activate, :following, :followers
     end
   end
   
-  get 'likes/index'
-  post '/likes', to: 'likes#create'
-  delete '/likes', to: 'likes#destroy'
+
+  post   '/like/:question_id', to: 'likes#like',   as: 'like'
+  delete '/like/:question_id', to: 'likes#unlike', as: 'unlike'
   
   
   

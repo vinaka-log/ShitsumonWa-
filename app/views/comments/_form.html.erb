@@ -1,0 +1,9 @@
+<h2>コメント一覧</h2>
+<!--.commentsで該当する記事のコメント一覧を取得-->
+<% @queestion.comments.each do |comment| %>
+    <p>内容</p>
+    <p><%= comment.content %></p>
+    <!--article_comment_pathヘルパーには親(article)と子(comment)を両方渡す-->
+    <p><%= link_to '削除',question_comment_path(@queston,comment),
+                          method: :delete,data: {confirm:'削除してもよろしいですか？'}%></p>
+<% end %>

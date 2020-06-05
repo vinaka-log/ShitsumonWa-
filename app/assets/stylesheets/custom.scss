@@ -29,13 +29,12 @@ body {
   }
 
 
-
-
 // <!-Footer-->
   footer {
     background-color: black;
     padding-top: 20px;
     color:white;
+
 
       .navbar-item {
         display: inline-block;
@@ -137,10 +136,12 @@ body {
     height: 100vh;
     padding-top: 180px;
     background-image: image-url('white-bord.jpg');
+
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+
 
     
     
@@ -158,6 +159,7 @@ body {
 
 // <!- edit user -->
   .user-edit-wrapper{
+
     width: 100vw;
     height: 100vh;
     padding-top: 150px;
@@ -224,6 +226,7 @@ body {
     margin-left: 20px;
   } 
 
+
 // <!- new question-->
   .question-wrapper {
     width: 100vw;
@@ -274,9 +277,38 @@ body {
       }
   }
 
+  // <!- new comments-->
+  .new-comment-wrapper {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 150px;
+    background-image: image-url('thumb.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    .content-box {
+      padding-top: 70px;
+    }
+
+  }
+
+  .iine__button{
+    
+    line-height: 42px;
+    color: #6d3701;
+    font-size: 14px;
+    display: inline-block;
+    padding: 0 18px;
+    border-radius: 150px;
+    font-weight: bold;
+ }
+
+
   
 
 }
+
 
 
 
