@@ -7,9 +7,9 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @quetion = Question.find(params[:id])
+    @question = Question.find(params[:id])
     @comments = @question.comments
-    @comment = current_user.comments.build(user_id: current_user.id) if current_user
+    @comment = Comment.new
   end
 
   def new
