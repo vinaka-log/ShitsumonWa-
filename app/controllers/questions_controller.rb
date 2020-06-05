@@ -3,12 +3,13 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.page(params[:page]).per(5).order('updated_at DESC').includes(:like_users)
+    comments = Comment.where(id: params[:id])
   end
 
   def show
-    @question = Question.find(params[:id])
+    @quetion = Question.find(params[:id])
     @comments = @question.comments
-    @comment = Comment.new
+    @comment = current_user.comments.build(user_id: current_user.id) if current_user
   end
 
   def new

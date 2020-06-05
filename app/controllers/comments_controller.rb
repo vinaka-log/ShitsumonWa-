@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
   def create
     @question = Question.find(params["question_id"])
     @comment = @question.comments.new(comment_params)
+    @comment.user_id = current_user.id
     if @comment.save
       flash[:success] = "Comment saved"
       redirect_to questions_path
@@ -31,7 +32,7 @@ class CommentsController < ApplicationController
 
     private
     def comment_params
-      params.require(:comment).permit(:content)
+      params.require(:comment).permit(:user_id, :question_id, :content)
     end
 
 end
