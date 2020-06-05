@@ -257,7 +257,6 @@ body {
     width: 100vw;
     height: 100vh;
     padding-top: 100px;
-
     background-image: image-url('black-board.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -276,6 +275,22 @@ body {
           font-size: 20px;
         font-weight: 50;
       }
+  }
+
+  // <!- new comments-->
+  .new-comment-wrapper {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 150px;
+    background-image: image-url('thumb.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    .content-box {
+      padding-top: 70px;
+    }
+
   }
 
 
