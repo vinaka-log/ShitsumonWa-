@@ -19,9 +19,6 @@ Rails.application.routes.draw do
   end
   
 
-  post '/likes', to: 'likes#create', as: 'like'
-  delete '/likes', to: 'likes#destroy', as: 'unlike'
-
   post   '/like/:question_id', to: 'likes#like',   as: 'like'
   delete '/like/:question_id', to: 'likes#unlike', as: 'unlike'
   
