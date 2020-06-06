@@ -19,9 +19,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = current_user.question.new(question_params)
+    @question = Question.new(question_params)
     @question.save!
-    redirect_to questions_url, notice: "#{question.name}.saved"
+    redirect_to questions_url, notice: "#{@question.name}.saved"
   end
 
   def edit

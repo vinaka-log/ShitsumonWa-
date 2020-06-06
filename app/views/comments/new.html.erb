@@ -1,14 +1,15 @@
 <div class="new-comment-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center ">New Comment!</h1>
+      <div class="col-md-offset-4 col-md-4 text-center comment-form">
+        <h1 class="comment-card">New Comment!</h1>
           <%= form_with(model: [@question, @comment], local: true) do |f| %>
-            <h3>
-            <%= f.text_area :content, placeholder: "Please your comments in 400 words", size: "40x10" %>
+            <div class="form-group">
+            <%= f.label :content, 'Content', class: 'form-control' %>
+            <%= f.text_area :content, placeholder: "Please your comments in 400 words", class: 'form-control' %>
             <%= f.hidden_field :user_id, value: @comment.user_id %>
             <%= f.hidden_field :question_id, value: @comment.question_id %>
-            </h3>
+            </div>
             <%= f.submit "Comment", class: "btn btn-primary btn-lg" %>
           <% end %>
       </div>

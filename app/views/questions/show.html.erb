@@ -30,11 +30,6 @@
             </div>
             <br />
           <% end %>
-
-          <% if @post.user_id == @current_user.id %>
-            <%= link_to("Edit","edit_question_path") %>
-            <%= link_to("Delete","question_path",{method:"post"}) %>
-          <% end %>
           
         </div>
       </div>
