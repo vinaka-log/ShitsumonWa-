@@ -37,14 +37,10 @@
               <%= form.label :password_confirmation, 'Password(confirmation)', class: 'form-control' %>
               <%= form.password_field :password_confirmation, placeholder: "Required", class: "form-control" %>
             </div>
-            <%= form.submit 'Update', class:'btn-block btn-primary btn-lg ' %>
-          <% end %>
-        </div>
-   
-        <div class= "sns-form">
-          <h2> SNS URL </h2>
-          <h4>(Optional)</h4>
-          <%= form_with(model: @user, local: true) do |form| %>
+
+            <h2> SNS URL </h2>
+            <h4>(Optional)</h4>
+
             <div class="form-group">
               <%= form.label :twitter, 'Twitter URL', class: 'form-control' %>
               <%= form.text_field :twitter, placeholder: "Optional", class: "form-control" %>
@@ -57,9 +53,9 @@
               <%= form.label :instagram, 'Instagram URL', class: 'form-control' %>
               <%= form.text_field :instagram, placeholder: "Optional", class: "form-control" %>
             </div>
-             <%= form.submit 'SNS add', class:'btn-block btn-info btn-lg ' %>
+            <%= form.submit 'Update', class:'btn-block btn-primary btn-lg ' %>
           <% end %>
-        <div>
+        </div>
  
       </div> 
     </div>

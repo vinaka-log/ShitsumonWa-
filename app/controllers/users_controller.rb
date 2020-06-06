@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:create, :destroy]
+  before_action :require_login, only: [:updaate, :destroy]
   def new
     @user = User.new
   end
@@ -63,6 +63,6 @@ class UsersController < ApplicationController
 
    private
       def user_params
-        params.require(:user).permit(:name, :email, :nationality, :password, :password_confirmation, :image)
+        params.require(:user).permit(:name, :email, :nationality, :password, :password_confirmation, :image, :twitter, :facebook, :instagram)
       end
 end

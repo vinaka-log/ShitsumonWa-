@@ -16,7 +16,21 @@
           <%= link_to "Edit", edit_user_path, class:'btn btn-success btn-lg' %>
         <% else %>
           <%= render 'users/follow', user: @user %>
-        <% end %>   
+        <% end %>  
+        
+        <div class = "sns-link">
+          <% if @user.twitter? %>
+            <p><i class="fab fa-twitter"></i></p>
+            <%= @user.twitter %>
+          <% end %>
+          <% if @user.facebook? %>
+            <%= @user.facebook %>
+          <% end %>
+          <% if @user.instagram? %>
+            <%= @user.instagram %>
+          <% end %>
+        </div>
+
       </div> 
     </div>
   </div>
