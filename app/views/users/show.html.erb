@@ -2,29 +2,30 @@
   <div class="container">
     <div class="row">
       <div class="col-md-offset-4 col-md-4 text-center">
-  
+        <h1 class="text-center card-title">
+        <%= @user.name %>/<%= (@user.nationality) %>
+        </h1>
         <% if @user.image? %>
           <%= image_tag @user.image.url, class: 'profile-image' %>
         <% else %>
           <%= image_tag '/assets/default_user.jpg', class: 'profile-image' %>
         <% end %>
-        <h2 class="text-center card-title">
-          <%= @user.name %>/<%= (@user.nationality) %>
-        </h2>
         <%= render '/users/stats', user: @user %>
-        <%= link_to "Edit", edit_user_path, class:'btn btn-success btn-lg' %>
 
-        <%= render 'users/follow', user: @user %>
+        <% if current_user?(@user) %>
+          <%= link_to "Edit", edit_user_path, class:'btn btn-success btn-lg' %>
+        <% else %>
+          <%= render 'users/follow', user: @user %>
+        <% end %>   
       </div> 
     </div>
   </div>
   <div class= "own-quesetions text-center">
     <% if @user.questions.any? %>
-      <h3>Your Questions (<%= @user.questions.count %>)</h3>
+      <h1 class ="card-title" >Your Questions (<%= @user.questions.count %>)</h1>
       <%= render 'questions/list' %>
     <% else %>
       <h2 class="text-center">No post yet..</h2>
     <% end %>
   </div>
-
 </div>
