@@ -159,13 +159,22 @@ body {
       padding :20px;
       margin-bottom: 20px;
     }
-    .sns-form {
-      background-color: white;
-      padding :20px;
-      h4 {
-       padding-bpttom: 5px;
+    .profile-links {
+      list-style: none;
+      .profile-link {
+        font-size: 50px;
+        display: inline-block;
+        width: 20%;
+        text-align: right;
+        /*Twitter*/
+        .fa-twitter{color:#1da1f2;}
+        /*Facebook*/
+        .fa-facebook-square{color:#3b5998;}
+        /*instagram*/
+        .fa-instagram{color:#e1306c;}
       }
     }
+  
   }
 
 // <!- index question-->

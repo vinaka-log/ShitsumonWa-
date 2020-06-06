@@ -19,16 +19,29 @@
         <% end %>  
         
         <div class = "sns-link">
-          <% if @user.twitter? %>
-            <p><i class="fab fa-twitter"></i></p>
-            <%= @user.twitter %>
-          <% end %>
-          <% if @user.facebook? %>
-            <%= @user.facebook %>
-          <% end %>
-          <% if @user.instagram? %>
-            <%= @user.instagram %>
-          <% end %>
+          <ul class="profile-links">
+            <% if @user.twitter.present? %>
+              <li class="profile-link">
+                <%= link_to @user.twitter, target: :_blank do %>
+                  <i class="fab fa-twitter-square"></i>
+                <% end %>
+              </li>
+            <% end %>
+            <% if @user.twitter.present? %>
+              <li class="profile-link">
+                <%= link_to @user.twitter, target: :_blank do %>
+                  <i class="fab fa-twitter-square"></i>
+                <% end %>
+              </li>
+            <% end %>
+            <% if @user.twitter.present? %>
+              <li class="profile-link">
+                <%= link_to @user.twitter, target: :_blank do %>
+                  <i class="fab fa-twitter-square"></i>
+                <% end %>
+              </li>
+            <% end %>
+            </ul>
         </div>
 
       </div> 
