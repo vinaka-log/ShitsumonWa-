@@ -5,10 +5,8 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3'
-
-
-#  Use bulma for views
 gem 'bootstrap-sass', '3.4.1'
+gem 'font-awesome-sass'
 gem 'sassc', '~> 2.0.0'
 gem 'uglifier'
 gem 'jquery-rails'
