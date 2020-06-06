@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/logout', to: 'user_sessions#destroy'
   
   resources :user_sessions
+  resources :password_resets
   resources :questions do
     resources :comments,only: [:new, :create, :destroy]
   end

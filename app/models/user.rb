@@ -17,6 +17,7 @@ class User < ApplicationRecord
   validates :password, confirmation: true, format: { with: VALID_PASSWORD_REGEX }
 
   validates :password_confirmation, presence: true, format: { with: VALID_PASSWORD_REGEX }
+  validates reset_password_token, presence: true, uniqueness: true
 
   has_many :questions 
   has_many :likes, dependent: :destroy

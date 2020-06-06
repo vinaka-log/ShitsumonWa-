@@ -116,15 +116,18 @@ body {
   }
 
 // <!- Log in -->
-  .form-wrapper {
+  .login-wrapper {
     width: 100vw;
     height: 100vh;
-    padding-top: 150px;
+    padding-top: 180px;
     background-image: image-url('laptop.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    h1 { 
+      padding-bottom: 50px;
+    }
   }
 
 // <!- show user -->
