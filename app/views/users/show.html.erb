@@ -12,8 +12,9 @@
           <%= @user.name %>/<%= (@user.nationality) %>
         </h2>
         <%= render '/users/stats', user: @user %>
+        <%= link_to "Edit", edit_user_path, class:'btn btn-success btn-lg' %>
+
         <%= render 'users/follow', user: @user %>
- 
       </div> 
     </div>
   </div>
