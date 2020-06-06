@@ -5,8 +5,8 @@
         <div class="question-index-single">
           <h1 class="question-title">
           <%=  @question.name %>
-          
           </h1>
+          <%= link_to @user.name, user_path %>
           <%= image_tag @question.image.url, class: "question-image" %>
           <p class="question-text">
             <%= @question.description %>
@@ -29,6 +29,11 @@
                <%= c.content %>
             </div>
             <br />
+          <% end %>
+
+          <% if @post.user_id == @current_user.id %>
+            <%= link_to("Edit","edit_question_path") %>
+            <%= link_to("Delete","question_path",{method:"post"}) %>
           <% end %>
           
         </div>
