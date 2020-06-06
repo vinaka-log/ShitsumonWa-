@@ -11,25 +11,19 @@
         <h2 class="text-center card-title">
           <%= @user.name %>/<%= (@user.nationality) %>
         </h2>
-        
         <%= render '/users/stats', user: @user %>
-        <%= link_to "Edit", edit_user_path, class:'btn btn-success btn-lg' %>
-       
-
-        <div class="profile-description">
-          Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent Centent
-        </div>
-
         <%= render 'users/follow', user: @user %>
  
       </div> 
     </div>
   </div>
-
-  <% if @question %>
-    <%= render '/questions/index', questions: @questions %>
-  <% else %>
-    <h2 class="text-center">No post yet..</h2>
-  <% end %>
+  <div class= "own-quesetions text-center">
+    <% if @user.questions.any? %>
+      <h3>Your Questions (<%= @user.questions.count %>)</h3>
+      <%= render 'questions/list' %>
+    <% else %>
+      <h2 class="text-center">No post yet..</h2>
+    <% end %>
+  </div>
 
 </div>
