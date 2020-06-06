@@ -57,25 +57,25 @@ body {
 
   .top-hero-container {
     padding-top: 140px;
+    color:black;
     h1 {
       font-size: 80px;
       font-weight: 400;
       margin-bottom: 20px;
-      color:white;
+      
     }
 
     h2 {
       margin-bottom: 40px;
       font-size: 55px;
-      color:white;
     }
 
     .btn {
       font-size: 20px;
       border-radius: 50px;
     }
-
   }
+  
 
   // <!-Sign up-->
   .signup-wrapper {
@@ -86,26 +86,26 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    color:white;
+    color:black;
+    padding-bottom: 30px;
 
     .signup-container {
-      padding-top: 120px;
+      background-color: whitesmoke;
+      margin-top: 150px;
       .text-white {
         font-size: 50px;
       }
-
       .form-group {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         font-weight: 500;
       }
-
       .link_login {
         font-size: 20px;
         text-decoration:underline;
-
       }
     }
   }
+
 
 // <!- flash -->
   .alert {
@@ -125,9 +125,17 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    h1 { 
-      padding-bottom: 50px;
+    .login-container {
+      background-color: whitesmoke;
     }
+      h1 { 
+        padding-bottom: 50px;
+      }
+      .link_signup {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
   }
 
 // <!- show user -->
