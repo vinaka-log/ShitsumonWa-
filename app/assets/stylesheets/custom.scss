@@ -144,18 +144,29 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    .question-index-single {
-      background-color: whitesmoke ;
-      padding: 20px;
-    }
+    
     .profile-image {
       display: block;
+      padding-bottom: 20px;
       margin: 0 auto;
       border-radius: 50%;
     }
     .card-title {
       font-weight: 700;
-    }   
+    }  
+    .user-form {
+      background-color: white;
+      padding :20px;
+      margin-bottom: 20px;
+    }
+    .sns-form {
+      background-color: white;
+      padding :20px;
+      h4 {
+       padding-bpttom: 5px; 
+
+      }
+    }
   }
 
 // <!- index question-->
