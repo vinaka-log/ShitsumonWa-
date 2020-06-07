@@ -1,7 +1,7 @@
 <div class="user-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-offset-4 col-md-4 text-center">
+      <div class="col-md-offset-4 col-md-4 text-center my-profile">
         <h1 class="text-center card-title">
         <%= @user.name %>/<%= (@user.nationality) %>
         </h1>
@@ -20,6 +20,7 @@
         
         <div class = "sns-link">
           <ul class="profile-links">
+          #  <% ポイント %>
             <% if @user.twitter.present? %>
               <li class="profile-link">
                 <%= link_to @user.twitter, target: :_blank do %>
@@ -27,17 +28,19 @@
                 <% end %>
               </li>
             <% end %>
-            <% if @user.twitter.present? %>
+          #  <% ポイント %>
+            <% if @user.facebook.present? %>
               <li class="profile-link">
-                <%= link_to @user.twitter, target: :_blank do %>
-                  <i class="fab fa-twitter-square"></i>
+                <%= link_to @user.facebook, target: :_blank do %>
+                  <i class="fab fa-facebook-square"></i>
                 <% end %>
               </li>
             <% end %>
-            <% if @user.twitter.present? %>
+          # <% ポイント %>
+            <% if @user.instagram.present? %>
               <li class="profile-link">
-                <%= link_to @user.twitter, target: :_blank do %>
-                  <i class="fab fa-twitter-square"></i>
+                <%= link_to @user.instagram, target: :_blank do %>
+                  <i class="fab fa-instagram"></i>
                 <% end %>
               </li>
             <% end %>

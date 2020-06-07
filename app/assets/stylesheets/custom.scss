@@ -136,15 +136,18 @@ body {
   }
 
 // <!- show&edit user -->
-  .user-wrapper{
-    width: 100vw;
-    padding: 130px 0 50px 0;
-    background-image: image-url('white-bord.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    
+.user-wrapper{
+  width: 100vw;
+  padding: 130px 0 50px 0;
+  background-image: image-url('white-bord.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  .row {
+    background-color: white;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
     .profile-image {
       display: block;
       padding-bottom: 20px;
@@ -154,13 +157,10 @@ body {
     .card-title {
       font-weight: 700;
     }  
-    .user-form {
-      background-color: white;
-      padding :20px;
-      margin-bottom: 20px;
-    }
+   
     .profile-links {
       list-style: none;
+      padding-right: 40px;
       .profile-link {
         font-size: 50px;
         display: inline-block;
@@ -174,8 +174,8 @@ body {
         .fa-instagram{color:#e1306c;}
       }
     }
-  
   }
+}
 
 // <!- index question-->
   .question-index-wrapper {

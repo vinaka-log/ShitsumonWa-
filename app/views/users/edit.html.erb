@@ -11,9 +11,10 @@
           <%= image_tag '/assets/default_user.jpg', class: 'profile-image' %>
         <% end %>
         
-        <div class= "user-form">
+        <div class= "my-profile">
           <h2>Update your info</h2>
           <%= form_with(model: @user, local: true) do |form| %>
+           
             <div class="form-group">
               <%= form.file_field :image %>
             </div>
@@ -37,24 +38,25 @@
               <%= form.label :password_confirmation, 'Password(confirmation)', class: 'form-control' %>
               <%= form.password_field :password_confirmation, placeholder: "Required", class: "form-control" %>
             </div>
-
-            <h2> SNS URL </h2>
-            <h4>(Optional)</h4>
-
-            <div class="form-group">
-              <%= form.label :twitter, 'Twitter URL', class: 'form-control' %>
-              <%= form.text_field :twitter, placeholder: "Optional", class: "form-control" %>
+            <div class = "sns-link">
+              <h2> SNS URL </h2>
+              <h4>(Optional)</h4>
+              <div class="form-group">
+                <%= form.label :twitter, 'Twitter URL', class: 'form-control' %>
+                <%= form.text_field :twitter, placeholder: "Optional", class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :facebook, 'Facebook URL', class: 'form-control' %>
+                <%= form.text_field :facebook, placeholder: "Optional", class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :instagram, 'Instagram URL', class: 'form-control' %>
+                <%= form.text_field :instagram, placeholder: "Optional", class: "form-control" %>
+              </div>
+              <%= form.submit 'Update', class:'btn-block btn-primary btn-lg ' %>
             </div>
-            <div class="form-group">
-              <%= form.label :facebook, 'Facebook URL', class: 'form-control' %>
-              <%= form.text_field :facebook, placeholder: "Optional", class: "form-control" %>
-            </div>
-            <div class="form-group">
-              <%= form.label :instagram, 'Instagram URL', class: 'form-control' %>
-              <%= form.text_field :instagram, placeholder: "Optional", class: "form-control" %>
-            </div>
-            <%= form.submit 'Update', class:'btn-block btn-primary btn-lg ' %>
           <% end %>
+
         </div>
  
       </div> 
