@@ -8,18 +8,20 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @user = User.find_by(id: @question.user_id)
     @comments = @question.comments
     @comment = Comment.new
   end
 
   def new
     @question = Question.new
+     
   end
 
   def create
-    question = Question.new(question_params)
-    question.save!
-    redirect_to questions_url, notice: "#{question.name}.saved"
+    @question = Question.new(question_params)
+    @question.save!
+    redirect_to questions_url, notice: "#{@question.name}.saved"
   end
 
   def edit
@@ -47,7 +49,7 @@ class QuestionsController < ApplicationController
     private
 
       def question_params
-        params.require(:question).permit(:name, :description, :image )
+        params.require(:question).permit(:name, :description, :image).merge(user_id: current_user.id)
       end
     
 

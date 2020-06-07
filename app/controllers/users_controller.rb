@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login
-
+  before_action :require_login, only: [:updaate, :destroy]
   def new
     @user = User.new
   end
@@ -32,7 +31,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to @user, success: "Update success"
+      redirect_to user_path, success: "Update success"
     else
       flash.now[danger] = "Update failed"
       render 'edit'
@@ -64,6 +63,6 @@ class UsersController < ApplicationController
 
    private
       def user_params
-        params.require(:user).permit(:name, :email, :nationality, :password, :password_confirmation, :image)
+        params.require(:user).permit(:name, :email, :nationality, :password, :password_confirmation, :image, :twitter, :facebook, :instagram)
       end
 end

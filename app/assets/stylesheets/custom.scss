@@ -34,14 +34,12 @@ body {
     background-color: black;
     padding-top: 20px;
     color:white;
-
-
-      .navbar-item {
-        display: inline-block;
-        float: left;
-        font-size: 20px;
-        color: white;
-      }  
+    .navbar-item {
+    display: inline-block;
+    float: left;
+    font-size: 20px;
+    color: white;
+    }  
   }
 
 // <!-Top page-->
@@ -57,25 +55,24 @@ body {
 
   .top-hero-container {
     padding-top: 140px;
+    color:white;
     h1 {
       font-size: 80px;
       font-weight: 400;
-      margin-bottom: 20px;
-      color:white;
+      margin-bottom: 20px;  
     }
 
     h2 {
       margin-bottom: 40px;
       font-size: 55px;
-      color:white;
     }
 
     .btn {
       font-size: 20px;
       border-radius: 50px;
     }
-
   }
+  
 
   // <!-Sign up-->
   .signup-wrapper {
@@ -86,29 +83,26 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    color:black;
+    padding-bottom: 30px;
 
     .signup-container {
-      padding-top: 120px;
+      background-color: whitesmoke;
+      margin-top: 150px;
       .text-white {
-        color: white;
         font-size: 50px;
       }
-
-
-
       .form-group {
-        margin-bottom: 20px;
-        color: black;
+        margin-bottom: 10px;
+        font-weight: 500;
       }
-
       .link_login {
         font-size: 20px;
-        color: white;
         text-decoration:underline;
-
       }
     }
   }
+
 
 // <!- flash -->
   .alert {
@@ -119,67 +113,69 @@ body {
   }
 
 // <!- Log in -->
-  .form-wrapper {
+  .login-wrapper {
     width: 100vw;
     height: 100vh;
-    padding-top: 150px;
+    padding-top: 180px;
     background-image: image-url('laptop.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    .login-container {
+      background-color: whitesmoke;
+    }
+      h1 { 
+        padding-bottom: 30px;
+      }
+      .link_signup {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
   }
 
-// <!- show user -->
-  .user-show-wrapper{
-    width: 100vw;
-    height: 100vh;
-    padding-top: 180px;
-    background-image: image-url('white-bord.jpg');
-
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-
-
-    
-    
+// <!- show&edit user -->
+.user-wrapper{
+  width: 100vw;
+  padding: 130px 0 50px 0;
+  background-image: image-url('white-bord.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  .row {
+    background-color: white;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
     .profile-image {
       display: block;
+      padding-bottom: 20px;
       margin: 0 auto;
+      border-radius: 50%;
     }
-
     .card-title {
       font-weight: 700;
-     magin-top: 0px;
-    }
-    
-  }
-
-// <!- edit user -->
-  .user-edit-wrapper{
-
-    width: 100vw;
-    height: 100vh;
-    padding-top: 150px;
-    background-color:white;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    .left-contents {
-      width: 600px;
-      margin-right: 20px;
-      float: left;
-    }
-
-    .right-contents {
-      width: 300px;
-      float: left;
+    }  
+   
+    .profile-links {
+      list-style: none;
+      padding-right: 40px;
+      .profile-link {
+        font-size: 50px;
+        display: inline-block;
+        width: 20%;
+        text-align: right;
+        /*Twitter*/
+        .fa-twitter{color:#1da1f2;}
+        /*Facebook*/
+        .fa-facebook-square{color:#3b5998;}
+        /*instagram*/
+        .fa-instagram{color:#e1306c;}
+      }
     }
   }
-
+}
 
 // <!- index question-->
   .question-index-wrapper {
@@ -196,16 +192,15 @@ body {
         font-size: 50px;
       }
       .btn {
-        margin-top: 120px;
+        margin-top: 100px;
+        width: 30%;
       }
     } 
-
       .question-image {
         padding: 20px 0 10px 0;
         width: 600px;
         height: 500px;
       }
-
       p {
         font-size: 20px;
         font-weight: 50;
@@ -226,36 +221,32 @@ body {
     margin-left: 20px;
   } 
 
-
 // <!- new question-->
-  .question-wrapper {
+  .new-question-wrapper {
     width: 100vw;
     height: 100vh;
-    padding-top: 200px;
+    padding-top: 150px;
     background-image: image-url('black-board.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    color:white;
-    .form-group {
-    color: black;
+    h1 {
+      color: white;
+      font-weight: 700;
     }
-    .question-image {
-    padding: 10px 0 20px 0;
-    width: 600px;
-        height: 500px;
-      }
-      p {
-          font-size: 20px;
-        font-weight: 50;
-      }
+    .new-question-container {
+      padding: 0px 20px 20px 20px ;
+      background-color: whitesmoke;
+      opacity: 0.9;
+      border-radius: 25px;
+      margin-top: 70px;
+    }
   }
 
   // <!- show question-->
-  .show-question-wrapper {
+  .question-show-wrapper {
     width: 100vw;
-    height: 100vh;
     padding-top: 100px;
     background-image: image-url('black-board.jpg');
     background-position: center center;
@@ -263,49 +254,50 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color:white;
-    .form-group {
-    color: black;
-    }
     .question-image {
-    padding: 10px 0 20px 0;
+    text-align: center;
+    display: block;
+    padding: 20px 0 10px 0;
     width: 600px;
-        height: 500px;
-      }
-      p {
-          font-size: 20px;
-        font-weight: 50;
-      }
+    height: 500px;
+    }
+    .comment-list {
+      background-color: mintcream;
+      color: black;
+      border: 10px;
+    }
+    
   }
 
   // <!- new comments-->
   .new-comment-wrapper {
     width: 100vw;
     height: 100vh;
-    padding-top: 150px;
+    padding-top: 120px;
     background-image: image-url('thumb.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    .content-box {
-      padding-top: 70px;
+    .comment-form {
+     padding: 100px 20px ;
+     background-color: whitesmoke;
+     margin-top: 100px;
+     opacity: 0.9;
+     border-radius: 25px;
     }
-
   }
 
-  .iine__button{
-    
-    line-height: 42px;
-    color: #6d3701;
-    font-size: 14px;
-    display: inline-block;
-    padding: 0 18px;
-    border-radius: 150px;
-    font-weight: bold;
- }
-
+  // <!- stats-->
+  .stats{
+    font-size: 20px;
+    font-weight: 500px;
+  }
 
   
+
+
+
 
 }
 

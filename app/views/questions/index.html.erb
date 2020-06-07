@@ -3,32 +3,12 @@
   <div class = "question-list ls"> 
       <div class = "text-center">
           <h1 class = "d-flex align-items-center">Shitsumon list</h1>
+          <h2>~Let's ask about what you are interested in about Japan~</h2>
+          <h3>(Any genre is ok.Feel free to ask!!!)</h3>
           <%=link_to 'new question', new_question_path, class:'btn btn-success btn-lg' %>
       </div>
   </div>
 
-  <div class="container">
-    <% @questions.each do |question| %>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="question-index-single">
-            <h1 class="question-title">
-            <%= link_to question.name,question_path(question) %>
-            </h1>
-            <%= image_tag question.image.url, class: "question-image" %>
-            <%= render partial: 'questions/questions', collection: @questions, as: :question %>
-            <%= link_to new_question_comment_path(question_id: question.id) do %>
-              <%= image_tag "/assets/comment.png", class: "question-index-icon" %>
-            <% end %>
-            <p class="question-text">
-              <%= question.description %>
-            </p>
-           
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <div class='paginate'><%= paginate(@questions) %></div>
+  <%= render 'questions/list'%>
 
 </div>
