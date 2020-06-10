@@ -7,6 +7,7 @@ jobs:
         environment:
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
+          BUNDLER_VERSION: 2.1.4  
           DATABASE_URL: postgres://postgres:password@localhost:5432/myapp_test
           RAILS_ENV: test
       - image: circleci/postgres:11-alpine
@@ -17,10 +18,10 @@ jobs:
             - my-app-bundle-v1-{{ checksum "Gemfile.lock" }}
             - my-app-bundle-v1-
       - run:
-          name: Bundlerをinstall
+          name: Bundler install
           command: |
             gem update --system
-            gem install bundler
+            gem install bundler -v 2.1.4
       - run:
           name: Bundle Install
           command: bundle check || bundle install
