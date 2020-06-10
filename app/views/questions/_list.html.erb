@@ -5,10 +5,10 @@
         <div class="col-md-6 col-md-offset-3">
           <div class="question-index-single">
             <h1 class="question-title">
-            <%= link_to question.name,question_path(question) %>
+            <%= link_to question.name, question_path(question) %>
             </h1>
-            <%= image_tag question.image.url, class: "question-image" %>
-            <%= render partial: 'questions/questions', collection: @questions, as: :question %>
+            <%= image_tag question.image.url, class: "question-image" if question.image.url %>
+            <%= render "likes/like", question: question %>
             <%= link_to new_question_comment_path(question_id: question.id) do %>
               <%= image_tag "/assets/comment.png", class: "question-index-icon" %>
             <% end %>
