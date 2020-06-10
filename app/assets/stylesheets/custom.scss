@@ -116,7 +116,7 @@ body {
   .login-wrapper {
     width: 100vw;
     height: 100vh;
-    padding-top: 180px;
+    padding-top: 150px;
     background-image: image-url('laptop.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -124,7 +124,7 @@ body {
     background-size: cover;
     .login-container {
       background-color: whitesmoke;
-    }
+      padding-bottom: 20px;
       h1 { 
         padding-bottom: 30px;
       }
@@ -133,6 +133,14 @@ body {
         font-size: 20px;
         margin-bottom: 30px;
       }
+      .reset-password {
+        text-decoration: underline;
+        h3 {
+          color:red;
+        }
+      }
+    }
+
   }
 
 // <!- show&edit user -->
