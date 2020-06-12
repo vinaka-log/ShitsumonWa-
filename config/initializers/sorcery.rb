@@ -7,7 +7,7 @@
 
 
 # Here you can configure each submodule's features.
-Rails.application.config.sorcery.submodules = [:remember_me, :user_activation, :reset_password]
+Rails.application.config.sorcery.submodules = [:remember_me, :user_activation, :reset_password, :external]
 
 Rails.application.config.sorcery.configure do |config|
   config.user_config do |user|
@@ -124,10 +124,17 @@ Rails.application.config.sorcery.configure do |config|
   # Twitter will not accept any requests nor redirect uri containing localhost,
   # Make sure you use 0.0.0.0:3000 to access your app in development
   #
-  # config.twitter.key = ""
-  # config.twitter.secret = ""
-  # config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
-  # config.twitter.user_info_mapping = {:email => "screen_name"}
+  config.external_providers = [:twitter]
+  config.twitter.key = Rails.application.credentials.dig(:twitter, :key)
+  config.twitter.secret = Rails.application.credentials.dig(:twitter, :secret_key)
+  config.twitter.callback_url = 'http://127.0.0.1:3000/oauth/callback?provider=twitter'
+  config.twitter.user_info_path = "/1.1/account/verify_credentials.json?include_email=true"
+  config.twitter.user_info_mapping = {
+    email: 'email', 
+    twitter_id: 'id',
+    name: 'name',
+    description: 'description'
+  }
   #
   # config.facebook.key = ""
   # config.facebook.secret = ""
@@ -531,7 +538,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    # user.authentications_class =
+    user.authentications_class = Authentication
 
     # User's identifier in the `authentications` class.
     # Default: `:user_id`

@@ -6,7 +6,6 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   validates :name, presence: true
-
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,format: { with: VALID_EMAIL_REGEX },
               uniqueness: { case_sensitive: false }  
@@ -15,7 +14,8 @@ class User < ApplicationRecord
   validates :password, confirmation: true, format: { with: VALID_PASSWORD_REGEX }
   validates :password_confirmation, presence: true, format: { with: VALID_PASSWORD_REGEX }
 
-
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications 
   has_many :questions 
   has_many :likes, dependent: :destroy
   has_many :like_questions, through: :likes, source: 'question'

@@ -30,6 +30,8 @@
           <p>Forgot Password?</p>
           <%= render 'forgot_password_form' %>
         </div>
+
+        <%= link_to 'Login with Twitter', auth_at_provider_path(provider: :twitter) %>
         
       </div>
     </div>
