@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'oauths/oauth'
+  get 'oauths/callback'
   root 'pages#index'
   get '/signup',  to: 'users#new'
   get '/login', to: 'user_sessions#new'
