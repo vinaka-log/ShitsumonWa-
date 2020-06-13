@@ -13,14 +13,13 @@
         <%= render '/users/stats', user: @user %>
 
         <% if current_user?(@user) %>
-          <%= link_to "Edit", edit_user_path, class:'btn btn-success btn-lg' %>
+          <%= link_to "Edit your profile", edit_user_path, class:'btn btn-success btn-lg' %>
         <% else %>
           <%= render 'users/follow', user: @user %>
         <% end %>  
         
         <div class = "sns-link">
           <ul class="profile-links">
-          #  <% ポイント %>
             <% if @user.twitter.present? %>
               <li class="profile-link">
                 <%= link_to @user.twitter, target: :_blank do %>
@@ -28,7 +27,6 @@
                 <% end %>
               </li>
             <% end %>
-          #  <% ポイント %>
             <% if @user.facebook.present? %>
               <li class="profile-link">
                 <%= link_to @user.facebook, target: :_blank do %>
@@ -36,7 +34,6 @@
                 <% end %>
               </li>
             <% end %>
-          # <% ポイント %>
             <% if @user.instagram.present? %>
               <li class="profile-link">
                 <%= link_to @user.instagram, target: :_blank do %>
