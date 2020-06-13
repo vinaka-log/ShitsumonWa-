@@ -46,30 +46,25 @@ body {
   .top-hero-wrapper {
     width: 100vw;
     height: 100vh;
-    background-image: url('children.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
 
-  .top-hero-container {
-    padding-top: 140px;
-    color:white;
-    h1 {
-      font-size: 80px;
-      font-weight: 400;
-      margin-bottom: 20px;  
-    }
+    .top-hero-container {
+      padding-top: 140px;
+      color:white;
+      h1 {
+        font-size: 80px;
+        font-weight: 400;
+        margin-bottom: 20px;  
+      }
 
-    h2 {
-      margin-bottom: 40px;
-      font-size: 55px;
-    }
+      h2 {
+        margin-bottom: 40px;
+        font-size: 55px;
+      }
 
-    .btn {
-      font-size: 20px;
-      border-radius: 50px;
+      .btn {
+        font-size: 20px;
+        border-radius: 50px;
+      }
     }
   }
   
