@@ -229,12 +229,12 @@ body {
     margin-left: 20px;
   } 
 
-// <!- new question-->
-  .new-question-wrapper {
+// <!- new&edit question-->
+  .question-form-wrapper {
     width: 100vw;
     height: 100vh;
     padding-top: 150px;
-    background-image: image-url('black-board.jpg');
+    background-image: image-url('people.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -243,12 +243,13 @@ body {
       color: white;
       font-weight: 700;
     }
-    .new-question-container {
+    .question-form-container {
       padding: 0px 20px 20px 20px ;
       background-color: whitesmoke;
       opacity: 0.9;
       border-radius: 25px;
       margin-top: 70px;
+      opacity: 0.8;
     }
   }
 
