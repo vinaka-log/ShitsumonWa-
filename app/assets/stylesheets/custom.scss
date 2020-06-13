@@ -46,7 +46,7 @@ body {
   .top-video-wrapper{
     padding-top: 100px;
     background-attachment: fixed;
-    background-size: cover;
+    
    .video-container {
      position: relative;
      .video-content {
@@ -59,8 +59,13 @@ body {
       width: 30%;
       height: 50%;
       background-color: rgba(255, 255, 255, 0.8); 
-      opacity: 0.9;
+      opacity: 0.7;
       border-radius: 5%;
+      .btn {
+        margin-top: 40px;
+       
+
+      }
      }
    }
   }
