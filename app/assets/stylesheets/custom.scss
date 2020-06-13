@@ -43,29 +43,26 @@ body {
   }
 
 // <!-Top page-->
-  .top-hero-wrapper {
-    width: 100vw;
-    height: 100vh;
-
-    .top-hero-container {
-      padding-top: 140px;
-      color:white;
-      h1 {
-        font-size: 80px;
-        font-weight: 400;
-        margin-bottom: 20px;  
-      }
-
-      h2 {
-        margin-bottom: 40px;
-        font-size: 55px;
-      }
-
-      .btn {
-        font-size: 20px;
-        border-radius: 50px;
-      }
-    }
+  .top-video-wrapper{
+    padding-top: 100px;
+    background-attachment: fixed;
+    background-size: cover;
+   .video-container {
+     position: relative;
+     .video-content {
+       width:100%;
+     }
+     .video-message {
+      position: absolute;
+      top: 20%;
+      left: 35%;
+      width: 30%;
+      height: 50%;
+      background-color: rgba(255, 255, 255, 0.8); 
+      opacity: 0.9;
+      border-radius: 5%;
+     }
+   }
   }
   
 
