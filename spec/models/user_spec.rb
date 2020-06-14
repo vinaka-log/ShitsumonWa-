@@ -109,6 +109,23 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "password" do
+    it "is invalid without password" do
+      @user.crypted_password = "" * 6
+      expect(@user).to be_invalid
+    end
+
+    it "is valid if password is less 6 characters" do
+      @user.password = @user.password_confirmation = "a" * 6
+      expect(@user).to be_valid
+    end
+
+    it "is valid if password is less 5 characters" do
+      @user.password = @user.password_confirmation = "a" * 5
+      expect(@user).to be_invalid
+    end
+  end
+
 
 
 
