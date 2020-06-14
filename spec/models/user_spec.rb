@@ -157,6 +157,36 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "facebook" do
+    it "is valid if facebook is 255 characters" do
+      @user.facebook = "https://" + "a" * 243 + ".com"
+      expect(@user).to be_valid
+    end
+
+    it "is invalid if facebook is 256 characters" do
+      @user.facebook = "https://" + "a" * 244 + ".com"
+      expect(@user).to be_invalid
+    end
+
+    it "confirm valid facebook" do
+      @user.facebook = "https://example.com"
+      expect(@user).to be_valid
+
+      @user.facebook = "http://example.com"
+      expect(@user).to be_valid
+
+      @user.facebook = "https://www.example.com"
+      expect(@user).to be_valid
+    end
+
+    it "confirm invalid facebook" do
+      @user.facebook = "ttps://example.com"
+      expect(@user).to be_invalid
+
+      @user.facebook = "httpss://example.com"
+      expect(@user).to be_invalid
+    end
+  end
 
 
 
