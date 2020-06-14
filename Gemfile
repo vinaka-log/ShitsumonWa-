@@ -46,6 +46,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
   gem 'kaminari'
+  gem 'rspec-rails', '~>3.8' 
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -64,7 +66,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  gem 'rspec-rails', '~>3.8' 
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -72,10 +73,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rename'
 gem 'sorcery'
 gem 'letter_opener'
-
-
 gem 'sprockets'
 gem 'sprockets-rails'
-
 gem "carrierwave"
 gem 'mini_magick'

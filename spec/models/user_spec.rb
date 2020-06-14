@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  before do
+    @user = FactoryBot.create(:user)
+  end
 
   it "is invalid without name" do
     user = User.new(name: nil)
