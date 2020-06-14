@@ -29,7 +29,6 @@ class User < ApplicationRecord
   def questions
     return Question.where(user_id: self.id)
   end
-  # < フォロー機能のメソッド>
 
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)
