@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
   end
 
   describe "user" do
-    it "is valid with name, email, nationality, password, password_confirmation"  do
+    it "is valid with name, email, nationality, password and password_confirmation"  do
       expect(@user).to be_valid
     end
   end
@@ -39,12 +39,12 @@ RSpec.describe User, type: :model do
       expect(@user).to be_valid
     end
 
-    it "is invalid if email is 256 characters" do
+    it "is invalid if email is 256 characters or more" do
       @user.email = "a" * 244 + "@example.com"
       expect(@user).to be_invalid
     end
 
-    it "is confirm valid email address" do
+    it "is confirm valid email" do
       @user.email = "test@example.com"
       expect(@user).to be_valid
 
@@ -98,12 +98,12 @@ RSpec.describe User, type: :model do
       expect(@user).to be_invalid
     end
 
-    it "is valid if nationality is 45 characters or less" do
+    it "is valid if nationality is 45 characters" do
       @user.nationality = "a" * 45
       expect(@user).to be_valid
     end
 
-    it "is invalid if nationality is 46 characters" do
+    it "is invalid if nationality is 46 characters or more" do
       @user.nationality = "a" * 46
       expect(@user).to be_invalid
     end
@@ -120,7 +120,7 @@ RSpec.describe User, type: :model do
       expect(@user).to be_valid
     end
 
-    it "is valid if password is 5 characters" do
+    it "is invalid if password is 5 characters or less" do
       @user.password = @user.password_confirmation = "a" * 5
       expect(@user).to be_invalid
     end
@@ -132,7 +132,7 @@ RSpec.describe User, type: :model do
       expect(@user).to be_valid
     end
 
-    it "is invalid if twitter is 256 characters" do
+    it "is invalid if twitter is 256 characters or more" do
       @user.twitter = "https://" + "a" * 244 + ".com"
       expect(@user).to be_invalid
     end
@@ -163,7 +163,7 @@ RSpec.describe User, type: :model do
       expect(@user).to be_valid
     end
 
-    it "is invalid if facebook is 256 characters" do
+    it "is invalid if facebook is 256 characters or more" do
       @user.facebook = "https://" + "a" * 244 + ".com"
       expect(@user).to be_invalid
     end
@@ -194,7 +194,7 @@ RSpec.describe User, type: :model do
       expect(@user).to be_valid
     end
 
-    it "is invalid if instagram is 256 characters" do
+    it "is invalid if instagram is 256 characters or more" do
       @user.instagram = "https://" + "a" * 244 + ".com"
       expect(@user).to be_invalid
     end
