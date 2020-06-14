@@ -6,7 +6,7 @@
           <%= form_with(model: [@question, @comment], local: true) do |f| %>
             <div class="form-group">
             <%= f.label :content, 'Content', class: 'form-control' %>
-            <%= f.text_area :content, placeholder: "Please your comments in 400 words", class: 'form-control' %>
+            <%= f.text_area :content, placeholder: "Please your comments in 255 words", class: 'form-control' %>
             <%= f.hidden_field :user_id, value: @comment.user_id %>
             <%= f.hidden_field :question_id, value: @comment.question_id %>
             </div>
