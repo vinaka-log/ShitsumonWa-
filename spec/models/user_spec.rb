@@ -188,6 +188,37 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "instagram" do
+    it "is valid if instagram is 255 characters" do
+      @user.instagram = "https://" + "a" * 243 + ".com"
+      expect(@user).to be_valid
+    end
+
+    it "is invalid if instagram is 256 characters" do
+      @user.instagram = "https://" + "a" * 244 + ".com"
+      expect(@user).to be_invalid
+    end
+
+    it "confirm valid instagram" do
+      @user.instagram = "https://example.com"
+      expect(@user).to be_valid
+
+      @user.instagram = "http://example.com"
+      expect(@user).to be_valid
+
+      @user.instagram = "https://www.example.com"
+      expect(@user).to be_valid
+    end
+
+    it "confirm invalid instagram" do
+      @user.instagram = "ttps://example.com"
+      expect(@user).to be_invalid
+      
+      @user.instagram = "httpss://example.com"
+      expect(@user).to be_invalid
+    end
+  end
+
 
 
      
