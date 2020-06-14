@@ -1,7 +1,6 @@
 class User < ApplicationRecord
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])[a-z\d]{8,32}+\z/
   VALID_URL_REGEX = /\A#{URI::regexp(%w(http https))}\z/
 
   has_one_attached :image
@@ -19,14 +18,13 @@ class User < ApplicationRecord
   has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :follower_relationships
 
-  validates :name, presence: true, , length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   validates :nationality, presence: true,length: { maximum: 45 }
-  validates :password,presence: true, confirmation: true, format: { with: VALID_PASSWORD_REGEX }
-  validates :password_confirmation, presence: true, format: { with: VALID_PASSWORD_REGEX }
-  validates :twitter_url, length: { maximum: 255 }, format: { with: VALID_URL_REGEX, allow_blank: true }
-  validates :facebook_url, length: { maximum: 255 }, format: { with: VALID_URL_REGEX, allow_blank: true }
-  validates :instagram_url, length: { maximum: 255 }, format: { with: VALID_URL_REGEX, allow_blank: true }
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+  validates :twitter, length: { maximum: 255 }, format: { with: VALID_URL_REGEX, allow_blank: true }
+  validates :facebook, length: { maximum: 255 }, format: { with: VALID_URL_REGEX, allow_blank: true }
+  validates :instagram, length: { maximum: 255 }, format: { with: VALID_URL_REGEX, allow_blank: true }
 
   def questions
     return Question.where(user_id: self.id)
