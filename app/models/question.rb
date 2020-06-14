@@ -7,9 +7,7 @@ class Question < ApplicationRecord
   has_many :like_users, through: :likes, source: 'user'
   has_many :comments
 
-
   validates :name, presence: true, length: { maximum: 50 }
   validates :description, presence: true, validates :description, presence: true, length: { maximum: 500}
-
 
 end
