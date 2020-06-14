@@ -213,14 +213,10 @@ RSpec.describe User, type: :model do
     it "confirm invalid instagram" do
       @user.instagram = "ttps://example.com"
       expect(@user).to be_invalid
-      
+
       @user.instagram = "httpss://example.com"
       expect(@user).to be_invalid
     end
   end
-
-
-
-     
 
 end
