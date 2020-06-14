@@ -17,12 +17,12 @@ RSpec.describe User, type: :model do
       expect(@user).to be_invalid
     end
 
-    it "is valid if name is less 50 characters" do
+    it "is valid if name is  50 characters" do
       @user.name = "a" * 50
       expect(@user).to be_valid
     end
 
-    it "is invalid if name is more 50 characters" do
+    it "is invalid if name is  51 characters or more" do
       @user.name = "a" * 51
       expect(@user).to be_invalid
     end
