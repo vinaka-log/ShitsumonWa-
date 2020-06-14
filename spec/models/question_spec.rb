@@ -10,4 +10,21 @@ RSpec.describe Question, type: :model do
       expect(@question).to be_valid
     end
   end
+
+  describe "name" do
+    it "is invalid without name" do
+      @question.name = ""
+      expect(@question).to be_invalid
+    end
+
+    it "is valid if name is  50 characters" do
+      @question.name = "a" * 50
+      expect(@question).to be_valid
+    end
+
+    it "is valid if name is  51 characters or more" do
+      @question.name = "a" * 51
+      expect(@question).to be_invalid
+    end
+  end
 end
