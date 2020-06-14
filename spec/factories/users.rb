@@ -3,7 +3,12 @@ FactoryBot.define do
       sequence(:name) { |n| "test_user#{n}" }
       sequence(:email) { |n| "test#{n}@example.com" }
       nationality { "japan" }
-      password { "pass1234" }
+      password { "pass12345" }
+      password_confirmation { "pass12345" }
+
+      after(:create) do |user|
+        user.activate!
+      end
   end 
  
 end

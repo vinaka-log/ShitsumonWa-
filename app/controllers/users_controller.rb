@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
-  # <修正する必要あり>
+ 
   def show  
     @user = User.find(params[:id])
     @questions = @user.questions.page(params[:page]).per(5).order('updated_at DESC')
@@ -38,8 +38,6 @@ class UsersController < ApplicationController
     end
   end
 
-  
-  #sorceryで、認証を行う
   def activate
     if (@user = User.load_from_activation_token(params[:id]))
       @user.activate!
