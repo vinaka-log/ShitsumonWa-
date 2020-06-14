@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:updaate, :destroy]
+  before_action :require_login, only: [:update, :destroy]
   def new
     @user = User.new
   end
@@ -9,8 +9,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, success: 'Signup success'
     else
-      flash.now[danger] = "Signup failed"
-      render :new
+      flash.now[:danger] = 'Signup failed'
+      render 'new'
     end
   end
  

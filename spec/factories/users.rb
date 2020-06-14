@@ -9,6 +9,5 @@ FactoryBot.define do
       after(:create) do |user|
         user.activate!
       end
-  end 
- 
+  end  
 end
