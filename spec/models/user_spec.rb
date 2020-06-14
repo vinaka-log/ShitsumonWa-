@@ -61,7 +61,7 @@ RSpec.describe User, type: :model do
       expect(@user).to be_valid
     end
 
-    it "is confirm invalid email address" do
+    it "is confirm invalid email" do
       @user.email = "test@example,com"
       expect(@user).to be_invalid
 
@@ -98,12 +98,12 @@ RSpec.describe User, type: :model do
       expect(@user).to be_invalid
     end
 
-    it "is valid if nationality is less 45 characters" do
+    it "is valid if nationality is 45 characters or less" do
       @user.nationality = "a" * 45
       expect(@user).to be_valid
     end
 
-    it "is invalid if nationality is more 45 characters" do
+    it "is invalid if nationality is 46 characters" do
       @user.nationality = "a" * 46
       expect(@user).to be_invalid
     end
@@ -115,13 +115,44 @@ RSpec.describe User, type: :model do
       expect(@user).to be_invalid
     end
 
-    it "is valid if password is less 6 characters" do
+    it "is valid if password is 6 characters" do
       @user.password = @user.password_confirmation = "a" * 6
       expect(@user).to be_valid
     end
 
-    it "is valid if password is less 5 characters" do
+    it "is valid if password is 5 characters" do
       @user.password = @user.password_confirmation = "a" * 5
+      expect(@user).to be_invalid
+    end
+  end
+
+  describe "twitter" do
+    it "is valid if twitter is 255 characters" do
+      @user.twitter = "https://" + "a" * 243 + ".com"
+      expect(@user).to be_valid
+    end
+
+    it "is invalid if twitter is 256 characters" do
+      @user.twitter = "https://" + "a" * 244 + ".com"
+      expect(@user).to be_invalid
+    end
+
+    it "confirm valid twitter" do
+      @user.twitter = "https://example.com"
+      expect(@user).to be_valid
+
+      @user.twitter = "http://example.com"
+      expect(@user).to be_valid
+
+      @user.twitter = "https://www.example.com"
+      expect(@user).to be_valid
+    end
+
+    it "confirm invalid twitter" do
+      @user.twitter = "ttps://example.com"
+      expect(@user).to be_invalid
+
+      @user.twitter = "httpss://example.com"
       expect(@user).to be_invalid
     end
   end
