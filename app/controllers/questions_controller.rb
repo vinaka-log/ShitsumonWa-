@@ -39,7 +39,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    question = Queston.find(params[:id])
+    question = Question.find(params[:id])
     question.destroy!
     flash[:success] = "#{question.name} deleted"
     redirect_to questions_url
