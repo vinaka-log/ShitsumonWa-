@@ -18,7 +18,6 @@
 
     <nav>
       <% if current_user %>
-        <!-- ulタグ内に「id="navbar"」を追記、classに「navbar-collapse collapse」を追記 -->
         <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
           <li class ="navbar-item">
 
@@ -36,6 +35,7 @@
         </ul>
       <% else %>
         <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
+          <li><%= link_to "Shitsumon list", questions_path %></li>
           <li><%= link_to "Sign up", signup_path %></li>
           <li><%= link_to "Log in", login_path %></li>
         </ul>
