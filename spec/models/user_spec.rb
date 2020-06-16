@@ -219,4 +219,15 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "user association" do
+    it {have_many :questions}
+    it {have_many :likes}
+    it {have_many :like_questions}
+    it {have_many :comments}
+    it {have_many :following_relationships}
+    it {have_many :followings}
+    it {have_many :follower_relationships}
+    it {have_many :followers}  
+  end
+
 end
