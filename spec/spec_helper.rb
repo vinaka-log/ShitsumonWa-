@@ -19,7 +19,7 @@ RSpec.configure do |config|
     FactoryBot.reload
   end
   config.before(:each, type: :system) do
-    dviven_by :selenium_chrome_headless
+    driven_by :selenium_chrome_headless
   end
 
   config.include Sorcery::TestHelpers::Rails::Integration, type: :feature
