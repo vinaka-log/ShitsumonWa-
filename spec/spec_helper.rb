@@ -13,9 +13,13 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'capybara/rspec'
 RSpec.configure do |config|
   config.before(:all) do
     FactoryBot.reload
+  end
+  config.before(:each, type: :system) do
+    dviven_by :selenium_chrome_headless
   end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
