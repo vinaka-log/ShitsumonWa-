@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to questions_path, success: '#{@question.name}.saved'
     else
-      flash.now[:danger] = '#{question.name} failed'
+      flash.now[:danger] = "#{@question.name}.failed"
       render 'new'
     end
   end
