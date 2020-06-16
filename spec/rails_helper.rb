@@ -71,7 +71,7 @@ RSpec.configure do |config|
   end
  
   config.include FactoryBot::Syntax::Methods
-  config.include LoginModule
+  
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
