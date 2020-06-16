@@ -1,24 +1,22 @@
 class OauthsController < ApplicationController
-  def oauth
+  skip_before_action :require_login, raise: false
+  
+ def oauth
     login_at(auth_params[:provider])
   end
 
   def callback
     provider = auth_params[:provider]
-    if auth_params[:denied].present? 
-      redirect_to root_path, notice: 'ログインをキャンセルしました'
-      return
-    end
     if (@user = login_from(provider))
-      redirect_to user_path(@user.id), notice: "#{provider.titleize}でログインしました"
+      redirect_to root_path, notice: "#{provider.titleize}Login successed"
     else
       begin
         @user = create_from(provider)
         reset_session
         auto_login(@user)
-        redirect_to user_path(@user.id), notice: "#{provider.titleize}でログインしました"
+        redirect_to root_path, notice: "#{provider.titleize}Login successed"
       rescue StandardError
-        redirect_to root_path, alert: "#{provider.titleize}でのログインに失敗しました"
+        redirect_to root_path, danger: "#{provider.titleize}Login failed"
       end
     end
   end
@@ -26,6 +24,6 @@ class OauthsController < ApplicationController
   private
 
   def auth_params
-    params.permit(:code, :provider, :denied)
+    params.permit(:code, :provider)
   end
 end
