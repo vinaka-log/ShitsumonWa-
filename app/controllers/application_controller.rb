@@ -8,4 +8,10 @@ class ApplicationController < ActionController::Base
   def not_authenticated
     redirect_to login_path, alert: "please login first"
   end
+
+  def require_login
+    unless current_user
+      redirect_to login_url
+    end
+  end
 end
