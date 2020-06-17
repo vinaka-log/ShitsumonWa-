@@ -1,36 +1,25 @@
 <header class="navbar navbar-fixed-top ">
   <div class="container">
-
-
-   
     <div class="navbar-header">
-
-
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-  
       <%= link_to "Shitsumonwa?", root_path, id: "logo" %>  
     </div>
-
     <nav>
       <% if current_user %>
         <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
           <li class ="navbar-item">
-
             <%= link_to "My profile", user_path(current_user), class: "nav-link text-light" %>
-
           </li>
           <li class ="navbar-item">
             <%= link_to "Shitsumon list", questions_path, class: "nav-link text-light" %>
           </li>
           <li class ="navbar-item">
-
           <%= link_to "Log out", logout_path, method: :post, class: "nav-link text-light" %> 
-
           </li>
         </ul>
       <% else %>
@@ -40,7 +29,6 @@
           <li><%= link_to "Log in", login_path %></li>
         </ul>
       <% end %>
-
     </nav>
   </div>
 </header>

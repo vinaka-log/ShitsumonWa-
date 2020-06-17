@@ -1,4 +1,5 @@
 <div class="top-video-wrapper text-center">
+
   <div class= "video-container">
     <%= video_tag("/videos/top-video.mp4", autoplay: :true, loop: :true, muted: :true, class: 'video-content') %>
     <div class="video-message">
@@ -18,42 +19,40 @@
 
 <div class="top-content-wrapper text-center">
 
-  <div class="top-content-about text-center animated fadein fadeInUp">
-    ShitsumonnWa? is a bulletin board service where foreigners interested in Japan can ask questions.
+  <div class="top-content-about animated fadein fadeInUp">
+  <span style="border-bottom: solid 4px #00FF00;">ShitsumonWa?</span> is a bulletin board service where foreigners interested in Japan can ask questions.</span>
   </div>
 
   <div class="about_title animated fadein fadeInUp">
-    <span style="border-bottom: solid 1px #00F;">Let's make it your second home country</span>
+    <span style="border-bottom: solid 2px #00FF00;">Let's make it your second home country!!</span>
   </div>
 
   <div class="content1">
 
     <div class="container animated fadein fadeInUp">  
       <div class="row"> 
-        <div class="col-sm-6 box1 attraction_text">
-          <p class="attraction_text1">旅先で、近くにいる人や気になった人と合流できる</p>
-            <p class="attraction_text2">
-              旅先での出会いは特別なもの。現地の人との交流はもちろん、
-              現地でばったり会う日本人もかけがいのない出会いの機会です。
-            </p>
+        <div class="col-sm-6 about-area1">
+          <p class="about-text1">Ask questions in all genres. If you are interested, let's post</p>
+          <p class="about-text2">
+          <span style="border-bottom: solid 1px #00FF00;"> See other people's questions </span>
+          </p>
+          <%= link_to "Shitsumon list", questions_path, class: 'btn btn-primary btn-lg' %>
         </div>
         <div class="col-sm-6 about-area2">
-          <img src="/assets/toppage1.jpg" alt="旅先での出会い">
+          <img src="/assets/toppage1.jpg" alt="japanese sake">
         </div>
       </div>
     </div>
 
     <div class="container animated fadein fadeInUp">  
       <div class="row">
-        <div class="col-sm-6">
-          <img src="/assets/toppage2.jpg" alt="人との繋がり">
+        <div class="col-sm-6 about-area2">
+          <img src="/assets/toppage2.jpg" alt="mt.fuji">
         </div>
-        <div class="col-sm-6 attraction_text">
-          <p class="attraction_text1">旅人どうしで情報を交換し、互いの旅をより快適に</p>
-            <p class="attraction_text2">
-              「あそこのお店が美味しかった」「穴場見つけたよ」「オススメの観光コースを発見しました」など
-              自分の知らなかった旅先の魅力や、奥深さを互いに共有できます。
-          </p>
+        <div class="col-sm-6 about-text1">
+          <p class="about-text1">This place for exchanging information about Japan</p>
+          <p class="about-text2">This service that attracts Japanese lovers regardless of nationality. 
+          You may get useful information from Japanese people.</p>
         </div>
       </div>
     </div>
@@ -61,33 +60,33 @@
     
   <div class="content2">
 
-    <div class="container animated fadein fadeInUp">  
-      <div class="row"> 
-        <div class="col-sm-6 box1 attraction_text">
-          <p class="attraction_text1">旅先で、近くにいる人や気になった人と合流できる</p>
-            <p class="attraction_text2">
-                旅先での出会いは特別なもの。現地の人との交流はもちろん、
-                現地でばったり会う日本人もかけがいのない出会いの機会です。
+      <div class="container animated fadein fadeInUp">  
+        <div class="row"> 
+          <div class="col-sm-6 about-area1">
+            <p class="about-text1">It can also be a place to make friends.</p>
+            <p class="about-text2">
+              You can put an SNS (Twitter, Faebook, instagram) link on your profile.
+              If there are people you care about, let's connect.
             </p>
-        </div>
-        <div class="col-sm-6 box2">
-          <img src="/assets/toppage3.jpg" alt="旅先での出会い">
+          </div>
+          <div class="col-sm-6 about-area2">
+            <img src="/assets/toppage3.jpg" alt="manga">
+          </div>
         </div>
       </div>
-    </div>
     
 
     <div class="container animated fadein fadeInUp">  
       <div class="row">
-        <div class="col-sm-6">
-          <img src="/assets/toppage4.jpg" alt="人との繋がり">
+        <div class="col-sm-6 about-area2">
+          <img src="/assets/toppage4.jpg" alt="chochin">
         </div>
-        <div class="col-sm-6 attraction_text">
-          <p class="attraction_text1">旅人どうしで情報を交換し、互いの旅をより快適に</p>
-            <p class="attraction_text2">
-              「あそこのお店が美味しかった」「穴場見つけたよ」「オススメの観光コースを発見しました」など
-              自分の知らなかった旅先の魅力や、奥深さを互いに共有できます。
-            </p>
+        <div class="col-sm-6 about-area1">
+          <p class="about-text1">All You have to do is register. Welcome to Shitsumonwa?</p>
+          <p class="about-text2">
+            <span style="border-bottom: solid 1px #00FF00;"> Registration is here </span>
+          </p>
+          <%= link_to 'Sign up', signup_path, class: 'btn btn-primary btn-lg' %>
         </div>
       </div>
     </div>
