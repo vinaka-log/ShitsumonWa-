@@ -354,6 +354,24 @@ body {
   }
 }
 
+// <!- follow-->
+  .follow-page {
+    padding-top: 1000px;
+    width:100%;
+    height: 100px;
+    background-image: image-url('white-bord.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    table {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+
+
 
 
 
