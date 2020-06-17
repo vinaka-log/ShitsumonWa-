@@ -89,7 +89,11 @@ Rails.application.config.sorcery.configure do |config|
   # i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack, :line].
   # Default: `[]`
   #
-  # config.external_providers =
+     config.external_providers = = [:slack]
+     config.slack.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=slack"
+     config.slack.key = '1202480594753.1175118814871D'
+     config.slack.secret = '78c24801d6d168a46373b059c4378bd1'
+     config.slack.user_info_mapping = {email: 'email'}
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
