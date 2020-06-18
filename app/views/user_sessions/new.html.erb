@@ -2,11 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-offset-4 col-md-4 login-container">
-
         <h1 class="text-center text-white">Log in</h1>
+        <%= link_to 'Login with Twitter', auth_at_provider_path(provider: :twitter), class:'link_signup btn-block btn btn-primary' %>
+        <%= link_to 'Login with Slack', auth_at_provider_path(provider: :slack), class:'link_signup btn-block btn btn-info' %>
         <div class = "login-no accoumt">
-        <p> Click here if you have not registered </p>
-        <%= link_to 'Sign up',signup_path, class:'link_signup btn btn-primary' %>
         </div> 
         <%= form_with url:user_sessions_path, local: true do |form| %>
           <div class="form-group">
@@ -24,16 +23,16 @@
             <%= label_tag :remember %>
           </div>
           
-          <%= form.submit "Log in", class:'btn-block btn-success btn-lg' %>
+          <%= form.submit "Login", class:'link_btn btn-block btn-success btn-lg' %>
         <% end %>
         <div class = "reset-password">
           <p>Forgot Password?</p>
           <%= render 'forgot_password_form' %>
         </div>
 
-        <%= link_to 'Login with Twitter', auth_at_provider_path(provider: :twitter) %>
-        <%= link_to 'Slackでログイン', auth_at_provider_path(provider: :slack) %>
-        
+        <p> Click here if you have not registered </p>
+        <%= link_to 'Sign up',signup_path, class:'link_signup btn-block btn btn-warning' %>
+          
       </div>
     </div>
   </div>
