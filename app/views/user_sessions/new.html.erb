@@ -3,10 +3,14 @@
     <div class="row">
       <div class="col-md-offset-4 col-md-4 login-container">
         <h1 class="text-center text-white">Log in</h1>
-        <%= link_to 'Login with Twitter', auth_at_provider_path(provider: :twitter), class:'link_signup btn-block btn btn-primary' %>
-        <%= link_to 'Login with Slack', auth_at_provider_path(provider: :slack), class:'link_signup btn-block btn btn-info' %>
-        <div class = "login-no accoumt">
-        </div> 
+        <%= link_to auth_at_provider_path(provider: :twitter), class:'link_signup btn-block btn btn-info' do %>
+          <i class="fab fa-twitter"></i>  Login with Twitter
+        <% end %>
+        <%= link_to auth_at_provider_path(provider: :slack), class:'link_signup btn-block btn btn-danger' do %>
+          <i class="fab fa-slack"></i> Login with Slack
+        <% end %>
+        
+
         <%= form_with url:user_sessions_path, local: true do |form| %>
           <div class="form-group">
             <%= form.label :email, 'E-mail', class: 'form-control' %>
