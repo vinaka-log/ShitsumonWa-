@@ -5,7 +5,6 @@ body {
 
 // <!-Header-->
   header {
-    color: #337ab7 !important;
     background-color: black;
     height: 100px;
     
@@ -16,30 +15,66 @@ body {
         letter-spacing: -1px;
         font-weight: bold;
         line-height: 100px;
+        color: white;
         &:hover {
-          color: white;
+          color: #337ab7;
           text-decoration: none;
+          letter-spacing: 5px;
         } 
       }
       
       ul {
-        padding: 25px 0;
-        font-size: 20px;
+        display: flex;
+        list-style: none;
+        line-height: normal;
+        padding-top: 25px;
+        font-size: 2rem;
+          
+        li {
+          padding: 5px;
+        }
+        a {
+          display: block;
+          position: relative;
+          text-decoration: none;
+          color: white;
+        }
+        a::before,
+        a::after {
+          border-bottom: solid 3px #337ab7;
+          color: #337ab7;
+          bottom: 0;
+          content: "";
+          display: block;
+          position: absolute;
+          transition: all .3s ease;
+          -webkit-transition: all .3s ease;
+          width: 0;
+        }
+        a::before {
+          left: 50%;
+        }
+        a::after {
+          right: 50%;
+        }
+        a:hover::before,
+        a:hover::after {
+          width: 50%;
+        }
+      }
+   }
+
+
+  // <!-Footer-->
+    footer {
+      background-color: black;
+      height: 100px;
+      line-height: 100px;
+      color:white;
+      .navbar-item {
+      display: inline-block;
+      font-size: 20px;
       }  
-  }
-
-
-// <!-Footer-->
-  footer {
-    background-color: black;
-    padding-top: 20px;
-    color:white;
-    .navbar-item {
-    display: inline-block;
-    float: left;
-    font-size: 20px;
-    color: white;
-    }  
   }
 
 // <!-Top page-->
@@ -170,10 +205,10 @@ body {
 
 // <!- flash -->
   .alert {
-    margin-bottom: 0px;
+    margin-top: 100px;
     position: fixed;
     width: 100%;
-    z-index: 10000;
+    z-index: 100000;
   }
 
 // <!- Log in -->
@@ -269,16 +304,50 @@ body {
         width: 30%;
       }
     } 
-      .question-image {
-        padding: 20px 0 10px 0;
-        width: 600px;
-        height: 500px;
+      .card-body {
+        padding: 1em;
+        box-shadow: 1.5px 1.5px 2px #696969;
+        transition: all .5s;
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+          opacity: 0.7;
+        }
+        .img_wrap{ 
+          width:  300px;
+          height: 300px;
+          margin: 0 auto;
+          overflow: hidden;
+        }
+        .img_wrap question-image{
+          width: 200px;
+          cursor: pointer;
+          transition-duration: 0.5s;
+        }
+        .img_wrap img:hover{
+          transform: scale(1.2) rotate(9deg);
+          transition-duration: 0.5s;
+          border-radius: 50px;
+        }
       }
-      p {
-        font-size: 20px;
-        font-weight: 50;
+      .question-content {
+        .card-title {
+        font-size: 40px;
+        color: black;
+        }
       }
     }
+
+// <!- page nation-->
+    .like-button-on {
+      color:red;
+      font-size: 6rem;
+    }
+    .like-button-off {
+      color: blue;
+      font-size: 6rem;
+    } 
+
 
 // <!- page nation-->
   .paginate {

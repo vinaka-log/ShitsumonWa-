@@ -15,7 +15,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to root_path, notice: 'logged out!'
+    redirect_to root_path, info: 'logged out!'
     
   end
   def index

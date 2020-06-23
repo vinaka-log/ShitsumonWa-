@@ -19,10 +19,7 @@ class UsersController < ApplicationController
     @questions = @user.questions.page(params[:page]).per(5).order('updated_at DESC')
   end
 
-   
-  def index
-    @users = User.all
-  end
+  def index; end
 
   def edit
     @user = User.find(params[:id])
@@ -61,6 +58,6 @@ class UsersController < ApplicationController
 
    private
       def user_params
-        params.require(:user).permit(:name, :email, :nationality, :password, :password_confirmation, :image, :twitter, :facebook, :instagram)
+        params.permit(:name, :email, :nationality, :password, :password_confirmation, :image, :twitter, :facebook, :instagram)
       end
 end
