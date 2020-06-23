@@ -107,6 +107,8 @@ GEM
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
+    flag-icons-rails (3.4.6.1)
+      sass-rails
     font-awesome-sass (5.13.0)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -340,6 +342,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   factory_bot_rails
+  flag-icons-rails
   font-awesome-sass
   jbuilder (~> 2.7)
   jquery-rails

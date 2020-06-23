@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   get '/signup/registration',  to: 'users#mail_form'
   get '/login', to: 'user_sessions#new'
   post '/logout', to: 'user_sessions#destroy'
-  get 'search', to: 'questions#search'
-  
+  get 'search', to: 'posts#search'  
   resources :user_sessions
   resources :password_resets, only: %i[create edit update]
   resources :questions do
