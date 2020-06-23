@@ -1,5 +1,11 @@
 
 <div class="container">
+  <% form_with model: @post, url: search_path, method: :get, local: true do |form| %>
+    <% form.select :keyword, [ ['New Update', 'new'],
+                              ['New Post', 'old'],
+                              ['Most Popularity', 'likes'],
+                            ] %>
+  <% form.submit %>
   <% @questions.each do |question| %>
   <div class="card my-3">
     <div class="card-body row">
