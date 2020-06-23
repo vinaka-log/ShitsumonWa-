@@ -25,6 +25,9 @@
           </span>
         </div>
         <%= render "likes/like", question: question %>
+        <span class="text-muted card-description">
+          <%= question.description %>
+          </span>
       </div>
       <% if current_user.id == question.user_id %>
           <div class="icon-links text-right">
