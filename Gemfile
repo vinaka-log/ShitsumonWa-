@@ -11,6 +11,7 @@ gem 'sassc', '~> 2.0.0'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'bootstrap'
+gem 'flag-icons-rails'
 
 # Use bcrypt for has_secure_password
 gem 'bcrypt'

@@ -252,6 +252,32 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  // <!- japan flag-->
+  .jp-point {
+    font-family: 'Corben', cursive;
+    padding-top: 50px;
+    span {
+      font-size: 100px;
+      border: solid 1px  black;
+      }
+    .jp-sentence {
+      font-size: 2rem;
+      font-weight: 20;
+    }
+    .jp-score {
+      font-size: 8rem;
+      font-weight: 700;
+      background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+      background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+      background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+      background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;  
+    }
+  }
+
   .row {
     background-color: white;
     padding-bottom: 20px;
@@ -264,6 +290,7 @@ body {
     }
     .card-title {
       font-weight: 700;
+      padding: 50px 0 50px 0;
     }  
    
     .profile-links {
