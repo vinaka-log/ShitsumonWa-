@@ -17,6 +17,11 @@ class UsersController < ApplicationController
   def show  
     @user = User.find(params[:id])
     @questions = @user.questions.page(params[:page]).per(5).order('updated_at DESC')
+    @user_questions = @user.questions
+    @likes_count = 0
+    @user_questions.each do |question|
+      @likes_count += question.likes.count
+    end
   end
 
   def index; end
