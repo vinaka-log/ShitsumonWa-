@@ -11,6 +11,11 @@ class QuestionsController < ApplicationController
     @user = User.find_by(id: @question.user_id)
     @comments = @question.comments
     @comment = Comment.new
+    @user_questions = @user.questions
+    @likes_count = 0
+    @user_questions.each do |question|
+      @likes_count += question.likes.count
+    end
   end
 
   def new
