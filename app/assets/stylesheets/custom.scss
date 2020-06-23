@@ -273,20 +273,19 @@ body {
         padding: 1em;
         box-shadow: 1.5px 1.5px 2px #696969;
         transition: all .5s;
-          &:hover {
+        &:hover {
           transform: translateY(-2px);
           box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
           opacity: 0.7;
         }
-        .img_wrap{
-          border: 1px solid #ddd;
-          width: 300px;
+        .img_wrap{ 
+          width:  300px;
           height: 300px;
           margin: 0 auto;
           overflow: hidden;
         }
-        .img_wrap img{
-          width: 100%;
+        .img_wrap question-image{
+          width: 200px;
           cursor: pointer;
           transition-duration: 0.5s;
         }
@@ -296,7 +295,25 @@ body {
           border-radius: 50px;
         }
       }
+      .question-content {
+        .card-title {
+        font-size: 40px;
+        color: black;
+        }
+      }
     }
+
+// <!- page nation-->
+    .like-button-on {
+      color:red;
+      font-size: 6rem;
+    }
+    .like-button-off {
+      color: blue;
+      font-size: 6rem;
+    } 
+
+
 // <!- page nation-->
   .paginate {
     text-align: center;
