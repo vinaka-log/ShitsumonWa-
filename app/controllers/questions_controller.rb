@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
   def search
     selection = params[:keyword]
     @questions = Question.sort(selection)
- end
+  end
 
   def edit
     @question = Question.find(params[:id])

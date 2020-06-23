@@ -1,11 +1,13 @@
 
-<div class="container">
-  <% form_with model: @post, url: search_path, method: :get, local: true do |form| %>
-    <% form.select :keyword, [ ['New Update', 'created_at'],
+<div class= "container">
+  <h1 class= "text-center"> Shitsumon list </h1>
+  <%= form_with model: @question, url: search_path, method: :get, local: true do |form| %>
+    <%= form.select :keyword, [ ['New Update', 'created_at'],
                               ['New Question', 'updated_at'],
                               ['Most Popularity', 'Popularity'],
                             ] %>
-  <% form.submit %>
+    <% form.submit %>
+  <% end %>
   <% @questions.each do |question| %>
   <div class="card my-3">
     <div class="card-body row">
@@ -33,7 +35,7 @@
         <%= render "likes/like", question: question %>
         <span class="text-muted card-description">
           <%= question.description %>
-          </span>
+        </span>
       </div>
       <% if current_user.id == question.user_id %>
           <div class="icon-links text-right">

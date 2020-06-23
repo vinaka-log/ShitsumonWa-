@@ -18,6 +18,7 @@ class Question < ApplicationRecord
       return all.order(updated_at: :DESC)
     when 'popularity'
       return find(Like.group(:question_id).order(Arel.sql('count(question_id) desc')).pluck(:question_id))
+    end
   end
 
 end
