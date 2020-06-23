@@ -14,8 +14,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
-     
+    @question = Question.new 
   end
 
   def create
@@ -26,6 +25,11 @@ class QuestionsController < ApplicationController
       flash.now[:danger] = "#{@question.name}.failed"
       render 'new'
     end
+  end
+
+  def search
+    selection = params[:keyword]
+    @questions = Question.sort(selection)
   end
 
   def edit

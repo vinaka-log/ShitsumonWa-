@@ -13,9 +13,10 @@
           </p>
           
           <% if current_user?(@user) %>
-            <%= link_to 'Update',edit_question_path, class: 'btn btn-success btn-lg ' %>
+            <%= link_to 'Update',edit_question_path, class: 'btn btn-success btn-lg' %>
             <%= link_to 'Delete',@question, method: :delete,  class: 'btn btn-danger btn-lg ' %>
           <% end %>
+          
           <h3 >Comments list</h3>
           <div class = "comment-list"> 
             <% @comments.each do |c| %>
