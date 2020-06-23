@@ -271,13 +271,21 @@ body {
     } 
       .question-image {
         padding: 20px 0 10px 0;
-        width: 600px;
+        width: 100%;
         height: 500px;
+        border-radius: 50%;
+        
       }
       p {
         font-size: 20px;
         font-weight: 50;
       }
+    }
+    .question-index-single {
+      padding: 20px;
+      border:1px solid black;
+      background-color: whitesmoke;
+      border-radius: 5%;
     }
 
 // <!- page nation-->

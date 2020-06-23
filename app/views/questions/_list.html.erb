@@ -1,23 +1,39 @@
 
 <div class="container">
-    <% @questions.each do |question| %>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="question-index-single">
-            <h1 class="question-title">
-            <%= link_to question.name, question_path(question) %>
-            </h1>
-            <%= image_tag question.image.url, class: "question-image" if question.image.url %>
-            <%= render "likes/like", question: question %>
-            <%= link_to new_question_comment_path(question_id: question.id) do %>
-              <%= image_tag "/assets/comment.png", class: "question-index-icon" %>
-            <% end %>
-            <p class="question-text">
-              <%= question.description %>
-            </p>
-          </div>
+  <% @questions.each do |question| %>
+  <div class="card my-3">
+    <div class="card-body row">
+      <div class="question-img col-lg-6">
+        <%= link_to question_path(question.id) do %>
+          <% if question.image? %>
+            <%= image_tag question.image.url %>
+          <% else %>
+            <%= image_tag 'default_user.jpg' %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="question-content col-lg-6 mt-3">
+        <%= link_to question.name, question_path(question.id), class: "card-title" %>
+        <div class="mb-1">
+          <span class="text-muted mr-3">
+            by <%= link_to question.user.name, question_path(question.user.id) %>
+          </span>
+          <span class="text-muted">
+            <i class="far fa-clock mr-1"></i><%= question.updated_at.strftime('%Y/%m/%d') %>Update
+          </span>
         </div>
       </div>
-    <% end %>
+      <% if current_user.id == question.user_id %>
+          <div class="icon-links text-right">
+            <%= link_to edit_question_path(question.id), class: "edit-icon mr-2 btn btn-success" do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
+            <%= link_to question_path(question.id), method: :delete, class: "delete-icon btn btn-danger", data: { confirm: 'really delete？' } do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          </div>
+        <% end %>
+      <div>
+    </div>
   </div>
-  <div class='paginate'><%= paginate(@questions) %></div>
+<% end %>

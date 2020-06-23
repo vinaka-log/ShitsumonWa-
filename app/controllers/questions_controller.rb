@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :require_login, except: [:index, :show,]
 
   def index
-    @questions = Question.page(params[:page]).per(5).order('updated_at DESC').includes(:like_users)
+    @questions = Question.page(params[:page]).per(12).order('updated_at DESC').includes(:like_users)
     comments = Comment.where(id: params[:id])
   end
 
