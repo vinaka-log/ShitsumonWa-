@@ -12,15 +12,12 @@ class Question < ApplicationRecord
 
   def self.sort(selection)
     case selection
-    when 'new'
+    when 'created_at'
       return all.order(created_at: :DESC)
-    when 'old'
-      return all.order(created_at: :ASC)
-    when 'likes'
-      return find(Favorite.group(:post_id).order(Arel.sql('count(post_id) desc')).pluck(:post_id))
-    when 'dislikes'
-      return find(Favorite.group(:post_id).order(Arel.sql('count(post_id) asc')).pluck(:post_id))
-    end
+    when 'updated_at'
+      return all.order(updated_at: :DESC)
+    when 'popularity'
+      return find(Like.group(:question_id).order(Arel.sql('count(question_id) desc')).pluck(:question_id))
   end
 
 end
