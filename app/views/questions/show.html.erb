@@ -15,11 +15,13 @@
           <p class="question-text">
             <%= @question.description %>
           </p>
-          <%= link_to new_question_comment_path(question_id: @question.id) do %>
-            <i class="fas fa-comment fa-fw fa-lg fa-4x faa-horizontal animated"></i>
+          <% if logged_in? %>
+            <%= link_to new_question_comment_path(question_id: @question.id) do %>
+              <i class="fas fa-comment fa-fw fa-lg fa-4x faa-horizontal animated"></i>
+            <% end %>
           <% end %>
 
-          <% if current_user.id == @question.user_id %>
+          <% if logged_in? %>
             <div class="icon-links text-right">
               <%= link_to edit_question_path(@question.id), class: "edit-icon mr-2 btn btn-success" do %>
                 <i class="fas fa-edit fa-2x"></i>

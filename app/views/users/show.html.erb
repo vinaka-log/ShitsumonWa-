@@ -15,7 +15,7 @@
         <% if current_user?(@user) %>
           <%= link_to "Edit your profile", edit_user_path, class:'btn btn-success btn-lg' %>
         <% else %>
-          <%= render 'users/follow', user: @user %>
+            <%= render 'users/follow', user: @user %>
         <% end %>  
         
         <div class = "sns-link">
@@ -46,7 +46,9 @@
         <div class = "jp-point">
           <span class="flag-icon flag-icon-jp faa-tada animated "></span>
           <p class= "jp-sentence"> Japan Score </p>
+
           <p class= "jp-count">
+
           <%= @likes_count %>
           </p>
         </div>

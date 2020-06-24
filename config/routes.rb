@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
   root 'pages#index'
   get '/signup',  to: 'users#new'
-  get '/signup/registration',  to: 'users#mail_form'
+  get '/signup/registration',  to: 'users#registration'
   get '/login', to: 'user_sessions#new'
   post '/logout', to: 'user_sessions#destroy'
   get 'search', to: 'questions#search'  
