@@ -16,7 +16,7 @@
                                   ['New Question', 'updated_at'],
                                   ['Most Popularity', 'popularity'],
                                 ] %>
-        <%= form.submit 'Sort'%>
+        <%= form.submit 'Sort', class:"sort-btn"%>
       <% end %>
     </div>
     <% @questions.each do |question| %>

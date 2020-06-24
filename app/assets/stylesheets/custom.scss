@@ -390,6 +390,20 @@ body {
     font-size: 20px;
   }
 
+  // <!- sort form-->
+  .sort-form {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0 50px 0;
+    .sort-btn {
+      background-color: black;
+      color:white;
+      font-size: 25px;
+
+    }
+  }
+
+
 
 // <!- new&edit question-->
   .question-form-wrapper {
