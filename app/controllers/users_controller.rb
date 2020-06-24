@@ -1,8 +1,15 @@
 class UsersController < ApplicationController
   before_action :require_login, only: [:destroy]
+
   def new
     @user = User.new
   end
+
+  def registration
+    @user = User.new
+  end
+
+
   
   def create
     @user = User.new(user_params)
