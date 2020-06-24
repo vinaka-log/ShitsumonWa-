@@ -29,7 +29,8 @@ class QuestionsController < ApplicationController
 
   def search
     selection = params[:keyword]
-    @questions = Question.sort(selection).per(5).order('updated_at DESC').includes(:like_users)
+    @questions = Question.sort(selection)
+    @questions = Kaminari.paginate_array(@questions).page(params[:page]).per(5)
   end
 
   def edit
