@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to questions_path, success: '#{@question.name}.saved'
+      redirect_to questions_path, success: "#{@question.name}.saved"
     else
       flash.now[:danger] = "#{@question.name}.failed"
       render 'new'
