@@ -7,7 +7,11 @@
           <%=  @question.name %>
           </h1>
           <h3> Questioned by  <%= link_to @user.name, user_path %> </h3>
-          <%= image_tag @question.image.url, class: "question-image" %>
+          <% if @question.image? %>
+              <%= image_tag @question.image.url, class: "question-image" %>
+            <% else %>
+              <%= image_tag 'nattou.jpg', class: "question-image" %>
+            <% end %>
           <p class="question-text">
             <%= @question.description %>
           </p>
