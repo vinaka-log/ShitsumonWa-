@@ -8,17 +8,26 @@
           </h1>
           <h3> Questioned by  <%= link_to @user.name, user_path %> </h3>
           <% if @question.image? %>
-              <%= image_tag @question.image.url, class: "question-image" %>
-            <% else %>
-              <%= image_tag 'nattou.jpg', class: "question-image" %>
-            <% end %>
+            <%= image_tag @question.image.url, class: "question-image" %>
+          <% else %>
+            <%= image_tag 'nattou.jpg', class: "question-image" %>
+          <% end %>
           <p class="question-text">
             <%= @question.description %>
           </p>
-          
-          <% if current_user?(@user) %>
-            <%= link_to 'Update',edit_question_path, class: 'btn btn-success btn-lg' %>
-            <%= link_to 'Delete',@question, method: :delete,  class: 'btn btn-danger btn-lg ' %>
+          <%= link_to new_question_comment_path(question_id: @question.id) do %>
+            <i class="fas fa-comment fa-fw fa-lg fa-4x faa-horizontal animated"></i>
+          <% end %>
+
+          <% if current_user.id == @question.user_id %>
+            <div class="icon-links text-right">
+              <%= link_to edit_question_path(@question.id), class: "edit-icon mr-2 btn btn-success" do %>
+                <i class="fas fa-edit fa-2x"></i>
+              <% end %>
+              <%= link_to question_path(@question.id), method: :delete, class: "delete-icon btn btn-danger", data: { confirm: 'really delete？' } do %>
+                <i class="fas fa-trash fa-2x"></i>
+              <% end %>
+            </div>
           <% end %>
           
           <h3 >Comments list</h3>
