@@ -1,14 +1,9 @@
 class UsersController < ApplicationController
   before_action :require_login, only: [:destroy]
-
   def new
     @user = User.new
   end
-
-  def registration
-    @user = User.new
-  end
-
+  
   def create
     @user = User.new(user_params)
     if @user.save
@@ -21,10 +16,10 @@ class UsersController < ApplicationController
  
   def show  
     @user = User.find(params[:id])
-    @questions = @user.questions.page(params[:page]).per(5).order('updated_at DESC')
+    @questions = @user.questions
     @user_questions = @user.questions
     @likes_count = 0
-    @user_questions.each do |question|
+    @questions.each do |question|
       @likes_count += question.likes.count
     end
   end

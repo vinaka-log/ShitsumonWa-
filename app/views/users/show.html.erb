@@ -54,8 +54,6 @@
         </div>
       </div> 
     </div>
-  </div>
-  <div class= "own-quesetions text-center">
     <% if @user.questions.any? %>
       <h1 class ="card-title" >Your Questions (<%= @user.questions.count %>)</h1>
       <%= render 'questions/list' %>

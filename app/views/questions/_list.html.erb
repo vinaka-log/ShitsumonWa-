@@ -1,4 +1,4 @@
- <% @questions.each do |question| %>
+<% @questions.each do |question| %>
   <div class="card my-3">
     <div class="card-body row">
       <div class="question-img col-lg-6">
@@ -16,7 +16,7 @@
         <%= link_to question.name, question_path(question.id), class: "card-title" %>
         <div class="mb-1">
           <span class="text-muted mr-3">
-            by <%= link_to question.user.name, question_path(question.user.id) %>
+            by <%= link_to question.user.name, user_path(question.user.id) %>
           </span>
           <span class="text-muted">
             <i class="far fa-clock mr-1"></i><%= question.updated_at.strftime('%Y/%m/%d') %>Update
