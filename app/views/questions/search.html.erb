@@ -1,0 +1,63 @@
+<div class="question-index-wrapper">
+
+  <div class = "question-list ls"> 
+      <div class = "text-center">
+          <h1 class = "d-flex align-items-center">Shitsumon list</h1>
+          <h2>~Let's ask about what you are interested in about Japan~</h2>
+          <h3>(Any genre is ok.Feel free to ask!!!)</h3>
+          <%=link_to 'new question', new_question_path, class:'btn btn-success btn-lg' %>
+      </div>
+  </div>
+  <div class= "container">
+    <h1 class= "text-center"> Shitsumon list </h1>
+    <%= form_with model: @question, url: search_path, method: :get, local: true do |form| %>
+      <%= form.select :keyword, [ ['New Update', 'created_at'],
+                                ['New Question', 'updated_at'],
+                                ['Most Popularity', 'popularity'],
+                              ] %>
+      <%= form.submit 'Submit'%>
+    <% end %>
+    <% @questions.each do |question| %>
+    <div class="card my-3">
+      <div class="card-body row">
+        <div class="question-img col-lg-6">
+          <%= link_to question_path(question.id) do %>
+            <div class="img_wrap">
+              <% if question.image? %>
+                <%= image_tag question.image.url, class: "question-image" %>
+              <% else %>
+                <%= image_tag 'nattou.jpg', class: "question-image" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="question-content col-lg-6 mt-3">
+          <%= link_to question.name, question_path(question.id), class: "card-title" %>
+          <div class="mb-1">
+            <span class="text-muted mr-3">
+              by <%= link_to question.user.name, question_path(question.user.id) %>
+            </span>
+            <span class="text-muted">
+              <i class="far fa-clock mr-1"></i><%= question.updated_at.strftime('%Y/%m/%d') %>Update
+            </span>
+          </div>
+          <%= render "likes/like", question: question %>
+          <span class="text-muted card-description">
+            <%= question.description %>
+          </span>
+        </div>
+        <% if current_user.id == question.user_id %>
+            <div class="icon-links text-right">
+              <%= link_to edit_question_path(question.id), class: "edit-icon mr-2 btn btn-success" do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+              <%= link_to question_path(question.id), method: :delete, class: "delete-icon btn btn-danger", data: { confirm: 'really delete？' } do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            </div>
+          <% end %>
+        <div>
+      </div>
+    </div>
+  <% end %>
+</div>

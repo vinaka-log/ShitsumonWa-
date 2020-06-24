@@ -4,9 +4,9 @@
   <%= form_with model: @question, url: search_path, method: :get, local: true do |form| %>
     <%= form.select :keyword, [ ['New Update', 'created_at'],
                               ['New Question', 'updated_at'],
-                              ['Most Popularity', 'Popularity'],
+                              ['Most Popularity', 'popularity'],
                             ] %>
-    <% form.submit %>
+    <%= form.submit 'Submit' %>
   <% end %>
   <% @questions.each do |question| %>
   <div class="card my-3">
