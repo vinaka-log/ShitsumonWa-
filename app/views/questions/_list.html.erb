@@ -37,7 +37,7 @@
           <%= question.description %>
         </span>
       </div>
-      <% if current_user.id == question.user_id %>
+      <% if logged_in? && current_user.id == question.user_id %>
           <div class="icon-links text-right">
             <%= link_to edit_question_path(question.id), class: "edit-icon mr-2 btn btn-success" do %>
               <i class="fas fa-edit"></i>
