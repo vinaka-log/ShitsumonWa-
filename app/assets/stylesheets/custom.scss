@@ -74,8 +74,10 @@ body {
       .navbar-item {
       display: inline-block;
       font-size: 20px;
+      position: absolute;
+      bottom: 0;
       }  
-  }
+    }
 
 // <!-Top page-->
   .top-video-wrapper{
@@ -246,6 +248,7 @@ body {
 // <!- show&edit user -->
 .user-wrapper{
   width: 100vw;
+  min-height: 100vh;
   padding: 130px 0 50px 0;
   background-image: image-url('white-bord.jpg');
   background-position: center center;
@@ -273,8 +276,7 @@ body {
       background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
       -webkit-background-clip: text;
       background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-fill-color: transparent;  
+      -webkit-text-fill-color: transparent; 
     }
   }
 
@@ -312,6 +314,41 @@ body {
   }
 }
 
+// <!- list -->
+.card-body {
+  padding: 1em;
+  box-shadow: 1.5px 1.5px 2px #696969;
+  transition: all .5s;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    opacity: 0.7;
+  }
+  .img_wrap{ 
+    width:  300px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .img_wrap question-image{
+    width: 200px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+  }
+  .img_wrap img:hover{
+    transform: scale(1.2) rotate(9deg);
+    transition-duration: 0.5s;
+    border-radius: 50px;
+  }
+}
+.question-content {
+  .card-title {
+  font-size: 40px;
+  color: black;
+  }
+}
+
+
 // <!- index question-->
   .question-index-wrapper {
     h1 {
@@ -332,40 +369,8 @@ body {
         margin-top: 100px;
         width: 30%;
       }
-    } 
-      .card-body {
-        padding: 1em;
-        box-shadow: 1.5px 1.5px 2px #696969;
-        transition: all .5s;
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
-          opacity: 0.7;
-        }
-        .img_wrap{ 
-          width:  300px;
-          height: 300px;
-          margin: 0 auto;
-          overflow: hidden;
-        }
-        .img_wrap question-image{
-          width: 200px;
-          cursor: pointer;
-          transition-duration: 0.5s;
-        }
-        .img_wrap img:hover{
-          transform: scale(1.2) rotate(9deg);
-          transition-duration: 0.5s;
-          border-radius: 50px;
-        }
-      }
-      .question-content {
-        .card-title {
-        font-size: 40px;
-        color: black;
-        }
-      }
-    }
+    }      
+  }
 
 // <!- like button-->
     .like-button-on {

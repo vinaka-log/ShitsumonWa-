@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path, success: "Update success"
     else
-      flash.now[danger] = "Update failed"
+      flash.now[:danger] = "Update failed"
       render 'edit'
     end
   end
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   def activate
     if (@user = User.load_from_activation_token(params[:id]))
       @user.activate!
-      redirect_to(login_path, notice: 'User was successfully activated.')
+      redirect_to(login_path, success: 'User was successfully activated.')
     else
       not_authenticated
     end
