@@ -30,6 +30,7 @@ class QuestionsController < ApplicationController
   def search
     selection = params[:keyword]
     @questions = Question.sort(selection)
+    @questions = Kaminari.paginate_array(@questions).page(params[:page]).per(5)
   end
 
   def edit
