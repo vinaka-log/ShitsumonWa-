@@ -1,16 +1,4 @@
-
-<div class= "container">
-  <h1 class= "text-center"> Shitsumon list </h1>
-  <div class = "sort-form">
-    <%= form_with model: @question, url: search_path, method: :get, local: true do |form| %>
-      <%= form.select :keyword, [ ['New Update', 'created_at'],
-                                ['New Question', 'updated_at'],
-                                ['Most Popularity', 'popularity'],
-                              ] %>
-      <%= form.submit 'Sort', class:"sort-btn"%>
-    <% end %>
-  </div>
-  <% @questions.each do |question| %>
+ <% @questions.each do |question| %>
   <div class="card my-3">
     <div class="card-body row">
       <div class="question-img col-lg-6">

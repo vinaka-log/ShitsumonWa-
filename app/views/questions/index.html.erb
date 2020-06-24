@@ -9,6 +9,11 @@
       </div>
   </div>
 
-  <%= render 'questions/list'%>
+  <div class= "container">
+    <h1 class= "text-center"> Shitsumon list </h1>
+    <%= render 'questions/select_form'%>
+    <%= render 'questions/list'%>
+  </div>
+  <div class='paginate'><%= paginate(@questions) %></div>
 
 </div>

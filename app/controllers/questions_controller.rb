@@ -29,7 +29,7 @@ class QuestionsController < ApplicationController
 
   def search
     selection = params[:keyword]
-    @questions = Question.sort(selection)
+    @questions = Question.sort(selection).per(5).order('updated_at DESC').includes(:like_users)
   end
 
   def edit
