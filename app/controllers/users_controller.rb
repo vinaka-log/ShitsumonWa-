@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:destroy]
+  before_action :require_login, only: [ :edit, :update, :destroy]
+  before_action :admin_user, only: [:destroy]
   def new
     @user = User.new
   end
@@ -17,14 +18,16 @@ class UsersController < ApplicationController
   def show  
     @user = User.find(params[:id])
     @questions = @user.questions
-    @user_questions = @user.questions
     @likes_count = 0
     @questions.each do |question|
       @likes_count += question.likes.count
     end
   end
 
-  def index; end
+  def index
+    @users = User.all
+    @users = Kaminari.paginate_array(@users).page(params[:page]).per(5)
+  end
 
   def edit
     @user = User.find(params[:id])
@@ -39,6 +42,13 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
+  end
+
 
   def activate
     if (@user = User.load_from_activation_token(params[:id]))
@@ -64,5 +74,9 @@ class UsersController < ApplicationController
    private
       def user_params
         params.require(:user).permit(:name, :email, :nationality, :password, :password_confirmation, :image, :twitter, :facebook, :instagram)
+      end
+
+      def admin_user
+        redirect_to(root_url) unless current_user.admin?
       end
 end
