@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_013436) do
+ActiveRecord::Schema.define(version: 2020_06_26_130621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,16 @@ ActiveRecord::Schema.define(version: 2020_06_26_013436) do
     t.index ["following_id"], name: "index_relationships_on_following_id"
   end
 
+  create_table "stocks", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_stocks_on_question_id"
+    t.index ["user_id", "question_id"], name: "index_stocks_on_user_id_and_question_id", unique: true
+    t.index ["user_id"], name: "index_stocks_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
@@ -115,4 +125,6 @@ ActiveRecord::Schema.define(version: 2020_06_26_013436) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "questions"
   add_foreign_key "comments", "users"
+  add_foreign_key "stocks", "questions"
+  add_foreign_key "stocks", "users"
 end
