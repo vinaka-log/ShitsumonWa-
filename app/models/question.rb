@@ -6,6 +6,8 @@ class Question < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: 'user'
   has_many :comments
+  has_many :stocks, dependent: :destroy
+  has_many :stock_users, through: :stocks, source: :user
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :description, presence: true, length: { maximum: 500}
@@ -19,6 +21,18 @@ class Question < ApplicationRecord
     when 'popularity'
       return find(Like.group(:question_id).order(Arel.sql('count(question_id) desc')).pluck(:question_id))
     end
+  end
+
+  def stock(user)
+    stocks.create(user_id: user.id)
+  end
+
+  def unstock(user)
+    stocks.find_by(user_id: user.id).destroy
+  end
+
+  def stocked?(user)
+    stock_users.include?(user)
   end
 
 end
