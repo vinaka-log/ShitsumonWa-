@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get :activate, :following, :followers
     end
   end
+  resources :stocks, only: %i(index create destroy)
 
   post   '/like/:question_id', to: 'likes#like',   as: 'like'
   delete '/like/:question_id', to: 'likes#unlike', as: 'unlike'
