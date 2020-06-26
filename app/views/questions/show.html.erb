@@ -6,7 +6,7 @@
           <h1 class="question-title">
           <%=  @question.name %>
           </h1>
-          <h3> Questioned by  <%= link_to user_path(question.user.id) %> </h3>
+          <h3> Questioned by  <%= link_to @user.name, user_path(@user.id) %> </h3>
           <% if @question.image? %>
             <%= image_tag @question.image.url, class: "question-image" %>
           <% else %>
