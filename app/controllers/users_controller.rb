@@ -62,12 +62,14 @@ class UsersController < ApplicationController
   def following
     @user  = User.find(params[:id])
     @users = @user.followings
+    @users = Kaminari.paginate_array(@users).page(params[:page]).per(5)
     render 'show_follow'
   end
 
   def followers
     @user  = User.find(params[:id])
     @users = @user.followers
+    @users = Kaminari.paginate_array(@users).page(params[:page]).per(5)
     render 'show_follower'
   end
 
