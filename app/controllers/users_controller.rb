@@ -63,14 +63,14 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
     @users = @user.followings
     @users = Kaminari.paginate_array(@users).page(params[:page]).per(5)
-    render 'show_follow'
+    render 'index'
   end
 
   def followers
     @user  = User.find(params[:id])
     @users = @user.followers
     @users = Kaminari.paginate_array(@users).page(params[:page]).per(5)
-    render 'show_follower'
+    render 'index'
   end
 
    private
@@ -81,4 +81,5 @@ class UsersController < ApplicationController
       def admin_user
         redirect_to(root_url) unless current_user.admin?
       end
+
 end
