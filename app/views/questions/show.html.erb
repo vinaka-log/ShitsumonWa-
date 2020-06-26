@@ -20,6 +20,9 @@
               <i class="fas fa-comment fa-fw fa-lg fa-4x faa-horizontal animated"></i>
             <% end %>
           <% end %>
+          <div id="question-<%= @question.id %>">
+            <%= render partial: 'stocks/stock', locals: { question: @question } %>
+          </div>
 
           <% if logged_in? %>
             <div class="icon-links text-right">
