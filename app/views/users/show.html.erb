@@ -14,8 +14,12 @@
 
         <% if current_user?(@user) %>
           <%= link_to "Edit your profile", edit_user_path, class:'btn btn-success btn-lg' %>
-        <% else %>
-            <%= render 'users/follow', user: @user %>
+        # <% else %>
+        #   <% if current_user.following?(@user) %>
+        #     <%= render 'users/unfollow' %>
+        #   <% else %>
+        #     <%= render 'users/follow'%>
+        #   <% end %>
         <% end %>  
         
         <div class = "sns-link">
