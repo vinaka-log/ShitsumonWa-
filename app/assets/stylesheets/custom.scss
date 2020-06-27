@@ -390,7 +390,6 @@ body {
   }
 }
 
-
 // <!- index question-->
   .question-index-wrapper {
     h1 {
@@ -422,6 +421,15 @@ body {
     }
     .bookmark-on {
       color: black;
+    }
+  }
+// <!- index stock--> 
+  .stock-index-wrapper {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 100px;
+    h1 {
+      padding: 50px;
     }
   }
 
