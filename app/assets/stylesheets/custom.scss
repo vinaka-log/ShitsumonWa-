@@ -390,7 +390,6 @@ body {
   }
 }
 
-
 // <!- index question-->
   .question-index-wrapper {
     h1 {
@@ -414,15 +413,36 @@ body {
     }      
   }
 
-// <!- like button-->
-    .like-button-on {
-      color:red;
-      font-size: 6rem;
+// <!- stock button--> 
+.stock-change {
+  display: inline-block;
+    .bookmark-off {  
+      color: white;
     }
-    .like-button-off {
-      color: blue;
-      font-size: 6rem;
-    } 
+    .bookmark-on {
+      color: black;
+    }
+  }
+// <!- index stock--> 
+  .stock-index-wrapper {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 100px;
+    h1 {
+      padding: 50px;
+    }
+  }
+
+
+// <!- like button-->
+  .like-button-on {
+    color:red;
+    font-size: 6rem;
+  }
+  .like-button-off {
+    color: blue;
+    font-size: 6rem;
+  } 
 
 
 // <!- page nation-->
@@ -534,22 +554,6 @@ body {
     font-weight: 500px;
   }
 }
-
-// <!- follow-->
-  .follow-page {
-    padding-top: 1000px;
-    width:100%;
-    height: 100px;
-    background-image: image-url('white-bord.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    table {
-      width: 400px;
-      height: 400px;
-    }
-  }
 
 
 
