@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'bootstrap'
 gem 'flag-icons-rails'
 
+
 # Use bcrypt for has_secure_password
 gem 'bcrypt'
 # Use pg as the database for Active Record
