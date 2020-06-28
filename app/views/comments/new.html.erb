@@ -3,15 +3,15 @@
     <div class="row">
       <div class="col-md-offset-4 col-md-4 text-center comment-form">
         <h1 class="comment-card">New Comment!</h1>
-          <%= form_with(model: [@question, @comment], local: true) do |f| %>
-            <div class="form-group">
+        <%= form_with(model: [@question, @comment], local: true) do |f| %>
+          <div class="form-group">
             <%= f.label :content, 'Content', class: 'form-control' %>
             <%= f.text_area :content, placeholder: "Please your comments in 400 words", class: 'form-control' %>
             <%= f.hidden_field :user_id, value: @comment.user_id %>
             <%= f.hidden_field :question_id, value: @comment.question_id %>
-            </div>
-            <%= f.submit "Comment", class: "btn btn-primary btn-lg" %>
-          <% end %>
+          </div>
+          <%= f.submit "Comment", class: "btn btn-primary btn-lg" %>
+        <% end %>
       </div>
     </div>
   </div>
