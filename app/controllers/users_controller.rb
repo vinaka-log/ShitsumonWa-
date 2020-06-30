@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, success: 'Signup success & please activate'
     else
-      flash.now[:danger] = 'Signup failed'
+      flash.now[:danger] = 'Signup fail'
       render :new
     end
   end
