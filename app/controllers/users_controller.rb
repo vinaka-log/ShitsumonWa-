@@ -5,14 +5,18 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
+  def registration
+    @user = User.new
+  end
   
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params)  
     if @user.save
-      redirect_to root_path, success: 'Signup success'
+      redirect_to root_path, success: 'Signup success & please activate'
     else
       flash.now[:danger] = 'Signup failed'
-      render 'new'
+      render :new
     end
   end
  

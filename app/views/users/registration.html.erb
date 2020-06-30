@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-offset-4 col-md-4 signup-container">
-        <%= form_with model: @user, url: users_path,local: true do |form| %>
+        <%= form_with model: @user, url: signup_create_path, local: true do |form| %>
           <h1 class="text-center">Sign up</h1>
           <div class="form-group">
             <%= form.label :name, 'Name', class: 'form-control' %>
@@ -24,9 +24,11 @@
             <%= form.label :password_confirmation, 'Password(confirmation)', class: 'form-control' %>
             <%= form.password_field :password_confirmation, placeholder: "Required", class: "form-control" %>
           </div>
+          
           <%= form.submit 'Register', class:'btn-block btn-success btn-lg ' %>
         <% end %>
+
       </div>
     </div>
-  </div>
+  </div>Ï
 </div>
