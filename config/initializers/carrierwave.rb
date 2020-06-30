@@ -7,7 +7,7 @@ unless Rails.env.development? || Rails.env.test?
       region: 'ap-northeast-1'
     }
 
-    config.fog_directory = 'portfolipedia-photo'
+    config.fog_directory = 'rails-production-images'
     config.cache_storage = :fog
   end
 end 
