@@ -34,6 +34,9 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# ignore Environment variable
+/environments/s3.env
+
 /public/packs
 /public/packs-test
 /node_modules
