@@ -6,7 +6,6 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   VALID_URL_REGEX = /\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/.freeze
 
-  has_one_attached :image
   mount_uploader :image, ImageUploader
   authenticates_with_sorcery!
 

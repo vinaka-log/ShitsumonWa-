@@ -5,7 +5,7 @@ RSpec.describe User, type: :system do
   before do
     @user = FactoryBot.create(:user)
     visit login_path
-    fill_in 'E-mail', with: 'testr@example.com', match: :first
+    fill_in 'E-mail', with: 'test@example.com', match: :first
     fill_in 'Password', with: 'pass12345', match: :first
     click_button 'Log in'
     visit edit_user_path(@user.id)
