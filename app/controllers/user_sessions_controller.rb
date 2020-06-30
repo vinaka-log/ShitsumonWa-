@@ -6,16 +6,16 @@ class UserSessionsController < ApplicationController
 
   def create
     if @user = login(params[:email], params[:password], params[:remember])
-      redirect_back_or_to(user_path(@user.id), success: 'login successful')
+      redirect_back_or_to(user_path(@user.id), success: 'login success')
     else
-      flash.now[:danger] = 'login failed'
-      render action: 'new'
+      flash.now[:danger] = 'login fail'
+      render :new
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, info: 'logged out!'
+    redirect_to root_path, info: 'log out!'
     
   end
   def index

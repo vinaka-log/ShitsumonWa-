@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/signup/registration',  to: 'users#registration'
   post '/signup/create',  to: 'users#create'
   get '/login', to: 'user_sessions#new'
+  post '/login/pending', to: 'user_sessions#create'
   post '/logout', to: 'user_sessions#destroy'
   get 'search', to: 'questions#search'  
   resources :user_sessions
