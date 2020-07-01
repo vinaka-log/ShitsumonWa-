@@ -35,15 +35,18 @@ class User < ApplicationRecord
     Question.where(user_id: id)
   end
 
+  
+  
   def following?(other_user)
-    following_relationships.find_by(following_id: other_user.id)
+    self.followings.include?(other_user)
   end
 
-  def follow!(other_user)
-    following_relationships.create!(following_id: other_user.id)
+  
+  def follow(other_user)
+    self.following_relationships.create(following_id: other_user.id)
   end
 
-  def unfollow!(other_user)
-    following_relationships.find_by(following_id: other_user.id).destroy
+  def unfollow(other_user)
+    self.following_relationships.find_by(following_id: other_user.id).destroy
   end
 end
