@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Logins", type: :system do
 
-  before do
-    @user = FactoryBot.create(:user)
-  end
+  let(:user){create(:suzuki)}
   
   describe 'Visit' do
 
@@ -25,16 +23,18 @@ RSpec.describe "Logins", type: :system do
   end
   
   describe 'Controll' do
+    context "Login", use_truncation: false do
     
     # ログイン成功
     it 'is success that Creating new user with E-mail' do
       visit login_path
-      fill_in 'E-mail', with: 'test@example.com',match: :first
-      fill_in 'Password', with: 'test12345'
+      fill_in 'E-mail', with: user.email, match: :first
+      fill_in 'Password', with: user.password
       within '.login-form' do
       click_button 'Log in'
+      # expect(page).to have_content 'login success'
+      # expect(current_path).to eq user_path(user.id)
       end
-      
     end
 
     # ログイン失敗
@@ -49,5 +49,6 @@ RSpec.describe "Logins", type: :system do
         expect(page).to have_content 'login fail'
         expect(current_path).to eq login_pending_path
     end
+  end
   end
 end
