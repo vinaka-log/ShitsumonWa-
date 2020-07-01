@@ -408,8 +408,10 @@ body {
   /* question-index */
   .question-index-wrapper {
     h1 {
-      font-size: 50px;
-      padding: 100px 0;
+      font-family: "Corben", cursive;
+      margin: 100px 0;
+      font-size: 6rem;
+      font-weight: bold;
     }
     .question-list {
       width: 100vw;
@@ -422,9 +424,48 @@ body {
       background-size: cover;
 
       .btn {
-        margin-top: 100px;
-        width: 30%;
+        background:#1AAB8A;
+        color:#fff;
+        border:none;
+        position:relative;
+        height:60px;
+        line-height: 60px;
+        font-size:1.6em;
+        padding:0 2em;
+        cursor:pointer;
+        transition:800ms ease all;
+        outline:none;
       }
+      .btn:hover{
+        background:#fff;
+        color:#1AAB8A;
+      }
+      .btn:before,.btn:after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: #1AAB8A;
+        transition:400ms ease all;
+      }
+      .btn:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+      }
+      .btn:hover:before,.btn:hover:after{
+        width:100%;
+        transition:800ms ease all;
+      }
+    }
+
+    .flag-icon-jp {
+      font-size: 15rem;
+      border: solid 1px black ;
+      margin-bottom: 50px;
     }
   }
 
@@ -561,11 +602,5 @@ body {
       border-radius: 25px;
       
     }
-  }
-
-  /* stats */
-  .stats {
-    font-size: 20px;
-    font-weight: 500px;
   }
 }
