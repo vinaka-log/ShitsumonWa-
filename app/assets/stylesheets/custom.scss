@@ -278,7 +278,7 @@ body {
       }
       .jp-count {
         font-size: 8rem;
-        font-weight: 700;
+        font-weight: bold;
         background: linear-gradient(to right, orange, yellow, green, cyan, blue, violet);
         background: -webkit-linear-gradient(left, orange, yellow, green, cyan, blue, violet);
         background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
@@ -297,11 +297,14 @@ body {
         display: block;
         padding-bottom: 20px;
         margin: 0 auto;
-        border-radius: 50%;
+        border-radius: 10%;
       }
       .card-title {
         font-weight: 700;
         padding: 50px 0 50px 0;
+      }
+      #following-count,#follower-count {
+        font-size: 2rem;
       }
     }
   }
