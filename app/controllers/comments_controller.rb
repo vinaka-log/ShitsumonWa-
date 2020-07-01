@@ -23,13 +23,6 @@ class CommentsController < ApplicationController
     @comment = @question.comments.build
   end
 
-  def destroy
-    question = Question.find(params[:question_id])
-    @comment = question.comments.find(params[:id])
-    @comment.destroy
-    redirect_back(fallback_location: question_path(question))
-  end
-
     private
     def comment_params
       params.require(:comment).permit(:user_id, :question_id, :content)
