@@ -1,8 +1,9 @@
-// <!-Body-->
+
+/* common */
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
 
-  // <!-Header-->
+  /* header */
   header {
     background-color: black;
     height: 100px;
@@ -63,7 +64,15 @@ body {
     }
   }
 
-  // <!-Footer-->
+  /* flash */
+  .alert {
+    margin-top: 100px;
+    position: fixed;
+    width: 100%;
+    z-index: 100000;
+  }
+
+  /* footer */
   footer {
     background-color: black;
     height: 100px;
@@ -78,7 +87,7 @@ body {
     }
   }
 
-  // <!-Top page-->
+  /*top-page */
   .top-video-wrapper {
     padding-top: 100px;
     background-attachment: fixed;
@@ -162,7 +171,7 @@ body {
     }
   }
 
-  // <!-Sign up-->
+  /* sign-up */
   .signup-wrapper {
     width: 100vw;
     height: 100vh;
@@ -202,15 +211,7 @@ body {
     }
   }
 
-  // <!- flash -->
-  .alert {
-    margin-top: 100px;
-    position: fixed;
-    width: 100%;
-    z-index: 100000;
-  }
-
-  // <!- Log in -->
+  /* log-in */
   .login-wrapper {
     width: 100vw;
     height: 1000px;
@@ -242,7 +243,7 @@ body {
     }
   }
 
-  // <!- show&edit user -->
+  /* user-show&edit */
   .user-wrapper {
     width: 100vw;
     min-height: 100vh;
@@ -252,7 +253,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    // <!- japan flag-->
+    /* jp score */
     .jp-point {
       font-family: "Corben", cursive;
       padding-top: 50px;
@@ -294,7 +295,7 @@ body {
     }
   }
 
-  // <!- sns link -->
+  /* sns-link */
   .profile-links {
     list-style: none;
     padding-right: 40px;
@@ -303,11 +304,11 @@ body {
       display: inline-block;
       width: 20%;
       text-align: right;
-      /*Twitter*/
+      /*twitter*/
       .fa-twitter {
         color: #1da1f2;
       }
-      /*Facebook*/
+      /*facebook*/
       .fa-facebook-square {
         color: #3b5998;
       }
@@ -318,7 +319,7 @@ body {
     }
   }
 
-  // <!- index user -->
+  /* user-index */
   .users-wrapper {
     width: 100vw;
     min-height: 100vh;
@@ -359,7 +360,7 @@ body {
     }
   }
 
-  // <!- list -->
+  /* list */
   .card-body {
     padding: 1em;
     box-shadow: 1.5px 1.5px 2px #696969;
@@ -393,7 +394,7 @@ body {
     }
   }
 
-  // <!- index question-->
+  /* question-index */
   .question-index-wrapper {
     h1 {
       font-size: 50px;
@@ -416,17 +417,7 @@ body {
     }
   }
 
-  // <!- stock button-->
-  .stock-change {
-    display: inline-block;
-    .bookmark-off {
-      color: white;
-    }
-    .bookmark-on {
-      color: black;
-    }
-  }
-  // <!- index stock-->
+  /* stock-index */
   .stock-index-wrapper {
     width: 100vw;
     height: 100vh;
@@ -436,7 +427,18 @@ body {
     }
   }
 
-  // <!- like button-->
+  /* stock-button */
+  .stock-change {
+    display: inline-block;
+    .bookmark-off {
+      color: white;
+    }
+    .bookmark-on {
+      color: black;
+    }
+  }
+  
+  /* like-button */
   .like-button-on {
     color: red;
     font-size: 6rem;
@@ -446,14 +448,14 @@ body {
     font-size: 6rem;
   }
 
-  // <!- page nation-->
+  /* page-nation */
   .paginate {
     text-align: center;
     margin: 0 auto;
     font-size: 20px;
   }
 
-  // <!- sort form-->
+  /* sort-form */
   .sort-form {
     text-align: center;
     font-size: 20px;
@@ -465,7 +467,7 @@ body {
     }
   }
 
-  // <!- new&edit question-->
+  /* question-new&edit */
   .question-form-wrapper {
     width: 100vw;
     height: 100vh;
@@ -489,7 +491,7 @@ body {
     }
   }
 
-  // <!- show question-->
+  /* question-show */
   .question-show-wrapper {
     width: 100vw;
     padding-top: 100px;
@@ -530,7 +532,7 @@ body {
     }
   }
 
-  // <!- new comments-->
+  /* comment-new */
   .new-comment-wrapper {
     width: 100vw;
     height: 100vh;
@@ -549,7 +551,7 @@ body {
     }
   }
 
-  // <!- stats-->
+  /* stats */
   .stats {
     font-size: 20px;
     font-weight: 500px;
