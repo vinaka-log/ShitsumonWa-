@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-md-offset-4 col-md-4 signup-container">
         <%= form_with model: @user, url: signup_create_path, local: true do |form| %>
+        <%= render 'shared/error_messages', model: form.object %>
           <h1 class="text-center">Sign up</h1>
           <div class="form-group">
             <%= form.label :name, 'Name', class: 'form-control' %>
