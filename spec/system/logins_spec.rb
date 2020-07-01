@@ -29,12 +29,12 @@ RSpec.describe "Logins", type: :system do
     it 'is success that Creating new user with E-mail' do
       visit login_path
       fill_in 'E-mail', with: user.email, match: :first
-      fill_in 'Password', with: user.password
+      fill_in 'Password', with: 'suzuki1234'
       within '.login-form' do
       click_button 'Log in'
-      # expect(page).to have_content 'login success'
-      # expect(current_path).to eq user_path(user.id)
       end
+      expect(page).to have_content 'Login success'
+      expect(current_path).to eq user_path(user.id)
     end
 
     # ログイン失敗
@@ -46,7 +46,7 @@ RSpec.describe "Logins", type: :system do
         within '.login-form' do
         click_on 'Log in'
         end
-        expect(page).to have_content 'login fail'
+        expect(page).to have_content 'Login fail'
         expect(current_path).to eq login_pending_path
     end
   end

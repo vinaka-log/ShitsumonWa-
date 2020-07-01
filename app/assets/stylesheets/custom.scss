@@ -72,6 +72,13 @@ body {
     z-index: 100000;
   }
 
+  .errors {
+    position: fixed;
+    width: 25%;
+    z-index: 100000;
+    background-color: #F0E68C;
+  }
+
   /* footer */
   footer {
     background-color: black;
@@ -174,7 +181,7 @@ body {
   /* sign-up */
   .signup-wrapper {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: image-url("tokyo.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -190,6 +197,9 @@ body {
       height: 80% h1 {
         padding-bottom: 30px;
         border-bottom: solid 3px black;
+      }
+      h1 {
+        padding-bottom: 50px;
       }
       .signup-btn {
         width: 100%;
@@ -208,6 +218,7 @@ body {
         font-size: 20px;
         text-decoration: underline;
       }
+    
     }
   }
 
