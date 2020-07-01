@@ -10,7 +10,7 @@
           <% if @question.image? %>
             <%= image_tag @question.image.url, class: "question-image" %>
           <% else %>
-            <%= image_tag 'default_question.jpg', class: "question-image" %>
+            <%= image_tag 'default_question.png', class: "question-image" %>
           <% end %>
           <p class="question-text">
             <%= @question.description %>

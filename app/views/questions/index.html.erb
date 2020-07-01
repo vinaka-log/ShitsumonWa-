@@ -1,14 +1,17 @@
 <div class="question-index-wrapper">
   <div class = "question-list ls">
     <div class = "text-center">
-      <h1 class = "d-flex align-items-center">Shitsumon list</h1>
-      <h2>~Let's ask about what you are interested in about Japan~</h2>
-      <h3>(Any genre is ok.Feel free to ask!!!)</h3>
-      <%=link_to 'new question', new_question_path, class:'btn btn-success btn-lg' %>
+      <div class = "qestion-index">
+        <h1>Let's ask about Japan and raise your japan score.</h1>
+        <% if logged_in? %>
+          <%=link_to 'new question', new_question_path, class:'btn btn-question' %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class= "container">
-    <h1 class= "text-center"> Shitsumon list </h1>
+  <div class= "container text-center">
+    <h1> Shitsumon list </h1>
+    <span class="flag-icon flag-icon-jp faa-tada animated "></span>
     <%= render 'questions/select_form'%>
     <%= render 'questions/list'%>
   </div>
