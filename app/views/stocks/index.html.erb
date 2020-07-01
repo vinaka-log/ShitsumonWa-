@@ -1,40 +1,44 @@
 <div class= "stock-index-wrapper">
   <div class ="container text-center">
     <h1> Stock list</h1>
-    <% @stock_questions.each do |question| %>
-      <div class="card my-3">
-        <div class="card-body row">
-          <div class="question-img col-lg-6">
-            <%= link_to question_path(question.id) do %>
-              <div class="img_wrap">
-                <% if question.image? %>
-                  <%= image_tag question.image.url, class: "question-image" %>
-                <% else %>
-                  <%= image_tag 'nattou.jpg', class: "question-image" %>
-                <% end %>
+    <% if current_user.stocks.any? %>
+      <% @stock_questions.each do |question| %>
+        <div class="card my-3">
+          <div class="card-body row">
+            <div class="question-img col-lg-6">
+              <%= link_to question_path(question.id) do %>
+                <div class="img_wrap">
+                  <% if question.image? %>
+                    <%= image_tag question.image.url, class: "question-image" %>
+                  <% else %>
+                    <%= image_tag 'nattou.jpg', class: "question-image" %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+            <div class="question-content col-lg-6 mt-3">
+              <%= link_to question.name, question_path(question.id), class: "card-title" %>
+              <div class="mb-1">
+                <span class="text-muted mr-3">
+                  by <%= link_to question.user.name, user_path(question.user.id) %>
+                </span>
+                <span class="text-muted">
+                  <i class="far fa-clock mr-1"></i><%= question.updated_at.strftime('%Y/%m/%d') %>Update
+                </span>
               </div>
-            <% end %>
-          </div>
-          <div class="question-content col-lg-6 mt-3">
-            <%= link_to question.name, question_path(question.id), class: "card-title" %>
-            <div class="mb-1">
-              <span class="text-muted mr-3">
-                by <%= link_to question.user.name, user_path(question.user.id) %>
-              </span>
-              <span class="text-muted">
-                <i class="far fa-clock mr-1"></i><%= question.updated_at.strftime('%Y/%m/%d') %>Update
+              <%= render "likes/like", question: question %>
+              <span class="text-muted card-description">
+                <%= question.description %>
               </span>
             </div>
-            <%= render "likes/like", question: question %>
-            <span class="text-muted card-description">
-              <%= question.description %>
-            </span>
           </div>
         </div>
+      <% end %>
+      <div class="paginate">
+        <%= paginate @stock_questions %>
       </div>
+    <% else %>
+      <h2 class="text-center">No stocks yet..</h2>
     <% end %>
-    <div class="paginate">
-      <%= paginate @stock_questions %>
-    </div>
   </div>
 </div>
