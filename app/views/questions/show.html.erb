@@ -10,7 +10,7 @@
           <% if @question.image? %>
             <%= image_tag @question.image.url, class: "question-image" %>
           <% else %>
-            <%= image_tag 'nattou.jpg', class: "question-image" %>
+            <%= image_tag 'default_question.jpg', class: "question-image" %>
           <% end %>
           <p class="question-text">
             <%= @question.description %>
@@ -38,12 +38,12 @@
           
           <h3 >Comments list</h3>
           <div class = "comment-list"> 
-            <% @comments.each do |c| %>
+            <% @comments.each do |comment| %>
               <div class = "comment-single"> 
-                <%= link_to c.user.name, user_path %>
-                <br />
+                <%= link_to comment.user.name, user_path %>
+                <br/>
                 <p>
-                <%= c.content %>
+                <%= comment.content %>
                 </p>
               </div>
               <br />

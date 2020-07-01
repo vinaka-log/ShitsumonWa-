@@ -1,4 +1,4 @@
 $("#follow_form").html("<%= j(render("users/unfollow")) %>");
-$("#follower-count").html('<%= link_to "following(#{@user.followings.count})",  following_user_url %>');
-$("#following-count").html('<%= link_to "follower(#{@user.followers.count})", followers_user_url %>');
+$("#follower-count").html('<%= link_to "following(#{@user.followings.count})",  following_user_url(@user) %>');
+$("#following-count").html('<%= link_to "follower(#{@user.followers.count})", followers_user_url(@user) %>');
 

@@ -49,7 +49,7 @@ RSpec.describe User, type: :system do
         fill_in 'Password', with: '1234abcd'
         expect do
           click_on 'Register'  
-          expect(page).to have_content 'Signup failed'
+          expect(page).to have_content 'Signup fail'
           expect(current_path).to eq signup_create_path
         end.to change(User, :count).by 0
     end

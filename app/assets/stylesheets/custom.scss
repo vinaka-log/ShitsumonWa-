@@ -72,6 +72,13 @@ body {
     z-index: 100000;
   }
 
+  .errors {
+    position: fixed;
+    width: 25%;
+    z-index: 100000;
+    background-color: #F0E68C;
+  }
+
   /* footer */
   footer {
     background-color: black;
@@ -174,7 +181,7 @@ body {
   /* sign-up */
   .signup-wrapper {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: image-url("tokyo.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -190,6 +197,9 @@ body {
       height: 80% h1 {
         padding-bottom: 30px;
         border-bottom: solid 3px black;
+      }
+      h1 {
+        padding-bottom: 50px;
       }
       .signup-btn {
         width: 100%;
@@ -208,6 +218,7 @@ body {
         font-size: 20px;
         text-decoration: underline;
       }
+    
     }
   }
 
@@ -472,7 +483,7 @@ body {
     width: 100vw;
     height: 100vh;
     padding-top: 150px;
-    background-image: image-url("people.jpg");
+    background-image: image-url("children.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -537,17 +548,18 @@ body {
     width: 100vw;
     height: 100vh;
     padding-top: 120px;
-    background-image: image-url("thumb.jpg");
+    background-image: image-url("team.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     .comment-form {
-      padding: 100px 20px;
+      padding: 80px 20px;
       background-color: whitesmoke;
       margin-top: 100px;
       opacity: 0.9;
       border-radius: 25px;
+      
     }
   }
 

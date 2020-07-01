@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       redirect_to root_path, success: 'Signup success & please activate'
     else
       flash.now[:danger] = 'Signup fail'
-      render :new
+      render :registration
     end
   end
  
