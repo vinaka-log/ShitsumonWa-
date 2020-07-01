@@ -5,9 +5,9 @@
         <%= link_to question_path(question.id) do %>
           <div class="img_wrap">
             <% if question.image? %>
-              <%= image_tag question.image.url, class: "question-image" %>
+              <%= image_tag question.image.url, class: "question-image",size: :'300x300' %>
             <% else %>
-              <%= image_tag 'default_question.png', class: "question-image" %>
+              <%= image_tag 'default_question.png', class: "question-image",size: :'300x300' %>
             <% end %>
           </div>
         <% end %>
