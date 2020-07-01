@@ -27,4 +27,21 @@ RSpec.describe Question, type: :model do
       expect(@question).to be_invalid
     end
   end
+
+  describe "description" do
+    it "is invalid without description" do
+      @question.description = ""
+      expect(@question).to be_invalid
+    end
+
+    it "is valid if description is 500 characters" do
+      @question.description = "a" * 500
+      expect(@question).to be_valid
+    end
+
+    it "is valid if description is  51 characters or more" do
+      @question.description = "a" * 501
+      expect(@question).to be_invalid
+    end
+  end
 end
