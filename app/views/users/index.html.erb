@@ -9,11 +9,11 @@
               <%= link_to user_path(user.id) do %>
                 <% if user.image? %>
                   <p>
-                    <%= image_tag @user.image.url, class: 'profile-image' %>
+                    <%= image_tag user.image.url, class: 'profile-image',size: :'300x300' %>
                   </p>
                 <% else %>
                   <p>
-                    <%= image_tag '/assets/default_user.jpg', class: 'profile-image' %>
+                    <%= image_tag '/assets/default_user.jpg', class: 'profile-image',size: :'300x300' %>
                   </p>
                 <% end %>
               <% end %>

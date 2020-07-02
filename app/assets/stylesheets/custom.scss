@@ -264,6 +264,12 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    h2 {
+        font-family: "Corben", cursive;
+        font-weight: bold;
+        font-size: 6rem;
+        margin: 50px 0 50px 0;
+      }
     /* jp score */
     .jp-point {
       font-family: "Corben", cursive;
@@ -298,10 +304,6 @@ body {
         padding-bottom: 20px;
         margin: 0 auto;
         border-radius: 10%;
-      }
-      .card-title {
-        font-weight: 700;
-        padding: 50px 0 50px 0;
       }
       #following-count,#follower-count {
         font-size: 2rem;
@@ -345,7 +347,10 @@ body {
       background: #fafafa;
       border-radius: 2%;
       h1 {
-        margin-bottom: 50px;
+        font-family: "Corben", cursive;
+        font-weight: bold;
+        font-size: 7rem;
+        margin: 50px 0 50px 0;
       }
     }
 
@@ -477,8 +482,11 @@ body {
     width: 100vw;
     height: 100vh;
     margin-top: 100px;
-    h1 {
-      padding: 50px;
+    h2 {
+      font-family: "Corben", cursive;
+      font-weight: bold;
+      font-size: 6rem;
+      margin: 50px 0 50px 0;
     }
   }
 
@@ -603,7 +611,6 @@ body {
       margin-top: 100px;
       opacity: 0.9;
       border-radius: 25px;
-      
     }
   }
 }
