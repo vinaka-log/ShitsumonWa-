@@ -100,4 +100,36 @@ RSpec.describe User, type: :system do
       end
     end
   end
+
+  
+    before do
+      visit login_path
+      fill_in 'E-mail', with: 'test1@example.com', match: :first
+      fill_in 'Password', with: ''
+      within '.login-form' do
+        click_on 'Log in'
+      end
+    end
+
+# ユーザー一覧ページ
+  describe 'Visit index' do
+    it 'index page' do
+       visit users_path
+       expect(page).to have_text('User list')
+    end
+  end
+
+  describe 'Visit show' do
+    it 'show page' do
+       visit user_path
+       expect(page).to have_text('User list')
+    end
+  end
+      
+
+
+
+
+
+
 end
