@@ -47,11 +47,33 @@ RSpec.describe "Signups", type: :system do
         fill_in 'E-mail', with: 'shitsumonwa@example.com'
         fill_in 'Country', with: 'japan'
         fill_in 'Password', with: '1234abcd'
+        fill_in 'Password(confirmation)', with: ""
         expect do
           click_on 'Register'  
           expect(page).to have_content 'Signup fail'
           expect(current_path).to eq signup_create_path
         end.to change(User, :count).by 0
+    end
+  end
+
+  describe 'Error_messages' do
+
+    # エラーメッセージを確認する
+    it 'is えrror messages are displayed ' do
+      visit signup_registration_path
+      fill_in 'Name', with: ""
+      fill_in 'E-mail', with: ""
+      fill_in 'Country', with: ""
+      fill_in 'Password', with: ""
+      fill_in 'Password(confirmation)', with: ""
+      click_button 'Register' 
+      expect(page).to have_content "Name can't be blank"
+      expect(page).to have_content "Email can't be blank"
+      expect(page).to have_content "Nationality can't be blank"
+      expect(page).to have_content "Name can't be blank"
+      expect(page).to have_content "Password can't be blank"
+      expect(page).to have_content "Password is too short (minimum is 6 characters)"
+      expect(page).to have_content "Password confirmation can't be blank"
     end
   end
 end
