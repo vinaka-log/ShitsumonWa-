@@ -1,8 +1,8 @@
 <div class="user-wrapper">
-  <div class="container">
+  <div class="container text-center">
     <div class="row">
       <div class="col-md-offset-4 col-md-4 text-center my-profile">
-        <h1 class="text-center card-title">
+        <h1 class="text-center">
           <%= @user.name %>/<%= (@user.nationality) %>
         </h1>
         <% if @user.image? %>
@@ -59,7 +59,7 @@
       </div>
     </div>
     <% if @user.questions.any? %>
-      <h1 class ="card-title" >Your Questions (<%= @user.questions.count %>)</h1>
+      <h2>Your Questions (<%= @user.questions.count %>)</h2>
       <%= render 'questions/list' %>
     <% else %>
       <h2 class="text-center">No post yet..</h2>
