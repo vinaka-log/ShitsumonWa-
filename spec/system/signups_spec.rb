@@ -11,7 +11,7 @@ RSpec.describe "Signups", type: :system do
         expect(page).to have_text('Sign up with Twitter')
         expect(page).to have_text('Sign up with Slack')
         expect(page).to have_text('Login is here')
-        expect(page).to have_text('Login')
+        expect(page).to have_button('Login')
     end
   end
 

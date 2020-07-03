@@ -18,7 +18,7 @@ RSpec.describe 'Logins', type: :system do
       expect(page).to have_text('Forgot Password?')
       expect(page).to have_text('Email')
       expect(page).to have_text('Click here if you have not registered')
-      expect(page).to have_text('Sign up')
+      expect(page).to have_button('Sign up')
     end
   end
 

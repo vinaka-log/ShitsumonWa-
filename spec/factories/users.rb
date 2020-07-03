@@ -5,7 +5,7 @@ FactoryBot.define do
       nationality { "japan" }
       password { "pass12345" }
       password_confirmation { "pass12345" }
-
+      
       after(:create) do |user|
         user.activate!
       end
