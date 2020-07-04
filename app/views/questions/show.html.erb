@@ -17,15 +17,17 @@
           </p>
           <% if logged_in? && current_user.id != @user.id %>
             <div class="icon-links text-left">
-              <%= link_to new_question_comment_path(question_id: @question.id), class: "btn btn-info" do %>
+              <%= link_to new_question_comment_path(question_id: @question.id), class: "comment-icon btn btn-info " do %>
                 <i class="fas fa-comment fa-2x"></i>
               <% end %>
             <div class= "stock-change", id="question-<%= @question.id %>">
               <%= render partial: 'stocks/stock', locals: { question: @question } %>
             </div>
            <% end %>
-
           <% if logged_in? && current_user.id == @user.id %>
+            <%= link_to new_question_comment_path(question_id: @question.id), class: "comment-icon btn btn-info" do %>
+              <i class="fas fa-comment fa-2x"></i>
+            <% end %>
             <div class="icon-links text-right">
               <%= link_to edit_question_path(@question.id), class: "edit-icon mr-2 btn btn-success" do %>
                 <i class="fas fa-edit fa-2x"></i>
@@ -34,8 +36,7 @@
                 <i class="fas fa-trash fa-2x"></i>
               <% end %>
             </div> 
-          <% end %>
-          
+          <% end %>          
           <h3 >Comments list</h3>
           <div class = "comment-list"> 
             <% @comments.each do |comment| %>
@@ -49,7 +50,6 @@
               <br />
             <% end %>
           </div>
-          
         </div>
       </div>
     </div>

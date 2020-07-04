@@ -22,6 +22,17 @@ FactoryBot.define do
         user.activate!
       end
   end 
-  
+
+  factory :tanaka, class: User do
+      name { "tanaka" }
+      email { "tanaka@example.com" }
+      nationality { "japan" }
+      password { "tanaka1234" }
+      password_confirmation { "tanaka1234" }
+
+      after(:create) do |user|
+        user.activate!
+      end
+  end 
   
 end

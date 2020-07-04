@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :system do
+RSpec.describe User, type: :system, js: true do
 
   let(:user){create(:suzuki)}
 
@@ -53,16 +53,8 @@ RSpec.describe User, type: :system do
       
       expect(page).to have_text 'Update success'
       expect(current_path).to eq user_path(user.id)
-
-    end
+    end 
   end
-
-
-      
-
-
-
-
-
-
 end
+
+# validationは別

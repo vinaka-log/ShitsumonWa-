@@ -2,10 +2,10 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Logins', type: :system do
+RSpec.describe 'Logins', type: :system, js: true do
   let(:user) { create(:suzuki) }
 
-  describe 'Visit' do
+  describe 'visit login' do
     # ログインページ
     it 'Login page' do
       visit login_path

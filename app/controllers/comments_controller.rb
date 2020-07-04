@@ -10,10 +10,10 @@ class CommentsController < ApplicationController
     @comment = @question.comments.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      flash[:success] = "Comment saved"
+      flash[:success] = "Comment save"
       redirect_to @question
     else
-      flash[:danger] = "Comment failed"
+      flash[:danger] = "Comment fail"
       redirect_back(fallback_location: new_question_comment_path)
     end 
   end

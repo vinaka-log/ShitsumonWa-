@@ -87,4 +87,6 @@ RSpec.describe "Questions", type: :system, js: true do
         expect(page).to have_content 'Question delete'   
       end
     end
+
+  # validationは別
 end
