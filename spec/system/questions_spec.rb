@@ -70,7 +70,6 @@ RSpec.describe "Questions", type: :system, js: true do
       fill_in 'Content', with: 'testtestest2'
       attach_file('question[image]', image)
       click_on 'Submit'
-
       expect(current_path).to eq questions_path
       expect(page).to have_text "Question update"
     end
