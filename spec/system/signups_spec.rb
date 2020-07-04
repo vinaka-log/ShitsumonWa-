@@ -16,9 +16,8 @@ RSpec.describe "Signups", type: :system, js: true do
   end
 
   describe 'Controll' do
-
     # 新規ユーザーの作成に成功
-    it 'is success that Creating new user with E-mail' do
+    it 'is success that Creating new user' do
       visit signup_registration_path
       fill_in 'Name', with: 'name'
       fill_in 'E-mail', with: 'shitsumonwa@example.com'
@@ -41,7 +40,7 @@ RSpec.describe "Signups", type: :system, js: true do
     end
 
       # 新規ユーザーの作成に失敗
-    it 'is fail that Creating new user with E-mail' do
+    it 'is fail that Creating new user' do
         visit signup_registration_path
         fill_in 'Name', with: 'name'
         fill_in 'E-mail', with: 'shitsumonwa@example.com'
