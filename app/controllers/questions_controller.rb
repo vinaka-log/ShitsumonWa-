@@ -21,9 +21,9 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to questions_path, success: "#{@question.name}.saved"
+      redirect_to questions_path, success: "Question save"
     else
-      flash.now[:danger] = "#{@question.name}.failed"
+      flash.now[:danger] = "Question fail"
       render 'new'
     end
   end
@@ -41,7 +41,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     if @question.update_attributes(question_params)
-      flash[:notice] = "#{@question.name}.saved"
+      flash[:success] = "Question update"
       redirect_to questions_url
     else
       render 'questons/edit'
@@ -51,7 +51,7 @@ class QuestionsController < ApplicationController
   def destroy
     question = Question.find(params[:id])
     question.destroy!
-    flash[:success] = "#{question.name} deleted"
+    flash[:success] = "Question delete"
     redirect_to questions_url
   end
 
