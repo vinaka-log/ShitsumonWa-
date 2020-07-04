@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "Signups", type: :system do
+RSpec.describe "Signups", type: :system, js: true do
 
   # ユーザー登録ページ
   describe 'Visit' do
-    it 'Signup page' do
+    it 'signup page' do
         visit signup_path
         expect(page).to have_text('Sign up')
         expect(page).to have_text('Sign up with E-mail')
@@ -17,7 +17,7 @@ RSpec.describe "Signups", type: :system do
 
   describe 'Controll' do
 
-    # E-mailで新規ユーザーの作成に成功
+    # 新規ユーザーの作成に成功
     it 'is success that Creating new user with E-mail' do
       visit signup_registration_path
       fill_in 'Name', with: 'name'
@@ -40,7 +40,7 @@ RSpec.describe "Signups", type: :system do
       expect(created_user.password_confirmation).to eq nil
     end
 
-    # E-mailで新規ユーザーの作成に失敗
+      # 新規ユーザーの作成に失敗
     it 'is fail that Creating new user with E-mail' do
         visit signup_registration_path
         fill_in 'Name', with: 'name'
@@ -58,8 +58,8 @@ RSpec.describe "Signups", type: :system do
 
   describe 'Error_messages' do
 
-    # エラーメッセージを確認する
-    it 'is えrror messages are displayed ' do
+    # エラーメッセージの出力を確認する
+    it 'is error messages are displayed ' do
       visit signup_registration_path
       fill_in 'Name', with: ""
       fill_in 'E-mail', with: ""
