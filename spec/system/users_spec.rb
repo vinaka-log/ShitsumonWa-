@@ -53,7 +53,7 @@ RSpec.describe User, type: :system do
       
       expect(page).to have_text 'Update success'
       expect(current_path).to eq user_path(user.id)
-      
+
     end
   end
 
