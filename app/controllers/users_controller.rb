@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [ :edit, :update, :destroy]
-  before_action :admin_user, only: [:destroy]
+  before_action :require_login, only:%i[edit update destroy]
+  before_action :admin_user, only:%i[destroy]
+  before_action :set_user, only:%i[show edit upate]
+  
   
   def new
     @user = User.new
@@ -85,6 +87,10 @@ class UsersController < ApplicationController
 
       def admin_user
         redirect_to(root_url) unless current_user.admin?
+      end
+
+      def set_user
+        @user = User.find(params[:id])
       end
 
 end
