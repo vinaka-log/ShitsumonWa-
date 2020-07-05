@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post '/login/pending', to: 'user_sessions#create'
   post '/logout', to: 'user_sessions#destroy'
   get 'search', to: 'questions#search'  
-  resources :user_sessions
+  resources :user_sessions, only: %i[new create destroy]
   resources :password_resets, only: %i[create edit update]
   resources :questions do
     resources :comments,only: %i[new create destroy]

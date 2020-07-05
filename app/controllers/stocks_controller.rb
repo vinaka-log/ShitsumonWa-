@@ -1,4 +1,5 @@
 class StocksController < ApplicationController
+   before_action :require_login, only: %i[index create destroy]
 
   def index
     stock_questions = Stock.get_stock_questions(current_user)
