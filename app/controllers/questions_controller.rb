@@ -41,7 +41,8 @@ class QuestionsController < ApplicationController
       flash[:success] = "Question update"
       redirect_to questions_url
     else
-      render 'questons/edit'
+      flash.now[:danger] = "Question fail"
+      render :edit
     end
   end
 
