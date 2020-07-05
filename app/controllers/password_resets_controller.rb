@@ -34,9 +34,10 @@ class PasswordResetsController < ApplicationController
 
      @user.password_confirmation = params[:user][:password_confirmation]
      if @user.change_password!(params[:user][:password])
-       redirect_to(root_path, success: 'Password was successfully updated.')
+      redirect_to(root_path, success: 'Password is successfully update')
      else
-       render action: :"edit"
+      flash.now[:danger] = 'The confirmation password and the password entered do not match'
+      render :edit
      end
    end
 end
