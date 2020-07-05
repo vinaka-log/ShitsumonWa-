@@ -38,4 +38,24 @@ RSpec.describe "Stocks", type: :system, js: true do
       expect(page).not_to have_css('.stock-change')  
     end
   end
+
+  describe "controll(Ajax)" do
+    it "stock question" do
+      # ログインする
+      visit login_path
+      fill_in 'E-mail', with: user_b.email, match: :first
+      fill_in 'Password', with: 'tanaka1234'
+      within '.login-form' do
+      click_on 'Log in'
+      end 
+      # 質問詳細画面
+      visit question_path(id: question_a.id)
+      expect(page).to have_css('.bookmark-off') 
+      expect(page).not_to have_css('.bookmark-on')
+      expect {
+        find('.bookmark-off').click      
+      }.to change{ question_a.stocks.count }.by(1) 
+    end 
+  end
+
 end
