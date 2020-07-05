@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col-md-offset-4 col-md-4 login-container">
         <h1 class="text-center text-white">Log in</h1>
-        <%= link_to auth_at_provider_path(provider: :twitter), class:'link_login btn-block btn btn-info' do %>
+        <%= link_to auth_at_provider_path(provider: :twitter), class:'link_login  btn btn-block btn-info' do %>
           <i class="fab fa-twitter"></i>  Log in with Twitter
         <% end %>
-        <%= link_to auth_at_provider_path(provider: :slack), class:'link_login btn-block btn btn-danger' do %>
+        <%= link_to auth_at_provider_path(provider: :slack), class:'link_login btn btn-block btn-danger' do %>
           <i class="fab fa-slack"></i> Log in with Slack
         <% end %>
         <div class = "login-form">
