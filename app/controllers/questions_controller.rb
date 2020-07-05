@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :require_login, except: [:index, :show]
+  before_action :require_login, only: %i[index show search]
+  before_action :set_question, only: %i[show edit update destroy]
 
   def index
     @questions = Question.all
@@ -8,7 +9,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
     @user = User.find_by(id: @question.user_id)
     @comments = @question.comments
     @comment = Comment.new
@@ -34,12 +34,9 @@ class QuestionsController < ApplicationController
     @questions = Kaminari.paginate_array(@questions).page(params[:page]).per(5)
   end
 
-  def edit
-    @question = Question.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @question = Question.find(params[:id])
     if @question.update_attributes(question_params)
       flash[:success] = "Question update"
       redirect_to questions_url
@@ -49,8 +46,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    question = Question.find(params[:id])
-    question.destroy!
+    @question.destroy!
     flash[:success] = "Question delete"
     redirect_to questions_url
   end
@@ -61,7 +57,10 @@ class QuestionsController < ApplicationController
       def question_params
         params.require(:question).permit(:name, :description, :image).merge(user_id: current_user.id)
       end
-    
 
+      def set_question
+       @question = Question.find(params[:id])
+      end
+    
 end
 
