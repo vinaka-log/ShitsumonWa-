@@ -3,12 +3,10 @@ class CommentsController < ApplicationController
   before_action :set_question, only: %i[new create show]
 
   def new
-    @question = Question.find(params["question_id"])
     @comment = @question.comments.new
   end
   
   def create
-    @question = Question.find(params["question_id"])
     @comment = @question.comments.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
@@ -21,7 +19,6 @@ class CommentsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
     @comment = @question.comments.build
   end
 

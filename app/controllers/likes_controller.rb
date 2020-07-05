@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  before_action :not_authenticated, only: %i[like unlike]
   before_action :set_variables
 
   def like
