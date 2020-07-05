@@ -1,4 +1,5 @@
 class UserSessionsController < ApplicationController
+  before_action :require_login, only:%i[destroy]
   
   def new
     @user = User.new
@@ -15,7 +16,8 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to root_path, info: 'Logout!'
+    redirect_to root_path, info: 'Log out!'
   end
+
 end
 
