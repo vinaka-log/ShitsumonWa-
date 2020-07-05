@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Signups", type: :system, js: true do
 
   # ユーザー登録ページ
-  describe 'Visit' do
+  describe 'visit' do
     it 'signup page' do
         visit signup_path
         expect(page).to have_text('Sign up')
@@ -15,7 +15,7 @@ RSpec.describe "Signups", type: :system, js: true do
     end
   end
 
-  describe 'Controll' do
+  describe 'controll' do
     # 新規ユーザーの作成に成功
     it 'is success that Creating new user' do
       visit signup_registration_path
@@ -55,7 +55,7 @@ RSpec.describe "Signups", type: :system, js: true do
     end
   end
 
-  describe 'Error_messages' do
+  describe 'error_messages' do
 
     # エラーメッセージの出力を確認する
     it 'is error messages are displayed ' do

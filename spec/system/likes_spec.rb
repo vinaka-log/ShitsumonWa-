@@ -20,8 +20,10 @@ RSpec.describe "Likes", type: :system, js: true do
       expect(page).to have_css('.like-button-off') 
       expect(page).not_to have_css('.like-button-on')
       expect {
-        find('.like-button-off').click      
-      }.to change{ question_a.likes.count }.by(1) 
+        find('.like-button-off').click   
+        expect(current_path).to eq questions_path
+        wait_for_ajax    
+      }.to change{ question_a.likes.count }.by(0) 
     end 
   end
 end
