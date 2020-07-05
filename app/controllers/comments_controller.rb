@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_action :set_question, only: %i[new create show]
+  before_action :set_question
 
   def new
     @comment = @question.comments.new
