@@ -253,6 +253,19 @@ body {
       }
     }
   }
+  /* password-reset */
+  .password-reset-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 200px;
+    .password-reset-form {
+      background-color: whitesmoke;
+      padding:  30px 30px 60px 30px;
+    }
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
 
   /* user-show&edit */
   .user-wrapper {
