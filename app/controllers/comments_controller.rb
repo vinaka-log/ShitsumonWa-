@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   before_action :set_question
 
   def new

@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :require_login, only: %i[index show search]
+  before_action :require_login, except: %i[index show search]
   before_action :set_question, only: %i[show edit update destroy]
 
   def index
