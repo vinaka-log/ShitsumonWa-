@@ -24,7 +24,7 @@ class QuestionsController < ApplicationController
       redirect_to questions_path, success: "Question save"
     else
       flash.now[:danger] = "Question fail"
-      render 'new'
+      render :new
     end
   end
 
@@ -38,19 +38,24 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update_attributes(question_params)
-      flash[:success] = "Question update"
+      flash[:success] = "Update success"
       redirect_to questions_url
     else
-      flash.now[:danger] = "Question fail"
+      flash.now[:danger] = "Update fail"
       render :edit
     end
   end
 
   def destroy
-    question = Question.find(params[:id])
-    question.destroy!
-    flash[:success] = "Question delete"
-    redirect_to questions_url
+    if
+      question = Question.find(params[:id])
+      question.destroy!
+      flash[:success] = "Delete success"
+      redirect_to questions_url
+    else
+      flash.now[:danger] = "Delete fail"
+      render :edit
+    end
   end
 
 
