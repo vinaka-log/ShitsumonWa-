@@ -64,39 +64,49 @@ RSpec.describe "Questions", type: :system, js: true do
     end
 
   #質問の編集に成功
-    it 'question edit success' do
+    it 'edit success' do
       visit edit_question_path(question_a.id)
       fill_in 'Title', with: 'test2'
       fill_in 'Content', with: 'testtestest2'
       attach_file('question[image]', image)
       click_on 'Submit'
       expect(current_path).to eq questions_path
-      expect(page).to have_text "Question update"
+      expect(page).to have_text "Update success"
     end
   
-  #質問の編集に失敗
-    it 'question edit fail' do
+    #質問の編集に失敗
+    it 'edit fail' do
       visit edit_question_path(question_a.id)
       fill_in 'Title', with: ''
       fill_in 'Content', with: 'testtestest2'
       attach_file('question[image]', image)
       click_on 'Submit'
       expect(current_path).to eq question_path(question_a.id)
-      expect(page).to have_text "Question update fail"
+      expect(page).to have_text "Update fail"
     end
   end
 
-  #質問の削除
-    describe 'Visit delete', use_truncation: false do   
-      it 'delete success' do   
-        edit_question_path(question_a.id)
-        expect(page).to have_css('.fa-trash')
-        page.accept_confirm do
-        find('.delete-icon').click
-        end
-        expect(page).to have_content 'Question delete'   
+  
+  describe 'Visit delete', use_truncation: false do  
+    #質問の削除に成功
+    it 'delete success' do   
+      edit_question_path(question_a.id)
+      expect(page).to have_css('.fa-trash')
+      page.accept_confirm do
+      find('.delete-icon').click
       end
+      expect(current_path).to eq questions_path
+      expect(page).to have_content 'Delete success'   
     end
-
-  # validationは別
+    #質問の削除に失敗
+    # it 'delete fail' do   
+    #   edit_question_path(question_a.id)
+    #   expect(page).to have_css('.fa-trash')
+    #   page.accept_confirm do
+    #   find('.delete-icon').click
+    #   end
+    #   expect(current_path).to eq questions_path
+    #   expect(page).to have_content 'Delete fail'   
+    # end
+  # end
 end
