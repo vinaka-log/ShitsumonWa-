@@ -63,8 +63,8 @@ RSpec.describe "Questions", type: :system, js: true do
       expect(page).to have_button("Submit")
     end
 
-  #質問の編集
-    it 'question edit' do
+  #質問の編集に成功
+    it 'question edit success' do
       visit edit_question_path(question_a.id)
       fill_in 'Title', with: 'test2'
       fill_in 'Content', with: 'testtestest2'
@@ -72,6 +72,17 @@ RSpec.describe "Questions", type: :system, js: true do
       click_on 'Submit'
       expect(current_path).to eq questions_path
       expect(page).to have_text "Question update"
+    end
+  
+  #質問の編集に失敗
+    it 'question edit fail' do
+      visit edit_question_path(question_a.id)
+      fill_in 'Title', with: ''
+      fill_in 'Content', with: 'testtestest2'
+      attach_file('question[image]', image)
+      click_on 'Submit'
+      expect(current_path).to eq question_path(question_a.id)
+      expect(page).to have_text "Question update fail"
     end
   end
 
