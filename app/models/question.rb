@@ -5,7 +5,7 @@ class Question < ApplicationRecord
   belongs_to :user, optional: true
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: 'user'
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :stocks, dependent: :destroy
   has_many :stock_users, through: :stocks, source: :user
 

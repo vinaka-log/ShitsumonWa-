@@ -76,7 +76,7 @@ RSpec.describe "Questions", type: :system, js: true do
   end
 
   #質問の削除
-   describe 'Visit delete', use_truncation: false do   
+    describe 'Visit delete', use_truncation: false do   
       it 'delete success' do   
         edit_question_path(question_a.id)
         expect(page).to have_css('.fa-trash')
