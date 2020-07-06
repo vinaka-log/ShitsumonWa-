@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/login', to: 'user_sessions#new'
   post '/login/pending', to: 'user_sessions#create'
   post '/logout', to: 'user_sessions#destroy'
+  post   '/like/:question_id', to: 'likes#like',   as: 'like'
+  delete '/like/:question_id', to: 'likes#unlike', as: 'unlike'
   get 'search', to: 'questions#search'  
   resources :user_sessions, only: %i[new create destroy]
   resources :password_resets, only: %i[create edit update]
@@ -24,8 +26,4 @@ Rails.application.routes.draw do
     end
   end
   resources :stocks, only: %i(index create destroy)
-
-  post   '/like/:question_id', to: 'likes#like',   as: 'like'
-  delete '/like/:question_id', to: 'likes#unlike', as: 'unlike'
-  
 end

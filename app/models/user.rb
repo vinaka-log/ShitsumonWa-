@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
-  has_many :questions
+  has_many :questions, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_questions, through: :likes, source: 'question'
   has_many :comments, dependent: :destroy

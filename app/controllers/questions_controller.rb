@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :require_login, except: %i[index show search]
-  before_action :set_question, only: %i[show edit update destroy]
+  before_action :set_question, only: %i[show edit update]
 
   def index
     @questions = Question.all
@@ -47,7 +47,8 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question.destroy!
+    question = Question.find(params[:id])
+    question.destroy!
     flash[:success] = "Question delete"
     redirect_to questions_url
   end
