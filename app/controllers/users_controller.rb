@@ -2,8 +2,7 @@ class UsersController < ApplicationController
   before_action :require_login, only: %i[edit pdate destroy]
   before_action :admin_user, only: %i[destroy]
   before_action :set_user, only: %i[show edit update]
-  before_action :Kaminari, only: %i[index following followers]
-
+  
   def new
     @user = User.new
   end
@@ -32,6 +31,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @users = Kaminari.paginate_array(@users).page(params[:page]).per(5)   
   end
 
   def edit; end
@@ -63,13 +63,15 @@ class UsersController < ApplicationController
 
   def following
     @user  = User.find(params[:id])
-    @users = @user.followings
+    @users = @user.following
+    @users = Kaminari.paginate_array(@users).page(params[:page]).per(5)   
     render 'index'
   end
 
   def followers
     @user  = User.find(params[:id])
     @users = @user.followers
+    @users = Kaminari.paginate_array(@users).page(params[:page]).per(5)   
     render 'index'
   end
 
@@ -85,11 +87,4 @@ class UsersController < ApplicationController
       def set_user
         @user = User.find(params[:id])
       end
-
-      def Kaminari
-         @users = Kaminari.paginate_array(@users).page(params[:page]).per(5)
-      end
-
-      
-
 end

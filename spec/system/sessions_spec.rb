@@ -22,7 +22,7 @@ RSpec.describe 'Logins', type: :system, js: true do
     end
   end
 
-  describe 'lontroll' do
+  describe 'controll' do
     context 'login', use_truncation: false do
       # ログイン成功
       it 'is success that Creating new user' do
@@ -59,7 +59,7 @@ RSpec.describe 'Logins', type: :system, js: true do
           click_on 'Log in'
         end
         click_on 'Log out'
-        expect(page).to have_content 'Logout!'
+        expect(page).to have_text 'Log out!'
         expect(current_path).to eq root_path
       end
     end
