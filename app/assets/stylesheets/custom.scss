@@ -98,7 +98,6 @@ body {
   .top-video-wrapper {
     padding-top: 100px;
     background-attachment: fixed;
-
     .video-container {
       position: relative;
       .video-content {
@@ -106,23 +105,15 @@ body {
       }
       .video-message {
         position: absolute;
-        top: 10%;
-        left: 35%;
-        width: 30%;
-        height: 450px;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); /*上下左右中央寄せ*/
+        text-align:center;
         background-color: rgba(255, 255, 255, 0.8);
         opacity: 0.9;
         border-radius: 5%;
-        h1 {
-          padding-top: 40px;
-          font-size: 4rem;
-        }
-        h2 {
-          font-size: 3rem;
-        }
-        .btn {
-          margin-top: 20px;
-        }
+        padding: 60px 20px 80px 20px; 
       }
     }
   }
@@ -130,17 +121,25 @@ body {
   .top-content-wrapper {
     margin-top: 100px;
     .top-content-about {
-      font-size: 4.5rem;
+      font-family: "Corben", cursive;
+      font-size: 6rem;
       font-weight: bold;
       width: 70%;
-      margin: 0 auto;
+      margin: 30px auto;
+      span {
+        font-size: 8rem;
+      }
     }
     .about_title {
-      font-size: 3rem;
+      font-family: "Corben", cursive;
+      font-size: 5rem;
       font-weight: bold;
       width: 70%;
-      margin: 0 auto;
+      margin: 100px auto;
       padding: 20px 0 50px 0;
+      .flag-icon-jp {
+        border: solid 1px black;
+      }
     }
     .content1,
     .content2 {
@@ -174,6 +173,48 @@ body {
         .btn {
           width: 50%;
         }
+        .js-text, {
+          font-family: "Corben", cursive;
+          font-size: 3rem;
+          font-weight: bold;
+        }
+        .flag-icon {
+          font-size: 6rem;
+          border: solid 1px black;
+        }
+        .js {
+          font-family: "Corben", cursive;
+          font-size:6rem;
+          background: linear-gradient(to right, orange, yellow, green, cyan, blue, violet);
+          background: -webkit-linear-gradient(left, orange, yellow, green, cyan, blue, violet);
+          background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+          background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+
+    .content3 {
+      .last-message {
+        font-family: "Corben", cursive;
+        font-size: 6rem;
+        padding-bottom: 50px;
+        border-radius: 5px;
+      }
+      img {
+        width: 100%;
+      }
+      .fadein {
+        opacity: 0;
+        transform: translate(0, 50px);
+        transition: all 1500ms;
+      }
+
+      .fadein.scrollin {
+        opacity: 1;
+        transform: translate(0, 0);
       }
     }
   }

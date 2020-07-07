@@ -108,5 +108,5 @@ RSpec.describe "Questions", type: :system, js: true do
     #   expect(current_path).to eq questions_path
     #   expect(page).to have_content 'Delete fail'   
     # end
-  # end
+  end
 end
