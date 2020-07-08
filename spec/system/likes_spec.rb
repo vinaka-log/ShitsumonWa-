@@ -7,7 +7,7 @@ RSpec.describe "Likes", type: :system, js: true do
 
   describe "controll(Ajax)" do
     # ログイン済みのユーザーならいいね/解除ができる
-    it "logged in user can like" do
+    it "logged in user can like", use_truncation: false do
       # ログインする
       visit login_path
       fill_in 'E-mail', with: user_b.email, match: :first
@@ -21,12 +21,12 @@ RSpec.describe "Likes", type: :system, js: true do
       expect(page).not_to have_css('.like-button-on')
       expect {
         find('.like-button-off').click   
-        expect(current_path).to eq questions_path
         wait_for_ajax    
-      }.to change{ question_a.likes.count }.by(0) 
+      }.to change{ question_a.likes.count }.by(1) 
+      expect(current_path).to eq questions_path
     end 
 
-    it "logged in user can unlike" do
+    it "logged in user can unlike", use_truncation: false do
       # ログインする
       visit login_path
       fill_in 'E-mail', with: user_b.email, match: :first
@@ -41,9 +41,9 @@ RSpec.describe "Likes", type: :system, js: true do
       expect(page).not_to have_css('.like-button-off')
       expect {
         find('.like-button-on').click   
-        expect(current_path).to eq questions_path
         wait_for_ajax    
       }.to change{ question_a.likes.count }.by(-1) 
+      expect(current_path).to eq questions_path
     end 
   end 
 end
