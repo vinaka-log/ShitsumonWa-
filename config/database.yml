@@ -73,6 +73,6 @@ test:
 #
 production:
   <<: *default
-  database: ShitsumonWa_production
-  username: ShitsumonWa
+  database: shitsumonwa_production
+  username: shitsumonwa
   password: <%= ENV['SHITSUMONWA_DATABASE_PASSWORD'] %>
