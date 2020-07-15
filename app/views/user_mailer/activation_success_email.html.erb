@@ -1,5 +1,9 @@
-<h1>User#activation_success_email</h1>
+Congratz, <%= @user.email %>
+===============================================
 
-<p>
-  <%= @greeting %>, find me in app/views/user_mailer/activation_success_email.html.erb
-</p>
+You have successfully activated your example.com account,
+your username is: <%= @user.email %>
+
+To login to the site, just follow this link: <%= @url %>
+
+Thanks for joining and have a great day!
