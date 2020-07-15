@@ -45,7 +45,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rubocop', require: false
 group :production, :staging do
-    gem 'unicorn'
+    gem 'unicorn', '5.4.1'
     gem 'mini_racer'
 end
 group :development, :test do
