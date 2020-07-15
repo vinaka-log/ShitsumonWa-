@@ -112,7 +112,17 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   config.assets.js_compressor = :uglifier
   #set up 'letter_opener'
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  config.action_mailer.delivery_method = :letter_opener
-
+  config.action_mailer.default_url_options = { host: :'http://3.115.118.9/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: 'smtp.gmail.com',
+      domain: 'gmail.com',
+      port:  587,
+      user_name: 'shitsumonwa@gmail.com',
+      password: 'qmvzvaisnvogrqvs',	
+      authentication: 'plain',
+      openssl_verify_mode: 'none', 
+      enable_starttls_auto: true
+  }
+  
 end
