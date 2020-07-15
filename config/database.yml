@@ -74,7 +74,7 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: ShitsumonWa_production
-  username: ShitsumonWa
+  database: shitsumonwa_production
+  username: shitsumonwa
   password: <%= ENV['SHITSUMONWA_DATABASE_PASSWORD'] %>
   encoding: utf8  
