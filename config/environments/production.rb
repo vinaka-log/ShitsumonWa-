@@ -113,6 +113,12 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   #set up 'letter_opener'
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  config.action_mailer.delivery_method = :letter_opener
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'gmail.com',
+      authentication:       'plain',
+      openssl_verify_mode: 'none', 
+      enable_starttls_auto: true }
 end

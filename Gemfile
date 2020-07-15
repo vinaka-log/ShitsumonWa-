@@ -18,7 +18,6 @@ gem 'kaminari'
 gem 'fog-aws'
 gem 'listen'
 
-
 # Use bcrypt for has_secure_password
 gem 'bcrypt'
 # Use pg as the database for Active Record
@@ -58,6 +57,7 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'rspec-rails', '~>3.8' 
   gem "factory_bot_rails"
+  gem 'letter_opener'
 end
 
 group :development do
@@ -80,7 +80,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]  
 gem 'sorcery'
-gem 'letter_opener'
 gem 'sprockets'
 gem 'sprockets-rails'
-
