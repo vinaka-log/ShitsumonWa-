@@ -1,3 +1,4 @@
+
 # unless Rails.env.development? || Rails.env.test?
 #   CarrierWave.configure do |config|
 #     config.fog_credentials = {
@@ -11,3 +12,4 @@
 #     config.cache_storage = :fog
 #   end
 # end 
+
