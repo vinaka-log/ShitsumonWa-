@@ -622,7 +622,7 @@ body {
   /* question-new&edit */
   .question-form-wrapper {
     width: 100vw;
-    height: 100vh;
+    height: 1000px;
     padding-top: 150px;
     background-image: image-url("children.jpg");
     background-position: center center;
@@ -633,13 +633,21 @@ body {
       color: white;
       font-weight: 700;
     }
-    .question-form-container {
-      padding: 0px 20px 20px 20px;
+    h2 {
+      padding-bottom: 20px;
+    }
+    .question-form {
+      width: 60%;
+      margin: 0 auto;
+      padding: 40px 20px 60px 20px;
       background-color: whitesmoke;
       opacity: 0.9;
       border-radius: 25px;
       margin-top: 70px;
-      opacity: 0.8;
+      .question-form2 {
+        width: 80%;
+        margin: 0 auto;
+      }
     }
   }
 
