@@ -1,37 +1,27 @@
-<header class="navbar navbar-fixed-top ">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "Shitsumonwa?", root_path, id: "logo" %>
-    </div>
-    <nav>
-      <% if current_user %>
-        <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
-          <li class ="navbar-item">
-            <%= link_to "My profile", user_path(current_user), class: "nav-link text-light" %>
-          </li>
-          <li class ="navbar-item">
-            <%= link_to "Shitsumon list", questions_path, class: "nav-link text-light" %>
-          </li>
-          <li class ="navbar-item">
-            <%= link_to "Stock list", stocks_path, class: "nav-link text-light" %>
-          </li>
-          <li class ="navbar-item">
-            <%= link_to "Log out", logout_path, method: :post, class: "nav-link text-light" %>
-          </li>
-        </ul>
-      <% else %>
-        <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
-          <li><%= link_to "Shitsumon list", questions_path %></li>
-          <li><%= link_to "Sign up", signup_path %></li>
-          <li><%= link_to "Log in", login_path %></li>
-        </ul>
-      <% end %>
-    </nav>
+<header>
+  <div class="nav">
+    <%= link_to image_tag("header-shitsumonwa.png", alt: "header-shitsumonwa",size: :'150x150'), root_path, id: "logo" %>
+    <% if current_user %>
+      <ul class= "logos text-right">
+        <li class= "logo">
+          <%= link_to image_tag("header-myprofile.png", alt: "header-myprofile",size: :'150x150'), user_path(current_user) %>
+        </li>
+        <li class= "logo">
+          <%= link_to image_tag("header-shitsumon.png", alt: "header-shitsumon",size: :'150x150'), questions_path %>
+        </li>
+        <li class= "logo">
+          <%= link_to image_tag("header-stock.png", alt: "header-stock",size: :'150x150'), stocks_path %>
+        </li>
+        <li class= "logo">
+          <%= link_to image_tag("header-logout.png", alt: "header-logout",size: :'150x150'), logout_path, method: :post %>
+        </li>
+      </ul>
+    <% else %>
+      <ul class= "logos text-right">
+        <li class= "logo"><%= link_to image_tag("header-shitsumon.png", alt: "header-shitsumon",size: :'150x150'), questions_path %></li>
+        <li class= "logo"><%= link_to image_tag("header-signup.png", alt: "header-signup",size: :'150x150'), signup_path %></li>
+        <li class= "logo"><%= link_to image_tag("header-login.png", alt: "header-login",size: :'150x150'), login_path %></li>
+      </ul>
+    <% end %>
   </div>
 </header>

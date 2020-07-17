@@ -6,70 +6,36 @@ body {
   /* header */
   header {
     background-color: black;
-    height: 100px;
-
-    #logo {
-      float: left;
-      margin-right: 10px;
-      font-size: 2.5em;
-      letter-spacing: -1px;
-      font-weight: bold;
-      line-height: 100px;
-      color: white;
-      &:hover {
-        color: #337ab7;
-        text-decoration: none;
-        letter-spacing: 5px;
+    height: 160px;
+    position: fixed;
+    position: fixed;            
+    top: 0px;                   
+    left: 0px;                  
+    width: 100%; 
+    z-index: 100000; 
+      #logo {
+        margin-left: 100px;
+        display: inline-block;
+        float: left;
       }
-    }
-
-    ul {
-      display: flex;
-      list-style: none;
-      line-height: normal;
-      padding-top: 25px;
-      font-size: 2rem;
-
-      li {
-        padding: 5px;
+      .logos {
+        list-style: none;
+        display: inline-block;
+        float: right;
+        margin-right: 50px;
+        .logo {
+          text-decoration: none;
+          float: left;
+        }
       }
-      a {
-        display: block;
-        position: relative;
-        text-decoration: none;
-        color: white;
-      }
-      a::before,
-      a::after {
-        border-bottom: solid 3px #337ab7;
-        color: #337ab7;
-        bottom: 0;
-        content: "";
-        display: block;
-        position: absolute;
-        transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        width: 0;
-      }
-      a::before {
-        left: 50%;
-      }
-      a::after {
-        right: 50%;
-      }
-      a:hover::before,
-      a:hover::after {
-        width: 50%;
-      }
-    }
   }
 
   /* flash */
   .alert {
-    margin-top: 100px;
+    margin-top: 160px;
     position: fixed;
     width: 100%;
-    z-index: 100000;
+    z-index: 200000;
   }
 
   .errors {
@@ -96,7 +62,7 @@ body {
 
   /*top-page */
   .top-video-wrapper {
-    padding-top: 100px;
+    margin-top: 160px;
     background-attachment: fixed;
     .video-container {
       position: relative;
@@ -108,7 +74,7 @@ body {
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%); /*上下左右中央寄せ*/
+        transform: translate(-50%, -50%);
         text-align:center;
         background-color: rgba(255, 255, 255, 0.8);
         opacity: 0.9;
@@ -220,7 +186,6 @@ body {
   }
 
   /* sign-up */
-
   .password-reset-wrapper {
     width: 100vw;
     min-height: 100vh;
@@ -602,7 +567,7 @@ body {
   .stock-index-wrapper {
     width: 100vw;
     height: 100vh;
-    margin-top: 100px;
+    margin-top: 160px;
     h2 {
       font-family: "Corben", cursive;
       font-weight: bold;
@@ -686,7 +651,7 @@ body {
   /* question-show */
   .question-show-wrapper {
     width: 100vw;
-    padding-top: 100px;
+    padding-top: 160px;
     background-image: image-url("black-board.jpg");
     background-position: center center;
     background-repeat: no-repeat;
