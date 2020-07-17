@@ -139,9 +139,8 @@ body {
       }
     }
   
-
   .top-content-wrapper {
-    margin-top: 100px;
+    margin: 100px 0;
     .top-content-about {
       font-family: "Corben", cursive;
       font-size: 6rem;
@@ -196,6 +195,11 @@ body {
           margin: 20px auto;
           border: 10px solid #ffffff;
           box-shadow: 0 0 5px #cccccc;
+          &:hover {
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+            transform: translateY(-10px);
+            transition-duration: 0.5s;
+          }
         }    
         .btn {
           width: 50%;
@@ -232,13 +236,20 @@ body {
       }
       img {
         width: 100%;
+        transform: scale(1.1);
+        cursor: pointer;
+        filter: blur(5px);
+        transition-duration: 0.5s;
+        &:hover {
+          filter: blur(0);
+          transition-duration: 0.5s;
+        }
       }
       .fadein {
         opacity: 0;
         transform: translate(0, 50px);
         transition: all 1500ms;
       }
-
       .fadein.scrollin {
         opacity: 1;
         transform: translate(0, 0);
@@ -425,6 +436,9 @@ body {
     .jp-point {
       font-family: "Corben", cursive;
       padding-top: 50px;
+      &:hover {
+
+      }
       span {
         font-size: 100px;
         border: solid 1px black;
