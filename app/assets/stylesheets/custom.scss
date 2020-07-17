@@ -359,6 +359,8 @@ body {
       margin-bottom: 30px;
       width:60%;
       margin: 0 auto;
+      box-shadow: 2px #696969;
+      transition: all 0.5s;
     }
     .user-edit-form {
       width: 60%;
@@ -384,7 +386,6 @@ body {
       font-weight: bold;
       font-size: 6rem;
       margin: 50px 0 50px 0;
-      background-color: white;
     }
     /* jp score */
     .jp-point {
@@ -453,6 +454,9 @@ body {
         font-size: 7rem;
         margin: 50px 0 50px 0;
       }
+      p {
+        font-size: 3rem;
+      }
     }
 
     .user-single {
@@ -461,6 +465,14 @@ body {
       flex-direction: column;
       padding: 40px 0;
       background: white;
+      padding: 1em;
+      box-shadow: 1.5px 1.5px 2px #696969;
+      transition: all 0.5s;
+      &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+      opacity: 0.7;
+     }
       li a {
         display: flex;
         justify-content: center;
@@ -470,12 +482,11 @@ body {
       .profile-image {
         cursor: pointer;
         transition-duration: 0.5s;
-      }
-
-      .profile-image:hover {
-        transform: scale(1.2) rotate(9deg);
-        transition-duration: 0.5s;
-        border-radius: 50px;
+        border-radius: 50%;;
+        &:hover {
+          transform: scale(1.2) rotate(9deg);
+          transition-duration: 0.5s;
+         }
       }
     }
   }
@@ -517,6 +528,10 @@ body {
       font-size: 40px;
       color: black;
     }
+
+  .text-muted {
+    font-size: 2rem;
+  }
   }
 
   /* question-index */
@@ -632,7 +647,7 @@ body {
     .sort-btn {
       background-color: black;
       color: white;
-      font-size: 25px;
+      font-size: 40px;
     }
   }
 
@@ -703,7 +718,6 @@ body {
         border-radius: 50%;
       }
     }
-
     .comment-list {
       background-color: mintcream;
       color: black;
@@ -718,7 +732,7 @@ body {
   /* comment-new */
   .new-comment-wrapper {
     width: 100vw;
-    height: 100vh;
+    height: 800px;
     padding-top: 120px;
     background-image: image-url("team.jpg");
     background-position: center center;
@@ -726,11 +740,20 @@ body {
     background-attachment: fixed;
     background-size: cover;
     .comment-form {
-      padding: 80px 20px;
+      width: 40%;
+      height: 300px;
+      margin: 0 auto;
+      margin-top: 200px;
       background-color: whitesmoke;
-      margin-top: 100px;
       opacity: 0.9;
       border-radius: 25px;
+      h1 {
+        padding: 30px 0;
+      }
+      .form-control {
+        width: 60%;
+        margin: 0 auto;
+      }
     }
   }
 }

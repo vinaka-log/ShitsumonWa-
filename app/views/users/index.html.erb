@@ -18,8 +18,10 @@
                 <% end %>
               <% end %>
             </div>
-            <%= link_to(user.name, user_path(user.id)) %>
-            <%= user.nationality %>
+            <p>
+              <%= link_to(user.name, user_path(user.id)) %>
+              <%= user.nationality %>
+            </p>
             <div class = "sns-link">
               <ul class="profile-links">
                 <% if user.twitter.present? %>
