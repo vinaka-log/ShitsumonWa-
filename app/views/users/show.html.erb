@@ -1,65 +1,64 @@
 <div class="user-wrapper">
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-md-offset-4 col-md-4 text-center my-profile">
-        <h1 class="text-center">
-          <%= @user.name %>/<%= (@user.nationality) %>
-        </h1>
-        <% if @user.image? %>
-          <%= image_tag @user.image.url, class: 'profile-image text-center',size: :'300x300' %>
-        <% else %>
-          <%= image_tag '/assets/default_user.jpg', class: 'profile-image',size: :'300x300' %>
-        <% end %>
+  <div class="user-container text-center">
+    <div class=" my-profile">
+      <h1 class="user-name text-center">
+        <%= @user.name %>/<%= (@user.nationality) %>
+      </h1>
+      <% if @user.image? %>
+        <%= image_tag @user.image.url, class: 'profile-image text-center',size: :'300x300' %>
+      <% else %>
+        <%= image_tag '/assets/default_user.jpg', class: 'profile-image',size: :'300x300' %>
+      <% end %>
+      <div class = "follow">
         <%= link_to "following(#{@user.followings.count})",  following_user_url, id:'following-count' %>
         <%= link_to "follower(#{@user.followers.count})", followers_user_url, id:'follower-count' %>
-        </br>
-        <% if logged_in? && current_user?(@user) %>
-          <%= link_to "Edit your profile", edit_user_path, class:'btn btn-success btn-lg' %>
-        <% elsif logged_in? %>
-          <div id="follow_form">
-            <% if current_user.following?(@user) %>
-              <%= render "unfollow" %>
-            <% else %>
-              <%= render "follow" %>
-            <% end %>
-          </div>
-        <% end %>
-        <div class = "sns-link">
-          <ul class="profile-links">
-            <% if @user.twitter.present? %>
-              <li class="profile-link">
-                <%= link_to @user.twitter, target: :_blank do %>
-                  <i class="fab fa-twitter-square"></i>
-                <% end %>
-              </li>
-            <% end %>
-            <% if @user.facebook.present? %>
-              <li class="profile-link">
-                <%= link_to @user.facebook, target: :_blank do %>
-                  <i class="fab fa-facebook-square"></i>
-                <% end %>
-              </li>
-            <% end %>
-            <% if @user.instagram.present? %>
-              <li class="profile-link">
-                <%= link_to @user.instagram, target: :_blank do %>
-                  <i class="fab fa-instagram"></i>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
+      </div>
+      <% if logged_in? && current_user?(@user) %>
+        <%= link_to "Edit your profile", edit_user_path, class:'btn btn-success btn-lg' %>
+      <% elsif logged_in? %>
+        <div id="follow_form">
+          <% if current_user.following?(@user) %>
+            <%= render "unfollow" %>
+          <% else %>
+            <%= render "follow" %>
+          <% end %>
         </div>
-        <div class = "jp-point">
-          <span class="flag-icon flag-icon-jp faa-tada animated "></span>
-          <p class= "jp-sentence"> Japan Score </p>
-          <p class= "jp-count">
-            <%= @likes_count %>
-          </p>
-        </div>
+      <% end %>
+      <div class = "sns-link">
+        <ul class="profile-links">
+          <% if @user.twitter.present? %>
+            <li class="profile-link">
+              <%= link_to @user.twitter, target: :_blank do %>
+                <i class="fab fa-twitter-square"></i>
+              <% end %>
+            </li>
+          <% end %>
+          <% if @user.facebook.present? %>
+            <li class="profile-link">
+              <%= link_to @user.facebook, target: :_blank do %>
+                <i class="fab fa-facebook-square"></i>
+              <% end %>
+            </li>
+          <% end %>
+          <% if @user.instagram.present? %>
+            <li class="profile-link">
+              <%= link_to @user.instagram, target: :_blank do %>
+                <i class="fab fa-instagram"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class = "jp-point">
+        <span class="flag-icon flag-icon-jp faa-tada animated "></span>
+        <p class= "jp-sentence"> Japan Score </p>
+        <p class= "jp-count">
+          <%= @likes_count %>
+        </p>
       </div>
     </div>
     <% if @user.questions.any? %>
-      <h2>Your Questions (<%= @user.questions.count %>)</h2>
+      <h2 class= "list-title">Your Questions (<%= @user.questions.count %>)</h2>
       <%= render 'questions/list' %>
     <% else %>
       <h2 class="text-center">No post yet..</h2>
