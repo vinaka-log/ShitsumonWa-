@@ -17,6 +17,10 @@ body {
         margin-left: 100px;
         display: inline-block;
         float: left;
+        &:hover {
+          transform: rotateY( 360deg );
+          transition-duration: 0.5s;
+        }
       }
       .logos {
         list-style: none;
@@ -26,9 +30,13 @@ body {
         .logo {
           text-decoration: none;
           float: left;
+          &:hover { 
+            transform: rotateX( 360deg );
+            transition-duration: 0.5s;
+          }
         }
       }
-  }
+    }
 
   /* flash */
   .alert {
