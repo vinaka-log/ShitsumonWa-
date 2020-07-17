@@ -5,9 +5,9 @@
         <%= @user.name %>/<%= (@user.nationality) %>
       </h1>
       <% if @user.image? %>
-        <%= image_tag @user.image.url, class: 'profile-image',size: :'300x300' %>
+        <%= image_tag @user.image.url, class: 'profile-image',size: :'400x400' %>
       <% else %>
-        <%= image_tag '/assets/default_user.jpg', class: 'profile-image',size: :'300x300' %>
+        <%= image_tag '/assets/default_user.jpg', class: 'profile-image',size: :'400x400' %>
       <% end %>
       <div class= "user-edit-form">
         <h2>Update your info</h2>
