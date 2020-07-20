@@ -18,7 +18,6 @@ gem 'kaminari'
 gem 'listen'
 # for image uploader with AWS S3
 gem 'fog-aws'
-gem 'fog'
 
 
 # Use bcrypt for has_secure_password
