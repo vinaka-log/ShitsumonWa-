@@ -250,6 +250,7 @@ body {
         transform: translate(0, 50px);
         transition: all 1500ms;
       }
+
       .fadein.scrollin {
         opacity: 1;
         transform: translate(0, 0);
@@ -570,6 +571,9 @@ body {
       width: 200px;
       cursor: pointer;
       transition-duration: 0.5s;
+      border: 10px solid whitesmoke;
+      box-shadow: 0 0 5px #cccccc;
+      margin: 20 0;
     }
     .img_wrap img:hover {
       transform: scale(1.2) rotate(9deg);

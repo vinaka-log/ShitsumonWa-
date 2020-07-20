@@ -8,7 +8,7 @@ class PasswordResetsController < ApplicationController
 
     if @user
       @user.deliver_reset_password_instructions!
-      redirect_to(root_path, success: 'Instructions have been sent to your email')
+      redirect_to(root_path, info: 'Instructions have been sent to your email')
     else
       flash.now[:danger] = 'Email address is wrong'
       render template: 'pages/index'
@@ -36,7 +36,7 @@ class PasswordResetsController < ApplicationController
 
     @user.password_confirmation = params[:user][:password_confirmation]
     if @user.change_password!(params[:user][:password])
-      redirect_to(root_path, success: 'Password is successfully update')
+      redirect_to(root_path, info: 'Password is successfully update')
     else
       flash.now[:danger] = 'The confirmation password and the password entered do not match'
       render :edit
