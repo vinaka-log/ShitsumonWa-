@@ -3,7 +3,13 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   
+  if Rails.env.development?
     storage :file
+  elsif Rails.env.test?
+    storage :file
+  else
+    storage :fog
+  end
   
 
   # process resize_to_limit: [400, 400]
@@ -19,9 +25,9 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  # def extension_white_list
-  #   %w[jpg jpeg gif png]
-  # end
+  def extension_white_list
+    %w[jpg jpeg gif png]
+  end
 
   # def filename
   #   super.chomp(File.extname(super)) + '.jpg'

@@ -15,8 +15,11 @@ gem 'flag-icons-rails'
 gem "carrierwave"
 gem 'mini_magick'
 gem 'kaminari'
-gem 'fog-aws'
 gem 'listen'
+# for image uploader with AWS S3
+gem 'fog-aws'
+gem 'fog'
+
 
 # Use bcrypt for has_secure_password
 gem 'bcrypt'
