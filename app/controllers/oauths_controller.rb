@@ -14,7 +14,7 @@ class OauthsController < ApplicationController
         @user = create_from(provider)
         reset_session
         auto_login(@user)
-        redirect_to user_path(@user.id), success: "#{provider.titleize} Login successed"
+        redirect_to user_path(@user.id) , success: "#{provider.titleize} Login successed"
       rescue StandardError
         redirect_to root_path, danger: "#{provider.titleize} Login failed"
       end
