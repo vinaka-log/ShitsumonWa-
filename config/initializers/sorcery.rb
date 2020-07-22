@@ -137,7 +137,7 @@ Rails.application.config.sorcery.configure do |config|
   config.facebook.key = Rails.application.credentials.dig(:facebook, :key)
   config.facebook.secret = Rails.application.credentials.dig(:facebook, :secret_key)
   config.facebook.callback_url = "https://www.shitsumonwa.com/oauth/callback?provider=facebook"
-  config.facebook.user_info_path = "me?fields=email"
+  config.facebook.user_info_path = "me?fields=email, name"
   config.facebook.user_info_mapping = { name: "name",email: "email"}
   config.facebook.access_permissions = %w[email]
   config.facebook.display = "page"
