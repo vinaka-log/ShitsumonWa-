@@ -8,7 +8,7 @@ RSpec.describe User, type: :system, js: true do
       visit login_path
       fill_in 'E-mail', with: user.email, match: :first
       fill_in 'Password', with: 'suzuki1234'
-      within '.login-form' do
+      within '.login-btn' do
       click_on 'Log in'
       end
     end

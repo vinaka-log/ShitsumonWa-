@@ -12,7 +12,7 @@ RSpec.describe "Likes", type: :system, js: true do
       visit login_path
       fill_in 'E-mail', with: user_b.email, match: :first
       fill_in 'Password', with: 'tanaka1234'
-      within '.login-form' do
+      within '.login-btn' do
       click_on 'Log in'
       end 
       # 質問一覧画面
@@ -31,7 +31,7 @@ RSpec.describe "Likes", type: :system, js: true do
       visit login_path
       fill_in 'E-mail', with: user_b.email, match: :first
       fill_in 'Password', with: 'tanaka1234'
-      within '.login-form' do
+      within '.login-btn' do
       click_on 'Log in'
       end 
       # 質問一覧画面

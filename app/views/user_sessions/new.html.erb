@@ -22,7 +22,9 @@
             <%= check_box_tag :remember, params[:remember], true %>
             <%= label_tag :remember %>
           </div>
-          <%= form.submit "Log in", class:' btn-block btn-success btn-lg' %>
+          <div class = "login-btn">
+            <%= form.submit "Log in", class:' btn-block btn-success btn-lg' %>
+          </div>
         <% end %>
       </div>
       <div class = "reset-password">
