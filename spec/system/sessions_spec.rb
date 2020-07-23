@@ -58,7 +58,7 @@ RSpec.describe 'Logins', type: :system, js: true do
         within '.login-btn' do
           click_on 'Log in'
         end
-        click_on 'Log out'
+        find('.logout').click 
         expect(page).to have_text 'Log out!'
         expect(current_path).to eq root_path
       end
