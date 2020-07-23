@@ -9,7 +9,7 @@ RSpec.describe "Signups", type: :system, js: true do
         expect(page).to have_text('Sign up')
         expect(page).to have_text('Sign up with E-mail')
         expect(page).to have_text('Sign up with Twitter')
-        expect(page).to have_text('Sign up with Slack')
+        expect(page).to have_text('Sign up with Facebook')
         expect(page).to have_text('Login is here')
         expect(page).to have_text('Login')
     end
@@ -26,7 +26,7 @@ RSpec.describe "Signups", type: :system, js: true do
       fill_in 'Password(confirmation)', with: '1234abcd'
       expect do
         click_on 'Register'
-        expect(page).to have_content 'Signup success & please activate'
+        expect(page).to have_content 'Please activate & check your email'
         expect(current_path).to eq root_path
       end.to change(User, :count).by 1
       
