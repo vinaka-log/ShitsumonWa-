@@ -40,14 +40,14 @@ body {
 
   /* flash */
   .alert-success,
-  .alert-danger,
-  .alert-warning  {
+  .alert-danger  {
     position: fixed;
     width: 100%;
     z-index: 200000;
   }
 
-  .alert-info {
+  .alert-info,
+  .alert-warning {
     position: fixed;
     width: 100%;
     z-index: 200000;
