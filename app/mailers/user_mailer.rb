@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def activation_needed_email(user)
     @user = user
-    @url  = "http://3.115.118.9/users/#{user.activation_token}/activate"
+    @url  = "https://www.shitsumonwa.com//users/#{user.activation_token}/activate"
     mail(:to => user.email,
      :subject => "Welcome to My Awesome Site")
   end
@@ -19,7 +19,7 @@ class UserMailer < ApplicationMailer
   #
   def activation_success_email(user)
     @user = user
-    @url  = "http://3.115.118.9//login"
+    @url  = "https://www.shitsumonwa.com/login"
     mail(:to => user.email,
          :subject => "Your account is now activated")
   end

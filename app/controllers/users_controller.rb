@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)  
     if @user.save
-      redirect_to root_path, success: 'Signup success & please activate'
+      redirect_to root_path, success: 'Please activate & check your email'
     else
       flash.now[:danger] = 'Signup fail'
       render :registration
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   def activate
     if (@user = User.load_from_activation_token(params[:id]))
       @user.activate!
-      redirect_to(login_path, success: 'User was successfully activated.')
+      redirect_to(login_path, success: 'User was successfully activated ')
     else
       not_authenticated
     end
