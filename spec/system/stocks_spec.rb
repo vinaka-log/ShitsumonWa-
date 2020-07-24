@@ -57,7 +57,7 @@ RSpec.describe "Stocks", type: :system, js: true do
         expect(current_path).to eq question_path(id: question_a.id)
         wait_for_ajax      
       }.to change{ question_a.stocks.count }.by(0) 
-      click_on 'Stock list'
+      find('.stock').click 
       # ストック一覧画面
       expect(page).to have_text('Stock list')
       expect(page).to have_css('.card') 

@@ -53,6 +53,11 @@
             <%= form.submit 'Update', class:'btn-block btn-primary btn-lg' %>
           </div>
         <% end %>
+        <div class= "user-delete-form">
+          <h2> Check</h2>
+          <p>If you delete the account you will need to register again.<p>
+          <%= link_to "Withdraw", user_path(@user.id), method: :delete, class: "btn btn-lg btn-danger", data: { confirm: 'really delete?' } %>
+        <div>
       </div>
     </div>
   </div>

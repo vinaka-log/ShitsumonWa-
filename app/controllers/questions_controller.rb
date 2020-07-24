@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
-    @questions = Kaminari.paginate_array(@questions).page(params[:page]).per(5)
+    @questions = Kaminari.paginate_array(@questions).page(params[:page]).per(10)
     comments = Comment.where(id: params[:id])
   end
 
@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
   def search
     selection = params[:keyword]
     @questions = Question.sort(selection)
-    @questions = Kaminari.paginate_array(@questions).page(params[:page]).per(5)
+    @questions = Kaminari.paginate_array(@questions).page(params[:page]).per(10)
   end
 
   def edit; end
