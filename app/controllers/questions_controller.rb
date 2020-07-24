@@ -1,11 +1,11 @@
 class QuestionsController < ApplicationController
   before_action :require_login, except: %i[index show search]
-  before_action :set_question, only: %i[show edit update]
+  before_action :set_question, only: %i[show edit update destroy]
 
   def index
     @questions = Question.all
     @questions = Kaminari.paginate_array(@questions).page(params[:page]).per(10)
-    comments = Comment.where(id: params[:id])
+    # comments = Comment.where(id: params[:id])
   end
 
   def show
@@ -47,8 +47,8 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    if question = Question.find(params[:id])
-      question.destroy!
+    if @question
+      @question.destroy!
       flash[:success] = 'Delete success'
       redirect_to questions_url
     else

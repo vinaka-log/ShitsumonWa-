@@ -14,7 +14,7 @@ class StocksController < ApplicationController
         format.html { redirect_to request.referrer || root_url }
         format.js
       end
-     end
+    end
   end
 
   def destroy
@@ -25,6 +25,6 @@ class StocksController < ApplicationController
         format.html { redirect_to request.referrer || root_url }
         format.js
       end
-     end
-   end
+    end
+  end
 end

@@ -3,7 +3,7 @@ class OauthsController < ApplicationController
 
   def oauth
     login_at(auth_params[:provider])
-   end
+  end
 
   def callback
     provider = auth_params[:provider]

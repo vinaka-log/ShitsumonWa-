@@ -44,3 +44,6 @@ Metrics/CyclomaticComplexity:
 
 Metrics/PerceivedComplexity:
   Max: 15 
+
+Style/GuardClause:
+  MinBodyLength: 7
