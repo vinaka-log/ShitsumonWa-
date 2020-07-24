@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_login, only: %i[edit pdate destroy]
-  before_action :admin_user, only: %i[destroy]
-  before_action :set_user, only: %i[show edit update]
+  before_action :set_user, only: %i[show edit update destroy]
   
   def new
     @user = User.new
@@ -46,9 +45,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
-    redirect_to users_url
+    @user.destroy
+    flash[:info] = "User delete"
+    redirect_to root_path
   end
 
   def activate
@@ -77,10 +76,6 @@ class UsersController < ApplicationController
    private
       def user_params
         params.require(:user).permit(:name, :email, :nationality, :password, :password_confirmation, :image, :twitter, :facebook, :instagram)
-      end
-
-      def admin_user
-        redirect_to(root_url) unless current_user.admin?
       end
 
       def set_user
