@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)  
     if @user.save
-      redirect_to root_path, success: 'Please activate & check your email'
+      redirect_to root_path, info: 'Please activate & check your email'
     else
       flash.now[:danger] = 'Signup fail'
       render :registration
