@@ -17,5 +17,4 @@ class LikesController < ApplicationController
     @question = Question.find(params[:question_id])
     @id_name = "#like-link-#{@question.id}"
   end
-
 end

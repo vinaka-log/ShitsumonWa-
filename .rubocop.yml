@@ -37,6 +37,7 @@ AllCops:
     - assets/**/*
     - spec/**/*
     - config/**/*
+    - '**/node_modules/**/*'
 
 Metrics/CyclomaticComplexity:
   Max: 15
