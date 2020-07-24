@@ -1,11 +1,11 @@
 class QuestionsController < ApplicationController
   before_action :require_login, except: %i[index show search]
-  before_action :set_question, only: %i[show edit update]
+  before_action :set_question, only: %i[show edit update destroy]
 
   def index
     @questions = Question.all
     @questions = Kaminari.paginate_array(@questions).page(params[:page]).per(10)
-    comments = Comment.where(id: params[:id])
+    # comments = Comment.where(id: params[:id])
   end
 
   def show
@@ -15,15 +15,15 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new 
+    @question = Question.new
   end
 
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to questions_path, success: "Question save"
+      redirect_to questions_path, success: 'Question save'
     else
-      flash.now[:danger] = "Question fail"
+      flash.now[:danger] = 'Question fail'
       render :new
     end
   end
@@ -38,36 +38,32 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update_attributes(question_params)
-      flash[:success] = "Update success"
+      flash[:success] = 'Update success'
       redirect_to questions_url
     else
-      flash.now[:danger] = "Update fail"
+      flash.now[:danger] = 'Update fail'
       render :edit
     end
   end
 
   def destroy
-    if
-      question = Question.find(params[:id])
-      question.destroy!
-      flash[:success] = "Delete success"
+    if @question
+      @question.destroy!
+      flash[:success] = 'Delete success'
       redirect_to questions_url
     else
-      flash.now[:danger] = "Delete fail"
+      flash.now[:danger] = 'Delete fail'
       render :edit
     end
   end
 
+  private
 
-    private
+  def question_params
+    params.require(:question).permit(:name, :description, :image).merge(user_id: current_user.id)
+  end
 
-      def question_params
-        params.require(:question).permit(:name, :description, :image).merge(user_id: current_user.id)
-      end
-
-      def set_question
-       @question = Question.find(params[:id])
-      end
-    
+  def set_question
+    @question = Question.find(params[:id])
+  end
 end
-

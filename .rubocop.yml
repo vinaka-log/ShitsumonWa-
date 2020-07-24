@@ -1,0 +1,49 @@
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 160
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 60
+  Exclude:
+
+Metrics/AbcSize:
+  Max: 45
+
+AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 60
+
+Metrics/ClassLength:
+  Max: 120
+
+AllCops:
+  Exclude:
+    - db/**/*
+    - bin/**/*
+    - vendor/**/*
+    - log/**/*
+    - public/**/*
+    - tmp/**/*
+    - assets/**/*
+    - spec/**/*
+    - config/**/*
+    - '**/node_modules/**/*'
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/PerceivedComplexity:
+  Max: 15 
+
+Style/GuardClause:
+  MinBodyLength: 7
