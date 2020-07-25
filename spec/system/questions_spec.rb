@@ -4,7 +4,7 @@ RSpec.describe "Questions", type: :system, js: true do
 
   let(:user_a){create(:suzuki)}
   let!(:question_a) { FactoryBot.create(:question, name: 'first title', description: 'first content', user: user_a) }
-  let(:image) { "#{Rails.root}/app/assets/images/default_question.png" }
+  let(:image) { "#{Rails.root}/app/assets/images/default-question.png" }
 
     before do
       visit login_path
