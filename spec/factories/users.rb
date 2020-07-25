@@ -29,7 +29,7 @@ FactoryBot.define do
       nationality { "japan" }
       password { "tanaka1234" }
       password_confirmation { "tanaka1234" }
-      image { Rack::Test::UploadedFile.new(Rails.root.join('spec/factories/test_user.jpg')) }
+      image { Rack::Test::UploadedFile.new(Rails.root.join('/app/assets/images/default-user.png')) }
 
       after(:create) do |user|
         user.activate!
