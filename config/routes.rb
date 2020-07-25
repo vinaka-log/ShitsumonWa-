@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   delete '/like/:question_id', to: 'likes#unlike', as: 'unlike'
   get 'search', to: 'questions#search'  
   resources :user_sessions, only: %i[new create destroy]
+  resources :guest_user_sessions, only: %i[create]
+
   resources :password_resets, only: %i[create edit update]
   resources :questions do
     resources :comments,only: %i[new create destroy]
