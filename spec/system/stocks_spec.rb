@@ -76,9 +76,9 @@ RSpec.describe "Stocks", type: :system, js: true do
       find('.bookmark-off').click 
       expect(page).to have_css('.bookmark-on') 
       expect(page).not_to have_css('.bookmark-off')
-      expect {
-        find('.bookmark-on').click 
-        expect(current_path).to eq question_path(id: question_a.id)
+      # expect {
+      find('.bookmark-on').click 
+      expect(current_path).to eq question_path(id: question_a.id)
       #   wait_for_ajax      
       # }.to change{ question_a.stocks.count }.by(0) 
       find('.stock-header').click 
