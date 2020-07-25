@@ -5,10 +5,13 @@
       <h1 class="text-white top-text">ShitsumonWa?</h1>
       <h2 class="text-white">Let's solve questions about Japan.</h2>  
       <div class= "wrap-btn1">    
-        <%= link_to 'Sign up', signup_path, class: 'btn btn-inline-block btn-lg signup-btn' %>
+        <%= link_to 'Sign up', signup_path, class: 'btn btn-lg signup-btn' %>
       </div>
       <div class= "wrap-btn2">  
-        <%= link_to 'Log in', login_path , class: 'btn btn-inline-block btn-lg login-btn' %>
+        <%= link_to 'Log in', login_path , class: 'btn btn-lg login-btn' %>
+      </div>
+      <div class= "wrap-btn3">  
+        <%= link_to 'guest user', guest_user_sessions_path, method: :post, class:" text-center btn btn-lg guest-btn" %>
       </div>
     </div>
   </div>
