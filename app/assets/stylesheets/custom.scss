@@ -13,8 +13,7 @@ body {
     width: 100%; 
     z-index: 100000; 
       #logo {
-        margin-left: 200px;
-        margin-right: 100px;
+        margin-left: 50px;
         display: inline-block;
         float: left;
         &:hover {
@@ -25,7 +24,8 @@ body {
       .logos {
         list-style: none;
         display: inline-block;
-        float: right;
+        float: left;
+        margin-left: 170px;
         .logo {
           text-decoration: none;
           float: left;
