@@ -7,7 +7,6 @@ body {
   header {
     background-color: black;
     height: 160px;
-    position: fixed;
     position: fixed;            
     top: 0px;                   
     left: 0px;                  
@@ -15,6 +14,7 @@ body {
     z-index: 100000; 
       #logo {
         margin-left: 200px;
+        margin-right: 100px;
         display: inline-block;
         float: left;
         &:hover {
@@ -26,7 +26,6 @@ body {
         list-style: none;
         display: inline-block;
         float: right;
-        margin-left: 300px;
         .logo {
           text-decoration: none;
           float: left;
@@ -474,9 +473,6 @@ body {
     .jp-point {
       font-family: "Corben", cursive;
       padding-top: 50px;
-      &:hover {
-
-      }
       span {
         font-size: 6rem;
         border: solid 1px black;
