@@ -356,6 +356,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    h2 {
+        padding: 30px 0;
+      }
     .login-form {
       background-color: whitesmoke;
       width: 60%;
@@ -363,9 +366,6 @@ body {
       padding-bottom: 20px;
       border-radius: 5%;
       opacity: 0.9;
-      h2 {
-        padding: 30px 0;
-      }
       .link_login {
         color: white;
         font-size: 20px;
