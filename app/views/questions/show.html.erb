@@ -1,12 +1,10 @@
 <div class="question-show-wrapper ">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="question-show-single">
+  <div class="question-show-container">
+        <div class="question-show-single ">
           <h1 class="question-title">
           <%=  @question.name %>
           </h1>
-          <h3> Questioned by  <%= link_to @user.name, user_path(@user.id) %> </h3>
+          <h4> Questioned by  <%= link_to @user.name, user_path(@user.id) %> </h4>
           <% if @question.image? %>
             <%= image_tag @question.image.url, class: "question-image" %>
           <% else %>
@@ -56,7 +54,5 @@
             <% end %>
           </div>
         </div>
-      </div>
-    </div>
   </div>
 </div>
