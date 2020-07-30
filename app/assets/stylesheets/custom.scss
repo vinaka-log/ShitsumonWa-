@@ -12,11 +12,17 @@ body {
     left: 0px;                  
     width: 100%; 
     z-index: 100000; 
-      #logo {
-        margin-left: 200px;
-        margin-right: 100px;
-        display: inline-block;
-        float: left;
+    .nav {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      .logo-left {
+        margin-left: 50px;
+        display: inline-block; 
+        align-items: left;
+        
         &:hover {
           transform: rotateY( 360deg );
           transition-duration: 0.5s;
@@ -25,10 +31,9 @@ body {
       .logos {
         list-style: none;
         display: inline-block;
-        float: right;
-        .logo {
+        align-items: right;
+        .logo-right {
           text-decoration: none;
-          float: left;
           &:hover { 
             transform: rotateX( 360deg );
             transition-duration: 0.5s;
@@ -36,6 +41,7 @@ body {
         }
       }
     }
+  }
 
   /* flash */
   .alert-success,
@@ -169,19 +175,19 @@ body {
     margin: 100px 0;
     .top-content-about {
       font-family: "Corben", cursive;
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: bold;
       width: 70%;
       margin: 30px auto;
       border: 10px solid #ffffff;
       box-shadow: 0 0 5px #cccccc;
       span {
-        font-size: 6rem;
+        font-size: 4rem;
       }
     }
     .about_title {
       font-family: "Corben", cursive;
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: bold;
       width: 70%;
       margin: 100px auto;
@@ -215,10 +221,10 @@ body {
         }
         img {
           width: 100%;
-          height: auto;
+          height: 350px;
         }
         .about-area2 {
-          margin: 20px auto;
+          margin: 0 auto;
           border: 10px solid #ffffff;
           box-shadow: 0 0 5px #cccccc;
           &:hover {
