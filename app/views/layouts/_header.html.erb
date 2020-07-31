@@ -2,22 +2,22 @@
   <div class="nav">
     <% if current_user %>
       <%= link_to image_tag("header-shitsumonwa.png", alt: "header-shitsumonwa",size: :'150x150'), root_path, class: "logo-left" %>
-      <ul class= "logos justify-content-end">
+      <ul class= "logos">
         <li class= "logo-right">
           <%= link_to image_tag("header-myprofile.png", alt: "header-myprofile",size: :'150x150'), user_path(current_user) %>
         </li>
-        <li class= "logo-right justify-content-end">
+        <li class= "logo-right">
           <%= link_to image_tag("header-shitsumon.png", alt: "header-shitsumon",size: :'150x150'), questions_path %>
         </li>
-        <li class= "logo-right justify-content-end stock-header">
+        <li class= "logo-right stock-header">
           <%= link_to image_tag("header-stock.png", alt: "header-stock",size: :'150x150'), stocks_path %>
         </li>
-        <li class= "logo-right justify-content-end logout-header">
+        <li class= "logo-right logout-header">
           <%= link_to image_tag("header-logout.png", alt: "header-logout",size: :'150x150'), logout_path, method: :post %>
         </li>
       </ul>
     <% else %>
-      <%= link_to image_tag("header-shitsumonwa.png", alt: "header-shitsumonwa",size: :'150x150'), root_path, class: "logo-left justify-content-start" %>
+      <%= link_to image_tag("header-shitsumonwa.png", alt: "header-shitsumonwa",size: :'150x150'), root_path, class: "logo-left" %>
       <ul class= "logos">
         <li class= "logo-right"><%= link_to image_tag("header-shitsumon.png", alt: "header-shitsumon",size: :'150x150'), questions_path %></li>
         <li class= "logo-right"><%= link_to image_tag("header-signup.png", alt: "header-signup",size: :'150x150'), signup_path %></li>

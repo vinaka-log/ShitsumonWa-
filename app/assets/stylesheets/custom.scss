@@ -20,9 +20,7 @@ body {
       align-items: center;
       .logo-left {
         margin-left: 50px;
-        display: inline-block; 
-        align-items: left;
-        
+        display: inline-block;  
         &:hover {
           transform: rotateY( 360deg );
           transition-duration: 0.5s;
@@ -31,9 +29,9 @@ body {
       .logos {
         list-style: none;
         display: inline-block;
-        align-items: right;
         .logo-right {
           text-decoration: none;
+          display: inline-block;
           &:hover { 
             transform: rotateX( 360deg );
             transition-duration: 0.5s;
