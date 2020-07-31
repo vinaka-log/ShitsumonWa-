@@ -29,10 +29,10 @@
       </div>
       <% if logged_in? && current_user.id == question.user_id %>
           <div class="icon-links text-right">
-            <%= link_to edit_question_path(question.id), class: "edit-icon mr-2 btn btn-success" do %>
+            <%= link_to edit_question_path(question.id), class: "edit-icon mr-2 mt-3 btn btn-success btn-lg" do %>
               <i class="fas fa-edit"></i>
             <% end %>
-            <%= link_to question_path(question.id), method: :delete, class: "delete-icon btn btn-danger", data: { confirm: 'really delete?' } do %>
+            <%= link_to question_path(question.id), method: :delete, class: "delete-icon mt-3 btn btn-danger btn-lg", data: { confirm: 'really delete?' } do %>
               <i class="fas fa-trash"></i>
             <% end %>
           </div>

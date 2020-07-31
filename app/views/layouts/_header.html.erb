@@ -1,26 +1,27 @@
 <header>
   <div class="nav">
-    <%= link_to image_tag("header-shitsumonwa.png", alt: "header-shitsumonwa",size: :'150x150'), root_path, id: "logo" %>
     <% if current_user %>
-      <ul class= "logos text-right">
-        <li class= "logo">
+      <%= link_to image_tag("header-shitsumonwa.png", alt: "header-shitsumonwa",size: :'150x150'), root_path, class: "logo-left" %>
+      <ul class= "logos">
+        <li class= "logo-right">
           <%= link_to image_tag("header-myprofile.png", alt: "header-myprofile",size: :'150x150'), user_path(current_user) %>
         </li>
-        <li class= "logo">
+        <li class= "logo-right">
           <%= link_to image_tag("header-shitsumon.png", alt: "header-shitsumon",size: :'150x150'), questions_path %>
         </li>
-        <li class= "logo stock-header">
+        <li class= "logo-right stock-header">
           <%= link_to image_tag("header-stock.png", alt: "header-stock",size: :'150x150'), stocks_path %>
         </li>
-        <li class= "logo logout-header">
+        <li class= "logo-right logout-header">
           <%= link_to image_tag("header-logout.png", alt: "header-logout",size: :'150x150'), logout_path, method: :post %>
         </li>
       </ul>
     <% else %>
+      <%= link_to image_tag("header-shitsumonwa.png", alt: "header-shitsumonwa",size: :'150x150'), root_path, class: "logo-left" %>
       <ul class= "logos">
-        <li class= "logo"><%= link_to image_tag("header-shitsumon.png", alt: "header-shitsumon",size: :'150x150'), questions_path %></li>
-        <li class= "logo"><%= link_to image_tag("header-signup.png", alt: "header-signup",size: :'150x150'), signup_path %></li>
-        <li class= "logo"><%= link_to image_tag("header-login.png", alt: "header-login",size: :'150x150'), login_path %></li>
+        <li class= "logo-right"><%= link_to image_tag("header-shitsumon.png", alt: "header-shitsumon",size: :'150x150'), questions_path %></li>
+        <li class= "logo-right"><%= link_to image_tag("header-signup.png", alt: "header-signup",size: :'150x150'), signup_path %></li>
+        <li class= "logo-right"><%= link_to image_tag("header-login.png", alt: "header-login",size: :'150x150'), login_path %></li>
       </ul>
     <% end %>
   </div>
