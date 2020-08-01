@@ -698,7 +698,7 @@ body {
   /* stock-index */
   .stock-index-wrapper {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     margin-top: 200px;
     h2 {
       font-family: "Corben", cursive;
