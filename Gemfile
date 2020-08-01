@@ -16,6 +16,7 @@ gem 'mini_magick'
 gem 'rails', '~> 6.0.3'
 gem 'sassc', '~> 2.0.0'
 gem 'uglifier'
+gem 'rollbar'
 # for image uploader with AWS S3
 gem 'fog-aws'
 
@@ -48,7 +49,6 @@ gem 'rubocop', require: false
 group :production, :staging do
   gem 'mini_racer'
   gem 'unicorn', '5.4.1'
-  gem 'rollbar'
 end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
