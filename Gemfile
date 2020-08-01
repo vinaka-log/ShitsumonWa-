@@ -17,6 +17,7 @@ gem 'rails', '~> 6.0.3'
 gem 'sassc', '~> 2.0.0'
 gem 'uglifier'
 gem 'rollbar'
+gem 'newrelic_rpm'
 # for image uploader with AWS S3
 gem 'fog-aws'
 

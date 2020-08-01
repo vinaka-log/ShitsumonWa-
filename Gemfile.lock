@@ -187,6 +187,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
+    newrelic_rpm (6.12.0.367)
     nio4r (2.5.2)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
@@ -379,6 +380,7 @@ DEPENDENCIES
   listen
   mini_magick
   mini_racer
+  newrelic_rpm
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-doc
