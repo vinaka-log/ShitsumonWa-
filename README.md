@@ -43,7 +43,7 @@
 
 ## 「ShitsumonWa?」の技術一覧
 
--  プラットフォーム（AWS EC2 ALB Route53 ）
+-  プラットフォーム（AWS EC2）
 -  インフラ（AWS（ALB Route53））
 -  Webサーバー（Nginx）
 -  APサーバー（Unicorn）
@@ -64,9 +64,9 @@
 -  レスポンス速度の改善（[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=JA&url=https%3A%2F%2Fwww.shitsumonwa.com%2F&tab=mobile)）
 
 
-  -  ①CloudFront（AWS）でRailsのAssets周りにある静的ファイルをCDN配信
-  -  ②必要のないCSSファイルを全消去
-  -  ③head内に共通CSSは直書きする
+    ①CloudFront（AWS）でRailsのAssets周りにある静的ファイルをCDN配信
+    ②必要のないCSSファイルを全消去
+    ③head内に共通CSSは直書きする
   
   
   
