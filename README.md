@@ -44,6 +44,7 @@
 ## 「ShitsumonWa?」の技術一覧
 
 -  プラットフォーム（AWS EC2 ALB Route53 ）
+-  インフラ（AWS（ALB Route53））
 -  Webサーバー（Nginx）
 -  APサーバー（Unicorn）
 -  データベース（PostgreSQL）
@@ -52,6 +53,8 @@
 -  CSSフレームワーク（Bootstrap4）
 -  JavaScriptライブラリ （jQuery）
 -  コードチェック（rubocop）
+-  パフォーマンスモニタリングツール（New Relic）
+-  エラー通知、分析サービス（Rollbar）
 -  開発環境 （Docker）
 -  バージョン管理 （Git）
 -  リポジトリ管理（Github）
@@ -61,9 +64,9 @@
 -  レスポンス速度の改善（[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=JA&url=https%3A%2F%2Fwww.shitsumonwa.com%2F&tab=mobile)）
 
 
-  -  CloudFront（AWS）でRailsのAssets周りにある静的ファイルをCDN配信
-  -  必要のないCSSファイルを全消去
-  -  head内に共通CSSは直書きする
+  -  ①CloudFront（AWS）でRailsのAssets周りにある静的ファイルをCDN配信
+  -  ②必要のないCSSファイルを全消去
+  -  ③head内に共通CSSは直書きする
   
   
   
