@@ -3,8 +3,8 @@
 ## Site information
 
 - URL: https://www.shitsumonwa.com
- 
-![image](https://user-images.githubusercontent.com/61833409/88449166-a4d7dc80-ce7f-11ea-821f-5f130757ed09.png)
+- ![スクリーンショット 2020-08-04 12 41 36](https://user-images.githubusercontent.com/61833409/89250878-af992b00-d650-11ea-8be0-785b6088f949.png)
+
 
 
 ## About "ShitsumonWa?"
