@@ -18,6 +18,7 @@ gem 'sassc', '~> 2.0.0'
 gem 'uglifier'
 gem 'rollbar'
 gem 'newrelic_rpm'
+gem 'google-analytics-rails'
 # for image uploader with AWS S3
 gem 'fog-aws'
 
