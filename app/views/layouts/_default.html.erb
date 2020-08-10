@@ -3,4 +3,5 @@
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+<%= analytics_init if Rails.env.production? %>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
