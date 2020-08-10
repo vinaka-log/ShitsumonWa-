@@ -126,5 +126,7 @@ Rails.application.configure do
       openssl_verify_mode: 'none', 
       enable_starttls_auto: true
   }
+  #  google analytics
+  GA.tracker = "UA-174941219-1"
   
 end
